@@ -135,18 +135,19 @@ varying float vDistortion;
 
     void main(){
         float noise = 5.0 * pnoise(position + u_time, vec3(10.0));
-       // float displacement = noise / 50.0;
-       
+    
          float displacement =(u_frequency / 90.0)* (noise / 12.0);
-        // float displacement = (u_frequency / 100.0) * (noise / 14.0);
+ 
        
-        // float displacement =(u_frequency / 60.0) * (noise / 10.0);
+  
         vec3 newPosition = position + normal * displacement;
        
         // newPosition.z += sin(u_time)*.1;
+       // newPosition.z += sin(displacement)*.1;
         vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
         // TEST
         vDistortion = displacement / 30.0;
+        //vDistortion = displacement / 100.0;
         // 
         
         gl_PointSize = 5.0 * (1.0 / - mvPosition.z);

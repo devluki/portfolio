@@ -61,8 +61,7 @@ const Visualizer = () => {
             window.innerHeight / 2,
             window.innerWidth / 2,
         );
-        sceneObj.init();
-        sceneObj.animate();
+
         // Create a scene
         const scene = new THREE.Scene();
         // Create a camera
@@ -146,17 +145,23 @@ const Visualizer = () => {
         composer.addPass(bloomPass);
         // End of unreal bloom
 
+        sceneObj.init();
+        sceneObj.createMesh(material);
+        sceneObj.animate();
+
         //const controls = new OrbitControls(camera, renderer.domElement);
         const animate = () => {
             requestAnimationFrame(animate);
-
+            //const fq = audioAnalyzer.current?.getAverageFrequency();
+            // fq<120 ?
+            // console.log(fq < 20 ? "b " + fq : "a " + fq);
             uniformsRef.current.u_frequency.value =
                 audioAnalyzer.current?.getAverageFrequency() === 0
                     ? 5 //16 //8
                     : audioAnalyzer.current!.getAverageFrequency();
 
             uniforms.u_time.value = clock.getElapsedTime();
-            sphere.rotation.y += 0.001; //+ audioAnalyzer.current!.getAverageFrequency() / 10000;
+            sphere.rotation.y += 0.001; //* fq) / 100; //+ audioAnalyzer.current!.getAverageFrequency() / 10000;
 
             //plane.material.update();
             //plane.material = reflectorMaterial;

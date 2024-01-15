@@ -40,12 +40,14 @@ export class SceneManager {
     scene: THREE.Scene;
     camera: THREE.Camera;
     renderer: THREE.WebGLRenderer;
-    mesh: THREE.Mesh | null;
+    mesh: THREE.Points | null; //| THREE.Mesh | null;
+    material: THREE.ShaderMaterial | null;
 
     constructor(
         containerRef: RefObject<HTMLDivElement>,
         height: number,
         width: number,
+        // material: THREE.ShaderMaterial,
     ) {
         (this.container = containerRef.current!), // I am sure that is not null
             (this.height = height),
@@ -59,16 +61,38 @@ export class SceneManager {
         );
         this.renderer = new THREE.WebGLRenderer();
         this.mesh = null; //
+        this.material = null;
     }
+
+    // Make them private
 
     init() {
         this.renderer.setSize(this.width, this.height);
         this.container.appendChild(this.renderer.domElement);
-        const geometry = new THREE.BoxGeometry(1, 1, 1);
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        this.mesh = new THREE.Mesh(geometry, material);
+    }
+
+    createMesh(material: THREE.ShaderMaterial) {
+        const geometry = new THREE.IcosahedronGeometry(1.3, 15); //20);
+        this.mesh = new THREE.Points(geometry, material);
         this.scene.add(this.mesh);
         this.camera.position.z = 5;
+        this.material = material;
+    }
+    // TODO: FIX TYPE
+
+    // uniformsRef.current.u_frequency.value =
+    // audioAnalyzer.current?.getAverageFrequency() === 0
+    //     ? 5 //16 //8
+    //     : audioAnalyzer.current!.getAverageFrequency();
+
+    // uniforms.u_time.value = clock.getElapsedTime();
+    // sphere.rotation.y += 0.001; //* fq) / 100; //+ audioAnalyzer.current!.getAverageFrequency() / 10000;
+    uptadeUniforms(
+        uniforms: RefObject<any>,
+        analyser: RefObject<THREE.AudioAnalyser>,
+    ) {
+        uniforms.current.u_frequency.value =
+            analyser.current!.getAverageFrequency();
     }
 
     animate() {
@@ -76,6 +100,9 @@ export class SceneManager {
         this.renderer.render(this.scene, this.camera);
         this.mesh!.rotation.x += 0.001;
         this.mesh!.rotation.y += 0.001;
-        //console.log(this);
     }
 }
+
+// class AudioManager {
+//     constructor() {}
+// }
