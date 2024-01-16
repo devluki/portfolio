@@ -58,8 +58,8 @@ const Visualizer = () => {
     useEffect(() => {
         const sceneObj = new SceneManager(
             container,
-            window.innerHeight / 2,
-            window.innerWidth / 2,
+            window.innerHeight,
+            window.innerWidth,
         );
 
         // Create a scene
@@ -146,7 +146,8 @@ const Visualizer = () => {
         // End of unreal bloom
 
         sceneObj.init();
-        sceneObj.createMesh(material);
+        sceneObj.createMesh();
+        sceneObj.initAudio(audioAnalyzer);
         sceneObj.animate();
 
         //const controls = new OrbitControls(camera, renderer.domElement);

@@ -32,6 +32,23 @@
 // };
 import * as THREE from "three";
 import { RefObject } from "react";
+import { GLSL_DATA } from "../js/glsl/helper";
+
+const uniforms = {
+    u_resolution: {
+        type: "v2",
+        value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+    },
+    u_time: { type: "f", value: 0.0 },
+    u_frequency: { type: "f", value: 6.0 },
+    //
+    uAmplitude: { value: 0 },
+    uDensity: { value: 0 },
+    uStrength: { value: 0 },
+    uDeepPurple: { value: 0.8 },
+    // uDeepPurple: { value: 0 },
+    uOpacity: { value: 1 },
+};
 
 export class SceneManager {
     container: HTMLDivElement;
@@ -40,8 +57,10 @@ export class SceneManager {
     scene: THREE.Scene;
     camera: THREE.Camera;
     renderer: THREE.WebGLRenderer;
+    clock: THREE.Clock;
     mesh: THREE.Points | null; //| THREE.Mesh | null;
     material: THREE.ShaderMaterial | null;
+    audioAnalyser: THREE.AudioAnalyser | null;
 
     constructor(
         containerRef: RefObject<HTMLDivElement>,
@@ -62,6 +81,8 @@ export class SceneManager {
         this.renderer = new THREE.WebGLRenderer();
         this.mesh = null; //
         this.material = null;
+        this.audioAnalyser = null;
+        this.clock = new THREE.Clock();
     }
 
     // Make them private
@@ -71,28 +92,20 @@ export class SceneManager {
         this.container.appendChild(this.renderer.domElement);
     }
 
-    createMesh(material: THREE.ShaderMaterial) {
+    createMesh() {
         const geometry = new THREE.IcosahedronGeometry(1.3, 15); //20);
-        this.mesh = new THREE.Points(geometry, material);
+        this.material = new THREE.ShaderMaterial({
+            uniforms,
+            vertexShader: GLSL_DATA.vertex,
+            fragmentShader: GLSL_DATA.fragment,
+        });
+        this.mesh = new THREE.Points(geometry, this.material);
         this.scene.add(this.mesh);
         this.camera.position.z = 5;
-        this.material = material;
     }
-    // TODO: FIX TYPE
 
-    // uniformsRef.current.u_frequency.value =
-    // audioAnalyzer.current?.getAverageFrequency() === 0
-    //     ? 5 //16 //8
-    //     : audioAnalyzer.current!.getAverageFrequency();
-
-    // uniforms.u_time.value = clock.getElapsedTime();
-    // sphere.rotation.y += 0.001; //* fq) / 100; //+ audioAnalyzer.current!.getAverageFrequency() / 10000;
-    uptadeUniforms(
-        uniforms: RefObject<any>,
-        analyser: RefObject<THREE.AudioAnalyser>,
-    ) {
-        uniforms.current.u_frequency.value =
-            analyser.current!.getAverageFrequency();
+    initAudio(audioRef: RefObject<THREE.AudioAnalyser>) {
+        this.audioAnalyser = audioRef.current;
     }
 
     animate() {
@@ -100,6 +113,9 @@ export class SceneManager {
         this.renderer.render(this.scene, this.camera);
         this.mesh!.rotation.x += 0.001;
         this.mesh!.rotation.y += 0.001;
+
+        uniforms.u_frequency.value = this.audioAnalyser!.getAverageFrequency();
+        uniforms.u_time.value = this.clock.getElapsedTime();
     }
 }
 
