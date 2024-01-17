@@ -34,6 +34,10 @@ import * as THREE from "three";
 import { RefObject } from "react";
 import { GLSL_DATA } from "../js/glsl/helper";
 
+import { RenderPass } from "three/examples/jsm/Addons.js";
+import { EffectComposer } from "three/examples/jsm/Addons.js";
+import { UnrealBloomPass } from "three/examples/jsm/Addons.js";
+
 const uniforms = {
     u_resolution: {
         type: "v2",
@@ -46,7 +50,7 @@ const uniforms = {
     uDensity: { value: 0 },
     uStrength: { value: 0 },
     uDeepPurple: { value: 0.8 },
-    // uDeepPurple: { value: 0 },
+    // uDeepPurple: { value: 0 },// For tests
     uOpacity: { value: 1 },
 };
 
@@ -104,9 +108,13 @@ export class SceneManager {
         this.camera.position.z = 5;
     }
 
-    initAudio(audioRef: RefObject<THREE.AudioAnalyser>) {
+    connectAudio(audioRef: RefObject<THREE.AudioAnalyser>) {
         this.audioAnalyser = audioRef.current;
     }
+
+    // addPostProcessingEffect(){
+
+    // }
 
     animate() {
         requestAnimationFrame(this.animate.bind(this));
@@ -114,11 +122,20 @@ export class SceneManager {
         this.mesh!.rotation.x += 0.001;
         this.mesh!.rotation.y += 0.001;
 
-        uniforms.u_frequency.value = this.audioAnalyser!.getAverageFrequency();
-        uniforms.u_time.value = this.clock.getElapsedTime();
+        const fq = this.audioAnalyser!.getAverageFrequency();
+        let time = 4;
+        if (fq < 50) {
+            uniforms.u_frequency.value = 60;
+            //time = 5;
+        } else {
+            uniforms.u_frequency.value = fq;
+            // time = time > 1 ? time-- : 1;
+        }
+
+        // uniforms.u_frequency.value =
+        //     this.audioAnalyser!.getAverageFrequency() === 0
+        //         ? 10
+        //         : this.audioAnalyser!.getAverageFrequency();
+        uniforms.u_time.value = this.clock.getElapsedTime() / time;
     }
 }
-
-// class AudioManager {
-//     constructor() {}
-// }

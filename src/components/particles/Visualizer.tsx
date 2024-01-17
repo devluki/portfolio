@@ -147,7 +147,7 @@ const Visualizer = () => {
 
         sceneObj.init();
         sceneObj.createMesh();
-        sceneObj.initAudio(audioAnalyzer);
+        sceneObj.connectAudio(audioAnalyzer);
         sceneObj.animate();
 
         //const controls = new OrbitControls(camera, renderer.domElement);
@@ -158,7 +158,7 @@ const Visualizer = () => {
             // console.log(fq < 20 ? "b " + fq : "a " + fq);
             uniformsRef.current.u_frequency.value =
                 audioAnalyzer.current?.getAverageFrequency() === 0
-                    ? 5 //16 //8
+                    ? 70 //16 //8
                     : audioAnalyzer.current!.getAverageFrequency();
 
             uniforms.u_time.value = clock.getElapsedTime();
