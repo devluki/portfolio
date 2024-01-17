@@ -65,6 +65,11 @@ export class SceneManager {
     mesh: THREE.Points | null; //| THREE.Mesh | null;
     material: THREE.ShaderMaterial | null;
     audioAnalyser: THREE.AudioAnalyser | null;
+    // Post processing
+    isPostProcessingActive: boolean;
+    time: number;
+    composer?: EffectComposer;
+    bloomPass?: UnrealBloomPass;
 
     constructor(
         containerRef: RefObject<HTMLDivElement>,
@@ -87,6 +92,8 @@ export class SceneManager {
         this.material = null;
         this.audioAnalyser = null;
         this.clock = new THREE.Clock();
+        this.isPostProcessingActive = false;
+        this.time = 1;
     }
 
     // Make them private
@@ -112,30 +119,49 @@ export class SceneManager {
         this.audioAnalyser = audioRef.current;
     }
 
-    // addPostProcessingEffect(){
+    addPostProcessingEffect() {
+        this.isPostProcessingActive = true;
+        const renderScene = new RenderPass(this.scene, this.camera);
+        this.composer = new EffectComposer(this.renderer);
+        this.composer.addPass(renderScene);
 
-    // }
+        const bloomPass = new UnrealBloomPass(
+            new THREE.Vector2(this.width, this.height),
+            1.5,
+            0.06,
+            0.1,
+        );
+        this.composer.addPass(bloomPass);
+    }
 
     animate() {
         requestAnimationFrame(this.animate.bind(this));
-        this.renderer.render(this.scene, this.camera);
+
+        if (!this.isPostProcessingActive) {
+            this.renderer.render(this.scene, this.camera);
+        } else {
+            this.composer?.render();
+        }
+
         this.mesh!.rotation.x += 0.001;
         this.mesh!.rotation.y += 0.001;
 
         const fq = this.audioAnalyser!.getAverageFrequency();
-        let time = 4;
-        if (fq < 50) {
-            uniforms.u_frequency.value = 60;
-            //time = 5;
+
+        if (fq < 40) {
+            uniforms.u_frequency.value = 40;
+            // if (this.time <= 3) {
+            //     this.time = this.time + 0.01;
+            // }
+            //time = 3;
         } else {
             uniforms.u_frequency.value = fq;
-            // time = time > 1 ? time-- : 1;
+            // if (this.time >= 1) {
+            //     this.time = this.time - 0.01;
+            // }
         }
 
-        // uniforms.u_frequency.value =
-        //     this.audioAnalyser!.getAverageFrequency() === 0
-        //         ? 10
-        //         : this.audioAnalyser!.getAverageFrequency();
-        uniforms.u_time.value = this.clock.getElapsedTime() / time;
+        uniforms.u_time.value = this.clock.getElapsedTime() / this.time;
+        // this.composer!.render();
     }
 }

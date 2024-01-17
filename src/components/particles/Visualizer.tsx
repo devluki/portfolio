@@ -148,6 +148,7 @@ const Visualizer = () => {
         sceneObj.init();
         sceneObj.createMesh();
         sceneObj.connectAudio(audioAnalyzer);
+        sceneObj.addPostProcessingEffect();
         sceneObj.animate();
 
         //const controls = new OrbitControls(camera, renderer.domElement);
