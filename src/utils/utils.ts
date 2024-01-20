@@ -32,7 +32,7 @@
 // };
 import * as THREE from "three";
 import { RefObject } from "react";
-import { GLSL_DATA } from "../js/glsl/helper";
+import { GLSL_DATA } from "../js/glsl/helper2";
 
 import { RenderPass } from "three/examples/jsm/Addons.js";
 import { EffectComposer } from "three/examples/jsm/Addons.js";
@@ -45,13 +45,10 @@ const uniforms = {
     },
     u_time: { type: "f", value: 0.0 },
     u_frequency: { type: "f", value: 6.0 },
-    //
-    uAmplitude: { value: 0 },
-    uDensity: { value: 0 },
-    uStrength: { value: 0 },
+
     uDeepPurple: { value: 0.8 },
-    // uDeepPurple: { value: 0 },// For tests
-    uOpacity: { value: 1 },
+
+    uOpacity: { value: 0.1 },
 };
 
 export class SceneManager {
@@ -67,7 +64,7 @@ export class SceneManager {
     audioAnalyser: THREE.AudioAnalyser | null;
     // Post processing
     isPostProcessingActive: boolean;
-    time: number;
+    velocity: number;
     composer?: EffectComposer;
     bloomPass?: UnrealBloomPass;
 
@@ -93,7 +90,8 @@ export class SceneManager {
         this.audioAnalyser = null;
         this.clock = new THREE.Clock();
         this.isPostProcessingActive = false;
-        this.time = 1;
+        //TODO CHANGE NAME
+        this.velocity = 3;
     }
 
     // Make them private
@@ -134,6 +132,26 @@ export class SceneManager {
         this.composer.addPass(bloomPass);
     }
 
+    increaseVelocity() {
+        //console.log(this.velocity);
+        const interval = setInterval(() => {
+            this.velocity -= 0.1;
+            console.log("Increaseing", this.velocity);
+            if (this.velocity <= 1.1) {
+                clearInterval(interval);
+            }
+        }, 200);
+    }
+    decreaseVelocity() {
+        const interval = setInterval(() => {
+            this.velocity += 0.1;
+            console.log("Decreasing", this.velocity);
+            if (this.velocity >= 3) {
+                clearInterval(interval);
+            }
+        }, 200);
+    }
+
     animate() {
         requestAnimationFrame(this.animate.bind(this));
 
@@ -150,18 +168,11 @@ export class SceneManager {
 
         if (fq < 40) {
             uniforms.u_frequency.value = 40;
-            // if (this.time <= 3) {
-            //     this.time = this.time + 0.01;
-            // }
-            //time = 3;
         } else {
             uniforms.u_frequency.value = fq;
-            // if (this.time >= 1) {
-            //     this.time = this.time - 0.01;
-            // }
         }
 
-        uniforms.u_time.value = this.clock.getElapsedTime() / this.time;
+        uniforms.u_time.value = this.clock.getElapsedTime() / this.velocity;
         // this.composer!.render();
     }
 }
