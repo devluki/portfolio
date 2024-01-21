@@ -128,6 +128,8 @@ float pnoise(vec3 P, vec3 rep)
 }
 
 uniform float u_frequency;
+uniform float u_Amplitude;
+
 
 // TEST
 varying float vDistortion;
@@ -138,17 +140,18 @@ varying float vDistortion;
     
          float displacement =(u_frequency / 90.0)* (noise / 12.0);
  
-       
+         float angle = sin(uv.y * u_frequency) * u_Amplitude;
+  
   
         vec3 newPosition = position + normal * displacement;
+      
        
-         // newPosition.z += sin(u_time)*.1;
-        //newPosition.z += sin(displacement)*.5;
+
         vec4 mvPosition = modelViewMatrix * vec4(position, 1);
         // TEST
-        //vDistortion = displacement / 100.0;
+    
          vDistortion = displacement / 30.0;
-        //vDistortion = displacement / 100.0;
+    
         // 
         
         gl_PointSize = 5.0 * (1.0 / - mvPosition.z);

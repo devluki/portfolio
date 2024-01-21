@@ -1,38 +1,7 @@
-// import { ChangeEvent } from "react";
-// // import ReactAudioPlayer from "react-audio-player";
-
-// export const uploadFileHanlder = (
-//     e: ChangeEvent<HTMLInputElement>,
-//     // audioRef: ReactAudioPlayer | null,
-// ) => {
-//     const { files } = e.target;
-
-//     //const audio = audioRef?.audioEl.current;
-
-//     //console.log("UplowadFileHandler", audio);
-
-//     if (files) {
-//         console.log("From if statement");
-//         const [file] = Array.from(files);
-//         const src = URL.createObjectURL(file);
-
-//         return src;
-
-//         // audio.load();
-//         // audio.play();
-
-//         // const audioContext = new AudioContext();
-
-//         // const audioSource = audioContext.createMediaElementSource(audio);
-//         // const analyser = audioContext.createAnalyser();
-//         // audioSource.connect(analyser);
-//         // analyser.connect(audioContext.destination);
-//         // analyser.fftSize = 2048;
-//     }
-// };
 import * as THREE from "three";
+import gsap from "gsap";
 import { RefObject } from "react";
-import { GLSL_DATA } from "../js/glsl/helper2";
+import { GLSL_DATA } from "../js/glsl/glsl";
 
 import { RenderPass } from "three/examples/jsm/Addons.js";
 import { EffectComposer } from "three/examples/jsm/Addons.js";
@@ -45,6 +14,7 @@ const uniforms = {
     },
     u_time: { type: "f", value: 0.0 },
     u_frequency: { type: "f", value: 6.0 },
+    u_Amplitude: { type: "f", value: 1.0 },
 
     uDeepPurple: { value: 0.8 },
 
@@ -132,26 +102,19 @@ export class SceneManager {
         this.composer.addPass(bloomPass);
     }
 
-    increaseVelocity() {
-        //console.log(this.velocity);
-        // const interval = setInterval(() => {
-        //     this.velocity -= 0.005; //0.009;
-        //     console.log("Increaseing", this.velocity);
-        //     if (this.velocity <= 1.1) {
-        //         clearInterval(interval);
-        //     }
-        // }, 60);
-        this.velocity = 1;
-    }
-    decreaseVelocity() {
-        // const interval = setInterval(() => {
-        //     this.velocity += 0.005; // 0.009;
-        //     console.log("Decreasing", this.velocity);
-        //     if (this.velocity >= 3) {
-        //         clearInterval(interval);
-        //     }
-        // }, 60);
-        this.velocity = 2;
+    onMouseMove() {
+        window.addEventListener("mousemove", (e: MouseEvent) => {
+            const mouseX = e.clientX;
+            //console.log((1.2 * this.width) / mouseX);
+
+            gsap.to(this, {
+                velocity: this.width / mouseX,
+            });
+            gsap.to(this.material!.uniforms.uDeepPurple, {
+                value: mouseX / this.width,
+            });
+            console.log(this.velocity);
+        });
     }
 
     animate() {
