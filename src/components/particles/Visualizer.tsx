@@ -35,24 +35,17 @@ const Visualizer = () => {
         sceneObj.createMesh();
         sceneObj.connectAudio(audioAnalyzer);
         sceneObj.addPostProcessingEffect();
-        sceneObj.onMouseMove();
+        // sceneObj.onMouseMove();
         sceneObj.animate();
     }, []);
 
     useEffect(() => {
         audioLoader.current = new THREE.AudioLoader();
-
-        // console.log("Second effect");
-        audioLoader.current.load(
-            url,
-
-            function (buffer) {
-                audioRef.current!.setBuffer(buffer);
-
-                console.log("BUFFER", buffer, audioRef.current);
-                setIsLoading(false);
-            },
-        );
+        audioLoader.current.load(url, function (buffer) {
+            audioRef.current!.setBuffer(buffer);
+            // console.log("BUFFER", buffer, audioRef.current);
+            setIsLoading(false);
+        });
     }, [url]);
 
     const playMusicHanlder = () => {

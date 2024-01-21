@@ -108,7 +108,7 @@ export class SceneManager {
             //console.log((1.2 * this.width) / mouseX);
 
             gsap.to(this, {
-                velocity: this.width / mouseX,
+                velocity: (this.width * 3) / mouseX,
             });
             gsap.to(this.material!.uniforms.uDeepPurple, {
                 value: mouseX / this.width,
