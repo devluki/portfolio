@@ -134,7 +134,7 @@ varying float vDistortion;
 // 
 
     void main(){
-        float noise = 5.0 * pnoise(position*1.2 + u_time/1.1, vec3(10.0));
+        float noise = 5.0 * pnoise(position*1.3 + u_time/1., vec3(10.0));
     
          float displacement =(u_frequency / 90.0)* (noise / 12.0);
  

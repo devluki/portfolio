@@ -91,7 +91,7 @@ export class SceneManager {
         this.clock = new THREE.Clock();
         this.isPostProcessingActive = false;
         //TODO CHANGE NAME
-        this.velocity = 3;
+        this.velocity = 1.5; //3;
     }
 
     // Make them private
@@ -134,22 +134,24 @@ export class SceneManager {
 
     increaseVelocity() {
         //console.log(this.velocity);
-        const interval = setInterval(() => {
-            this.velocity -= 0.1;
-            console.log("Increaseing", this.velocity);
-            if (this.velocity <= 1.1) {
-                clearInterval(interval);
-            }
-        }, 200);
+        // const interval = setInterval(() => {
+        //     this.velocity -= 0.005; //0.009;
+        //     console.log("Increaseing", this.velocity);
+        //     if (this.velocity <= 1.1) {
+        //         clearInterval(interval);
+        //     }
+        // }, 60);
+        this.velocity = 1;
     }
     decreaseVelocity() {
-        const interval = setInterval(() => {
-            this.velocity += 0.1;
-            console.log("Decreasing", this.velocity);
-            if (this.velocity >= 3) {
-                clearInterval(interval);
-            }
-        }, 200);
+        // const interval = setInterval(() => {
+        //     this.velocity += 0.005; // 0.009;
+        //     console.log("Decreasing", this.velocity);
+        //     if (this.velocity >= 3) {
+        //         clearInterval(interval);
+        //     }
+        // }, 60);
+        this.velocity = 2;
     }
 
     animate() {
@@ -173,6 +175,7 @@ export class SceneManager {
         }
 
         uniforms.u_time.value = this.clock.getElapsedTime() / this.velocity;
+        //console.log(uniforms.u_time.value)
         // this.composer!.render();
     }
 }

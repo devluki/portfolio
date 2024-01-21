@@ -20,7 +20,7 @@ const Visualizer = () => {
     const audioLoader = useRef<THREE.AudioLoader | null>(null);
     const audioAnalyzer = useRef<THREE.AudioAnalyser | null>(null);
     //const particleVelocity = useRef<() => void>();
-    const sceneManagerRef = useRef();
+    //const sceneManagerRef = useRef();
 
     // Ref for mounting animation
     const container = useRef<HTMLDivElement | null>(null);
@@ -58,17 +58,17 @@ const Visualizer = () => {
 
     // Create a scene
     useEffect(() => {
-        sceneManagerRef.current = new SceneManager(
-            container,
-            window.innerHeight,
-            window.innerWidth,
-        );
-
-        // const sceneObj = new SceneManager(
+        // sceneManagerRef.current = new SceneManager(
         //     container,
         //     window.innerHeight,
         //     window.innerWidth,
         // );
+
+        const sceneObj = new SceneManager(
+            container,
+            window.innerHeight,
+            window.innerWidth,
+        );
 
         // Create a scene
         const scene = new THREE.Scene();
@@ -153,18 +153,18 @@ const Visualizer = () => {
         composer.addPass(bloomPass);
         // End of unreal bloom
 
-        // sceneObj.init();
-        // sceneObj.createMesh();
-        // sceneObj.connectAudio(audioAnalyzer);
-        // sceneObj.addPostProcessingEffect();
-        // sceneObj.animate();
+        sceneObj.init();
+        sceneObj.createMesh();
+        sceneObj.connectAudio(audioAnalyzer);
+        sceneObj.addPostProcessingEffect();
+        sceneObj.animate();
         //particleVelocity.current = sceneObj.increaseVelocity;
 
-        sceneManagerRef.current.init();
-        sceneManagerRef.current.createMesh();
-        sceneManagerRef.current.connectAudio(audioAnalyzer);
-        sceneManagerRef.current.addPostProcessingEffect();
-        sceneManagerRef.current.animate();
+        // sceneManagerRef.current.init();
+        // sceneManagerRef.current.createMesh();
+        // sceneManagerRef.current.connectAudio(audioAnalyzer);
+        // sceneManagerRef.current.addPostProcessingEffect();
+        // sceneManagerRef.current.animate();
 
         //const controls = new OrbitControls(camera, renderer.domElement);
         const animate = () => {
@@ -210,11 +210,11 @@ const Visualizer = () => {
     const playMusicHanlder = () => {
         if (!isPlaying) {
             audioRef.current!.play();
-            sceneManagerRef.current!.increaseVelocity();
+            //sceneManagerRef.current!.increaseVelocity();
             //isPlayingRef.current = true;
         } else {
             audioRef.current!.pause();
-            sceneManagerRef.current!.decreaseVelocity();
+            // sceneManagerRef.current!.decreaseVelocity();
             //isPlayingRef.current = false;
         }
 
