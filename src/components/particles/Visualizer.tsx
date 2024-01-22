@@ -36,6 +36,7 @@ const Visualizer = () => {
         sceneObj.connectAudio(audioAnalyzer);
         sceneObj.addPostProcessingEffect();
         // sceneObj.onMouseMove();
+        sceneObj.addEventListeners();
         sceneObj.animate();
     }, []);
 

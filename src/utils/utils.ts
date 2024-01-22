@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import gsap from "gsap";
+//import gsap from "gsap";
 import { RefObject } from "react";
 import { GLSL_DATA } from "../js/glsl/glsl";
 
@@ -15,6 +15,7 @@ const uniforms = {
     u_time: { type: "f", value: 0.0 },
     u_frequency: { type: "f", value: 6.0 },
     u_Amplitude: { type: "f", value: 1.0 },
+    u_amplifier: { type: "f", value: 5.1 },
 
     uDeepPurple: { value: 0.8 },
 
@@ -37,6 +38,8 @@ export class SceneManager {
     velocity: number;
     composer?: EffectComposer;
     bloomPass?: UnrealBloomPass;
+    isScroll: boolean;
+    scrollValue: number;
 
     constructor(
         containerRef: RefObject<HTMLDivElement>,
@@ -62,6 +65,8 @@ export class SceneManager {
         this.isPostProcessingActive = false;
         //TODO CHANGE NAME
         this.velocity = 1.5; //3;
+        this.isScroll = false;
+        this.scrollValue = 0;
     }
 
     // Make them private
@@ -72,7 +77,7 @@ export class SceneManager {
     }
 
     createMesh() {
-        const geometry = new THREE.IcosahedronGeometry(1.3, 15); //20);
+        const geometry = new THREE.IcosahedronGeometry(1.3, 22); //20);
         this.material = new THREE.ShaderMaterial({
             uniforms,
             vertexShader: GLSL_DATA.vertex,
@@ -102,19 +107,40 @@ export class SceneManager {
         this.composer.addPass(bloomPass);
     }
 
-    onMouseMove() {
-        window.addEventListener("mousemove", (e: MouseEvent) => {
-            const mouseX = e.clientX;
-            //console.log((1.2 * this.width) / mouseX);
+    // onMouseMove() {
+    //     window.addEventListener("mousemove", (e: MouseEvent) => {
+    //         const mouseX = e.clientX;
+    //         //console.log((1.2 * this.width) / mouseX);
 
-            gsap.to(this, {
-                velocity: (this.width * 3) / mouseX,
-            });
-            gsap.to(this.material!.uniforms.uDeepPurple, {
-                value: mouseX / this.width,
-            });
-            console.log(this.velocity);
-        });
+    //         // gsap.to(this.material!.uniforms.u_frequency, {
+    //         //     value: mouseX,
+    //         // });
+
+    //         // gsap.to(this, {
+    //         //     velocity: mouseX / this.width,
+    //         // });
+    //         // gsap.to(this.material!.uniforms.uDeepPurple, {
+    //         //     value: mouseX / this.width,
+    //         // });
+    //         // console.log(mouseX);
+    //     });
+    // }
+
+    onScroll() {
+        this.scrollValue = this.container.getBoundingClientRect().top;
+        console.log("Scroll", this.scrollValue);
+        if (this.scrollValue < 0) {
+            this.isScroll = true;
+
+            this.material!.uniforms.u_amplifier.value = this.scrollValue;
+        } else {
+            this.isScroll = false;
+            this.material!.uniforms.u_amplifier.value = 5.0;
+        }
+    }
+
+    addEventListeners() {
+        window.addEventListener("scroll", this.onScroll.bind(this));
     }
 
     animate() {
@@ -137,8 +163,12 @@ export class SceneManager {
             uniforms.u_frequency.value = fq;
         }
 
-        uniforms.u_time.value = this.clock.getElapsedTime() / this.velocity;
-        //console.log(uniforms.u_time.value)
+        // uniforms.u_time.value = this.clock.getElapsedTime() / this.velocity;
+
+        uniforms.u_time.value = !this.isScroll
+            ? this.clock.getElapsedTime() / this.velocity
+            : this.velocity;
+        //console.log(uniforms.u_time.value);
         // this.composer!.render();
     }
 }
