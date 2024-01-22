@@ -128,14 +128,23 @@ export class SceneManager {
 
     onScroll() {
         this.scrollValue = this.container.getBoundingClientRect().top;
-        console.log("Scroll", this.scrollValue);
-        if (this.scrollValue < 0) {
+        //console.log("Scroll", this.scrollValue);
+        if (this.scrollValue < 150 && this.scrollValue > 0) {
+            this.isScroll = false;
+            this.material!.uniforms.u_amplifier.value = this.scrollValue / 33.6;
+            console.log(
+                "0-168",
+                this.scrollValue / 33.6,
+                this.material!.uniforms.u_amplifier.value,
+            );
+        } else if (this.scrollValue < 0) {
             this.isScroll = true;
-
+            console.log("Zero");
             this.material!.uniforms.u_amplifier.value = this.scrollValue;
         } else {
             this.isScroll = false;
             this.material!.uniforms.u_amplifier.value = 5.0;
+            console.log("ELSE");
         }
     }
 
