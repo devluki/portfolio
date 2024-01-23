@@ -40,6 +40,7 @@ export class SceneManager {
     bloomPass?: UnrealBloomPass;
     isScroll: boolean;
     scrollValue: number;
+    isMusicPlaying: boolean;
 
     constructor(
         containerRef: RefObject<HTMLDivElement>,
@@ -67,9 +68,8 @@ export class SceneManager {
         this.velocity = 1.5; //3;
         this.isScroll = false;
         this.scrollValue = 0;
+        this.isMusicPlaying = false;
     }
-
-    // Make them private
 
     init() {
         this.renderer.setSize(this.width, this.height);
@@ -77,7 +77,7 @@ export class SceneManager {
     }
 
     createMesh() {
-        const geometry = new THREE.IcosahedronGeometry(1.3, 22); //20);
+        const geometry = new THREE.IcosahedronGeometry(1.3, 14); //22);
         this.material = new THREE.ShaderMaterial({
             uniforms,
             vertexShader: GLSL_DATA.vertex,
@@ -127,24 +127,20 @@ export class SceneManager {
     // }
 
     onScroll() {
+        console.log("Is music playing:", this.isMusicPlaying);
+        if (this.isMusicPlaying) return;
         this.scrollValue = this.container.getBoundingClientRect().top;
-        //console.log("Scroll", this.scrollValue);
+
         if (this.scrollValue < 150 && this.scrollValue > 0) {
             this.isScroll = false;
             this.material!.uniforms.u_amplifier.value = this.scrollValue / 33.6;
-            console.log(
-                "0-168",
-                this.scrollValue / 33.6,
-                this.material!.uniforms.u_amplifier.value,
-            );
         } else if (this.scrollValue < 0) {
             this.isScroll = true;
-            console.log("Zero");
+
             this.material!.uniforms.u_amplifier.value = this.scrollValue;
         } else {
             this.isScroll = false;
             this.material!.uniforms.u_amplifier.value = 5.0;
-            console.log("ELSE");
         }
     }
 
@@ -177,6 +173,7 @@ export class SceneManager {
         uniforms.u_time.value = !this.isScroll
             ? this.clock.getElapsedTime() / this.velocity
             : this.velocity;
+
         //console.log(uniforms.u_time.value);
         // this.composer!.render();
     }

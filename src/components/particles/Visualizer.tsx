@@ -10,6 +10,8 @@ const Visualizer = () => {
     const audioRef = useRef<THREE.Audio | null>(null);
     const audioLoader = useRef<THREE.AudioLoader | null>(null);
     const audioAnalyzer = useRef<THREE.AudioAnalyser | null>(null);
+    const isMusicPlaying = useRef(false);
+    const sceneManagerRef = useRef<SceneManager>();
 
     const container = useRef<HTMLDivElement | null>(null);
 
@@ -21,7 +23,13 @@ const Visualizer = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const sceneObj = new SceneManager(
+        // const sceneObj = new SceneManager(
+        //     container,
+        //     window.innerHeight,
+        //     window.innerWidth,
+        // );
+
+        sceneManagerRef.current = new SceneManager(
             container,
             window.innerHeight,
             window.innerWidth,
@@ -31,13 +39,23 @@ const Visualizer = () => {
         audioRef.current = new THREE.Audio(listenerRef.current);
         audioAnalyzer.current = new THREE.AudioAnalyser(audioRef.current!, 32);
 
-        sceneObj.init();
-        sceneObj.createMesh();
-        sceneObj.connectAudio(audioAnalyzer);
-        sceneObj.addPostProcessingEffect();
-        // sceneObj.onMouseMove();
-        sceneObj.addEventListeners();
-        sceneObj.animate();
+        sceneManagerRef.current.init();
+        sceneManagerRef.current.createMesh();
+        sceneManagerRef.current.connectAudio(audioAnalyzer);
+        // sceneManagerRef.current.addPostProcessingEffect();
+        sceneManagerRef.current.addEventListeners();
+        sceneManagerRef.current.animate();
+
+        // sceneObj.init();
+        // sceneObj.createMesh();
+        // sceneObj.connectAudio(audioAnalyzer);
+        // sceneObj.addPostProcessingEffect();
+        // // sceneObj.onMouseMove();
+
+        // sceneObj.addEventListeners();
+
+        // //console.log("Is scroll active??", isScrollActive.current);
+        // sceneObj.animate();
     }, []);
 
     useEffect(() => {
@@ -52,8 +70,12 @@ const Visualizer = () => {
     const playMusicHanlder = () => {
         if (!isPlaying) {
             audioRef.current!.play();
+            isMusicPlaying.current = true;
+            sceneManagerRef.current!.isMusicPlaying = true;
         } else {
             audioRef.current!.pause();
+            isMusicPlaying.current = false;
+            sceneManagerRef.current!.isMusicPlaying = false;
         }
 
         setIsPlaying((prev) => !prev);
@@ -86,12 +108,18 @@ const Visualizer = () => {
         }
     };
 
+    // const muteHandler = () => {
+    //     audioRef.current!.setVolume(0.01);
+    //     console.log(audioRef.current!.getVolume());
+    // };
+
     return (
         <>
             <h1>Visualizer</h1>
             <button disabled={isLoading} onClick={playMusicHanlder}>
                 {!isPlaying ? "Play" : "Pause"}
             </button>
+            {/* <button onClick={muteHandler}>Mute</button> */}
             <input
                 type="file"
                 id="fileupload"
