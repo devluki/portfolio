@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 import * as THREE from "three";
 
+import AudioPanel from "./AudioPanel/AudioPanel.js";
+
 import { SceneManager } from "../../utils/utils.js";
 
 const Visualizer = () => {
@@ -89,18 +91,26 @@ const Visualizer = () => {
 
     return (
         <>
-            <h1>Visualizer</h1>
-            <button disabled={isLoading} onClick={playMusicHanlder}>
+            {/* <h1>Visualizer</h1> */}
+            {/* AUDIO PANEL */}
+
+            {/* <button disabled={isLoading} onClick={playMusicHanlder}>
                 {!isPlaying ? "Play" : "Pause"}
             </button>
-            {/* <button onClick={muteHandler}>Mute</button> */}
+          
             <input
                 type="file"
                 id="fileupload"
                 accept="audio/*"
                 onChange={(e) => uploadFileHanlder(e)}
             />
-            {isLoading && <p>Loading...</p>}
+            {isLoading && <p>Loading...</p>} */}
+            <AudioPanel
+                isMusicPlaying={isPlaying}
+                isLoading={isLoading}
+                musicHandler={playMusicHanlder}
+                uploadHandler={uploadFileHanlder}
+            />
 
             <div ref={container}></div>
         </>

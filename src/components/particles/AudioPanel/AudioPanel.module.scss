@@ -1,0 +1,18 @@
+h1 {
+    color: yellow;
+}
+
+.panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: darkcyan;
+    // test
+    width: 400px;
+    transform: translate(150%, -50%);
+    transition: transform 0.2s;
+
+    &--active {
+        transform: translate(90%, -50%);
+    }
+}
