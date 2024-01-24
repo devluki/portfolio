@@ -23,11 +23,9 @@ const Visualizer = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // const sceneObj = new SceneManager(
-        //     container,
-        //     window.innerHeight,
-        //     window.innerWidth,
-        // );
+        listenerRef.current = new THREE.AudioListener();
+        audioRef.current = new THREE.Audio(listenerRef.current);
+        audioAnalyzer.current = new THREE.AudioAnalyser(audioRef.current!, 32);
 
         sceneManagerRef.current = new SceneManager(
             container,
@@ -35,34 +33,13 @@ const Visualizer = () => {
             window.innerWidth,
         );
 
-        listenerRef.current = new THREE.AudioListener();
-        audioRef.current = new THREE.Audio(listenerRef.current);
-        audioAnalyzer.current = new THREE.AudioAnalyser(audioRef.current!, 32);
-
-        sceneManagerRef.current.init();
-        sceneManagerRef.current.createMesh();
-        sceneManagerRef.current.connectAudio(audioAnalyzer);
-        // sceneManagerRef.current.addPostProcessingEffect();
-        sceneManagerRef.current.addEventListeners();
-        sceneManagerRef.current.animate();
-
-        // sceneObj.init();
-        // sceneObj.createMesh();
-        // sceneObj.connectAudio(audioAnalyzer);
-        // sceneObj.addPostProcessingEffect();
-        // // sceneObj.onMouseMove();
-
-        // sceneObj.addEventListeners();
-
-        // //console.log("Is scroll active??", isScrollActive.current);
-        // sceneObj.animate();
+        sceneManagerRef.current.startScene(audioAnalyzer);
     }, []);
 
     useEffect(() => {
         audioLoader.current = new THREE.AudioLoader();
         audioLoader.current.load(url, function (buffer) {
             audioRef.current!.setBuffer(buffer);
-            // console.log("BUFFER", buffer, audioRef.current);
             setIsLoading(false);
         });
     }, [url]);
@@ -85,16 +62,18 @@ const Visualizer = () => {
         const { files } = e.target;
         // audioRef.current!.pause();
         audioRef.current!.stop();
+        isMusicPlaying.current = false;
+        sceneManagerRef.current!.isMusicPlaying = false;
         setIsPlaying(false);
         setIsLoading(true);
 
-        console.log("UplowadFileHandler", audioRef);
+        // console.log("UplowadFileHandler", audioRef);
 
         if (files) {
             console.log("From if statement");
             const [file] = Array.from(files);
             const src = URL.createObjectURL(file);
-            console.log("SRC", src);
+            // console.log("SRC", src);
 
             audioLoader.current!.load(
                 src,
@@ -107,11 +86,6 @@ const Visualizer = () => {
             setUrl(src);
         }
     };
-
-    // const muteHandler = () => {
-    //     audioRef.current!.setVolume(0.01);
-    //     console.log(audioRef.current!.getVolume());
-    // };
 
     return (
         <>

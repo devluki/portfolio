@@ -177,4 +177,13 @@ export class SceneManager {
         //console.log(uniforms.u_time.value);
         // this.composer!.render();
     }
+
+    startScene(audioAnalyzer: RefObject<THREE.AudioAnalyser>) {
+        this.init();
+        this.createMesh();
+        this.connectAudio(audioAnalyzer);
+        this.addPostProcessingEffect();
+        this.addEventListeners();
+        this.animate();
+    }
 }
