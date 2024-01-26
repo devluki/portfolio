@@ -3,11 +3,13 @@ import { TRANSLATIONS } from "./translations";
 
 type Language = "pl" | "en";
 
-export const LanguageContext = createContext({
-    currentLanguage: "en",
-    toggleLanguage: () => {},
-    getTranslatedValue: (key) => string,
-});
+interface LanguageState {
+    currentLanguage: Language;
+    toggleLanguage: () => void;
+    getTranslatedValue: (key: string) => string;
+}
+
+export const LanguageContext = createContext<LanguageState | null>(null);
 // @ts-ignore
 const LanguageContextProvider = ({ children }) => {
     const [language, setLanguage] = useState<Language>("en");
