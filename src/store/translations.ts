@@ -1,4 +1,4 @@
-const TRANSLATION_KEYS: string[] = ["audiopanel.heading"];
+const TRANSLATION_KEYS: string[] = ["audiopanel.heading", "test.test"];
 
 // type KeyTuple = typeof TRANSLATION_KEYS;
 // export type TranslationKey = KeyTuple[number];
@@ -12,9 +12,11 @@ export const TRANSLATIONS: Record<
 > = {
     en: {
         "audiopanel.heading": "Audio Panel EN",
+        "test.test": "In English",
     },
 
     pl: {
         "audiopanel.heading": "Panel Audio PL",
+        "test.test": "Po polsku",
     },
 };

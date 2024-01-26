@@ -1,0 +1,24 @@
+.btn {
+    display: inline-block;
+    background-color: transparent;
+
+    &,
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
+        border: none;
+        border-radius: 0px;
+        outline: none;
+    }
+}
+
+.active {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+span {
+    font-weight: 200;
+    color: darkgray;
+}

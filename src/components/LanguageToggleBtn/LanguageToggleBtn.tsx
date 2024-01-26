@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../store/LanguageContext";
 
+import styles from "./LanguageToggleBtn.module.scss";
+
 const LanguageToggleBtn = () => {
     const langCtx = useContext(LanguageContext);
     const lang = langCtx?.currentLanguage;
@@ -9,7 +11,13 @@ const LanguageToggleBtn = () => {
         langCtx?.toggleLanguage();
     };
 
-    return <button onClick={langToggleHandler}>{lang}</button>;
+    return (
+        <button className={styles.btn} onClick={langToggleHandler}>
+            <span className={lang === "en" ? styles.active : ""}>EN</span>
+            <span> | </span>
+            <span className={lang === "pl" ? styles.active : ""}>PL</span>
+        </button>
+    );
 };
 
 export default LanguageToggleBtn;

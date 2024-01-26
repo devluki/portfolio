@@ -1,9 +1,7 @@
-import { useContext } from "react";
+import { useContext, FC } from "react";
 import { LanguageContext } from "../../store/LanguageContext";
 
-// @ts-ignore
-
-const Translator = ({ translationKey }) => {
+const Translator: FC<{ translationKey: string }> = ({ translationKey }) => {
     const langCtx = useContext(LanguageContext);
     const translatedTxt = langCtx?.getTranslatedValue(translationKey);
 

@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, ReactNode, FC } from "react";
 import { TRANSLATIONS } from "./translations";
 
 type Language = "pl" | "en";
@@ -10,8 +10,8 @@ interface LanguageState {
 }
 
 export const LanguageContext = createContext<LanguageState | null>(null);
-// @ts-ignore
-const LanguageContextProvider = ({ children }) => {
+
+const LanguageContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [language, setLanguage] = useState<Language>("en");
 
     const toggleLanguage = () => {
