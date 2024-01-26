@@ -1,7 +1,7 @@
 import "./App.css";
 import LanguageContextProvider from "./store/LanguageContext";
-import Visualizer from "./components/particles/Visualizer";
-import LanguageToggleBtn from "./components/particles/LanguageToggleBtn/LanguageToggleBtn";
+import Visualizer from "./components/Visualizer/Visualizer";
+import LanguageToggleBtn from "./components/LanguageToggleBtn/LanguageToggleBtn";
 
 function App() {
     return (

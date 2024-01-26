@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./AudioPanel.module.scss";
+import Translator from "../Translator/Translator";
 
 interface AudioPanelProps {
     isLoading: boolean;
@@ -24,6 +25,10 @@ const AudioPanel = (props: AudioPanelProps) => {
                 }`}
             >
                 <h1 className={styles.h1}>AudioPanel</h1>
+                <h1 className={styles.h1}>
+                    {" "}
+                    <Translator translationKey="audiopanel.heading" />
+                </h1>
                 <button disabled={isLoading} onClick={musicHandler}>
                     {!isMusicPlaying ? "Play" : "Pause"}
                 </button>

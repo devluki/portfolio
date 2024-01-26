@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import * as THREE from "three";
 
-import AudioPanel from "./AudioPanel/AudioPanel.js";
+import AudioPanel from "../AudioPanel/AudioPanel.js";
 
 import { SceneManager } from "../../utils/utils.js";
 

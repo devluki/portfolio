@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LanguageContext } from "../../../store/LanguageContext";
+import { LanguageContext } from "../../store/LanguageContext";
 
 const LanguageToggleBtn = () => {
     const langCtx = useContext(LanguageContext);
