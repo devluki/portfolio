@@ -71,13 +71,14 @@ export class SceneManager {
         this.isMusicPlaying = false;
     }
 
-    init() {
+    private init() {
         this.renderer.setSize(this.width, this.height);
         this.container.appendChild(this.renderer.domElement);
     }
 
     createMesh() {
         const geometry = new THREE.IcosahedronGeometry(1.3, 14); //22);
+        // const geometry = new THREE.IcosahedronGeometry(1.3, 24); //22);
         this.material = new THREE.ShaderMaterial({
             uniforms,
             vertexShader: GLSL_DATA.vertex,

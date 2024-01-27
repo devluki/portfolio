@@ -2,21 +2,33 @@ import { useContext } from "react";
 import { LanguageContext } from "../../store/LanguageContext";
 
 import styles from "./LanguageToggleBtn.module.scss";
+import { Language } from "../../store/translations";
 
 const LanguageToggleBtn = () => {
     const langCtx = useContext(LanguageContext);
     const lang = langCtx?.currentLanguage;
 
-    const langToggleHandler = () => {
-        langCtx?.toggleLanguage();
+    const langToggleHandler = (lang: Language) => {
+        langCtx?.toggleLanguage(lang);
     };
 
     return (
-        <button className={styles.btn} onClick={langToggleHandler}>
-            <span className={lang === "en" ? styles.active : ""}>EN</span>
+        <>
+            <p className={styles.test}>Test napisu</p>
+            <button
+                className={styles.btn}
+                onClick={() => langToggleHandler("en")}
+            >
+                <span className={lang === "en" ? styles.active : ""}>EN</span>
+            </button>{" "}
             <span> | </span>
-            <span className={lang === "pl" ? styles.active : ""}>PL</span>
-        </button>
+            <button
+                className={styles.btn}
+                onClick={() => langToggleHandler("pl")}
+            >
+                <span className={lang === "pl" ? styles.active : ""}>PL</span>
+            </button>
+        </>
     );
 };
 
