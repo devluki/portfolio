@@ -7,6 +7,7 @@ import AudioPanel from "../AudioPanel/AudioPanel.js";
 import { SceneManager } from "../../utils/utils.js";
 
 const Visualizer = () => {
+    console.log("RENDER");
     // Refereces for THREE Audio API
     const listenerRef = useRef<THREE.AudioListener | null>(null);
     const audioRef = useRef<THREE.Audio | null>(null);
@@ -72,6 +73,26 @@ const Visualizer = () => {
         setIsPlaying((prev) => !prev);
     };
 
+    const stopMusicHandler = () => {
+        audioRef.current!.stop();
+        isMusicPlaying.current = false;
+        sceneManagerRef.current!.isMusicPlaying = false;
+        setIsPlaying(false);
+    };
+
+    const musicVolumeHandlerPlus = () => {
+        const volume = audioRef.current!.getVolume();
+        console.log("Plud", volume, audioRef.current!.getVolume());
+        if (volume > 10) return;
+        audioRef.current!.setVolume(volume + 0.5);
+    };
+    const musicVolumeHandlerMinus = () => {
+        const volume = audioRef.current!.getVolume();
+        console.log("Minus", volume, audioRef.current!.getVolume());
+        if (volume < 1) return;
+        audioRef.current!.setVolume(volume - 0.5);
+    };
+
     const uploadFileHanlder = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { files } = e.target;
 
@@ -121,6 +142,9 @@ const Visualizer = () => {
                 onChange={(e) => uploadFileHanlder(e)}
             />
             {isLoading && <p>Loading...</p>} */}
+            <button onClick={musicVolumeHandlerPlus}>++</button>
+            <button onClick={musicVolumeHandlerMinus}>--</button>
+            <button onClick={stopMusicHandler}>STOP</button>
             <AudioPanel
                 isMusicPlaying={isPlaying}
                 isLoading={isLoading}
