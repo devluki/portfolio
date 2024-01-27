@@ -11,16 +11,21 @@
         border-radius: 0px;
         outline: none;
     }
-}
-
-.active {
-    font-weight: bold;
-    color: whitesmoke;
-}
-
-span {
-    font-weight: 200;
-    color: darkgray;
+    // Change into class??
+    span {
+        display: inline-block;
+        font-weight: 200;
+        color: darkgray;
+        transition: all 0.2s;
+        &:hover {
+            // font-weight: bold;
+            transform: translateY(-1px) scale(1.05);
+        }
+    }
+    .active {
+        font-weight: bold;
+        color: whitesmoke;
+    }
 }
 
 // Test napisu

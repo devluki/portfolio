@@ -128,7 +128,7 @@ export class SceneManager {
     // }
 
     onScroll() {
-        console.log("Is music playing:", this.isMusicPlaying);
+        // console.log("Is music playing:", this.isMusicPlaying);
         if (this.isMusicPlaying) return;
         this.scrollValue = this.container.getBoundingClientRect().top;
 

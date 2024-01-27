@@ -46,8 +46,19 @@ const Visualizer = () => {
         });
     }, [url]);
 
+    // const endMusicHandler = () => {
+    //     audioRef.current!.onEnded = () => {
+    //         isMusicPlaying.current = false;
+    //         sceneManagerRef.current!.isMusicPlaying = false;
+    //         setIsPlaying(false);
+    //         console.log("Song ended!");
+    //     };
+    // };
+
     const playMusicHanlder = () => {
+        console.log("Click play");
         if (!isPlaying) {
+            console.log(audioRef.current!);
             audioRef.current!.play();
             isMusicPlaying.current = true;
             sceneManagerRef.current!.isMusicPlaying = true;
@@ -55,6 +66,7 @@ const Visualizer = () => {
             audioRef.current!.pause();
             isMusicPlaying.current = false;
             sceneManagerRef.current!.isMusicPlaying = false;
+            //endMusicHandler();
         }
 
         setIsPlaying((prev) => !prev);
@@ -62,17 +74,14 @@ const Visualizer = () => {
 
     const uploadFileHanlder = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { files } = e.target;
-        // audioRef.current!.pause();
+
         audioRef.current!.stop();
         isMusicPlaying.current = false;
         sceneManagerRef.current!.isMusicPlaying = false;
         setIsPlaying(false);
         setIsLoading(true);
 
-        // console.log("UplowadFileHandler", audioRef);
-
         if (files) {
-            console.log("From if statement");
             const [file] = Array.from(files);
             const src = URL.createObjectURL(file);
             // console.log("SRC", src);
@@ -82,6 +91,13 @@ const Visualizer = () => {
 
                 function (buffer) {
                     audioRef.current!.setBuffer(buffer);
+                    audioRef.current!.onEnded = () => {
+                        isMusicPlaying.current = false;
+                        sceneManagerRef.current!.isMusicPlaying = false;
+                        setIsPlaying(false);
+                        audioRef.current!.stop();
+                        console.log("Song ended!");
+                    };
                     setIsLoading(false);
                 },
             );
