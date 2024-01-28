@@ -5,17 +5,42 @@ h1 {
 }
 
 .panel {
-    position: absolute;
+    display: grid;
 
+    position: absolute;
     top: 50%;
     left: 50vw;
-    border-radius: 1.5rem;
-    padding: 2rem;
+    border-radius: 0rem 0 0 1.5rem;
+
     background-color: $primary-gray-dark;
-    // test
+
     width: 400px;
     transform: translate(-10%, -50%);
     transition: transform 0.2s;
+
+    box-shadow: -1px 1px 3px lighten($primary-gray-light, 90);
+
+    &__settings {
+        position: absolute;
+        right: calc(100% - 1px);
+        top: -1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 1.5rem 0 0 1.5rem;
+        background-color: inherit;
+        box-shadow: -2px 1px 1px lighten($primary-gray-light, 90);
+        svg {
+            animation: icon-spin 5s infinite linear;
+
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+    }
+    //
 
     &--active {
         transform: translate(90%, -50%);
@@ -26,36 +51,57 @@ h1 {
         justify-content: space-around;
         align-items: center;
 
-        .controls__btn {
-            background-color: transparent;
-            transition: all 0.2s;
-            cursor: pointer;
-            svg {
-                height: 2.5rem;
-                width: 2.5rem;
-                fill: $primary-gray-light;
-            }
-
-            &:active,
-            &:focus,
-            &:hover,
-            &:visited {
-                border: none;
-                border-radius: 0px;
-                outline: none;
-            }
-
-            &:disabled,
-            &--disabled {
-                cursor: not-allowed;
-                svg {
-                    fill: lighten($primary-gray-dark, 30);
-                }
-            }
-        }
-
         input[type="file"] {
             display: none;
         }
+    }
+    .panel__btn {
+        background-color: transparent;
+        transition: all 0.2s;
+        padding: 0px;
+        cursor: pointer;
+        svg {
+            height: 2.5rem;
+            width: 2.5rem;
+            fill: $primary-gray-light;
+        }
+
+        &,
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited {
+            border: none;
+            border-radius: 0px;
+            outline: none;
+            box-shadow: none;
+        }
+
+        &:hover {
+            svg {
+                fill: darken($primary-gray-light, 20);
+            }
+        }
+
+        &:disabled,
+        &--disabled {
+            cursor: not-allowed;
+            svg {
+                fill: lighten($primary-gray-dark, 30);
+            }
+        }
+    }
+
+    .panel__content {
+        padding: 0rem 1rem 1rem 1rem;
+    }
+}
+
+@keyframes icon-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

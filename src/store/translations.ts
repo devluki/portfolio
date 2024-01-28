@@ -11,11 +11,13 @@ export const TRANSLATIONS: Record<
     Record<TranslationKey[number], string>
 > = {
     en: {
+        "audiopanel.settings": "Settings",
         "audiopanel.heading": "Audio Panel EN",
         "test.test": "In English",
     },
 
     pl: {
+        "audiopanel.settings": "Ustawienia",
         "audiopanel.heading": "Panel Audio PL",
         "test.test": "Po polsku",
     },

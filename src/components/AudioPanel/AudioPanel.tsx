@@ -8,19 +8,24 @@ interface AudioPanelProps {
     isMusicPlaying: boolean;
     uploadHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
     musicHandler: () => void;
+    stopHandler: () => void;
 }
 
 const AudioPanel = (props: AudioPanelProps) => {
-    const { isLoading, musicHandler, isMusicPlaying, uploadHandler } = props;
+    const {
+        isLoading,
+        musicHandler,
+        isMusicPlaying,
+        uploadHandler,
+        stopHandler,
+    } = props;
     const [isPanelActive, setIsPanelActive] = useState(false);
 
     const panelActiveHandler = () => {
         setIsPanelActive((prev) => !prev);
     };
 
-    //     <svg>
-    //     <use xlinkHref={el.icon}></use>
-    // </svg>
+    //   SVG icons
 
     const play = (
         <svg>
@@ -45,6 +50,12 @@ const AudioPanel = (props: AudioPanelProps) => {
         </svg>
     );
 
+    const settings = (
+        <svg>
+            <use xlinkHref={`${panelIcons}#icon-cog`}></use>
+        </svg>
+    );
+
     return (
         <>
             <div
@@ -53,44 +64,58 @@ const AudioPanel = (props: AudioPanelProps) => {
                     isPanelActive ? "" : styles["panel--active"]
                 }`}
             >
-                <h1 className={styles.h1}>AudioPanel</h1>
-                <h1 className={styles.h1}>
-                    {" "}
-                    <Translator translationKey="audiopanel.heading" />
-                </h1>
-                <div className={styles.panel__controls}>
-                    <button
-                        className={styles.controls__btn}
-                        disabled={isLoading}
-                        onClick={musicHandler}
-                    >
-                        {!isMusicPlaying ? play : pause}
-                    </button>
-                    <button
-                        className={styles.controls__btn}
-                        disabled={!isMusicPlaying}
-                    >
-                        {stop}
-                    </button>
-
-                    <label
-                        htmlFor="fileupload"
-                        className={
-                            !isLoading
-                                ? styles.controls__btn
-                                : `${styles.controls__btn} ${styles["controls__btn--disabled"]}`
-                        }
-                    >
-                        {upload}
-                    </label>
-                    <input
-                        className={styles["controls__btn-upload"]}
-                        type="file"
-                        id="fileupload"
-                        accept="audio/*"
-                        onChange={(e) => uploadHandler(e)}
-                    />
+                <div className={styles.panel__settings}>
+                    <button className={styles.panel__btn}>{settings}</button>
                 </div>
+
+                <div className={styles.panel__content}>
+                    <h1 className={styles["heading-tertiary"]}>
+                        Animation settings
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Et fugiat, a suscipit officiis velit voluptatem! Ea
+                        recusandae quae, repellat hic, doloremque ipsam harum
+                        deserunt facilis debitis odit nesciunt ex molestiae?
+                    </p>
+                    <div className={styles.panel__controls}>
+                        <button
+                            className={styles.panel__btn}
+                            disabled={isLoading}
+                            onClick={musicHandler}
+                        >
+                            {!isMusicPlaying ? play : pause}
+                        </button>
+                        <button
+                            className={styles.panel__btn}
+                            disabled={!isMusicPlaying}
+                            onClick={stopHandler}
+                        >
+                            {stop}
+                        </button>
+
+                        <label
+                            htmlFor="fileupload"
+                            className={
+                                !isLoading
+                                    ? styles.panel__btn
+                                    : `${styles.panel__btn} ${styles["panel__btn--disabled"]}`
+                            }
+                        >
+                            <span className={styles["panel__btn-upload"]}>
+                                {upload}
+                            </span>
+                        </label>
+                        <input
+                            className={styles["controls__btn-upload"]}
+                            type="file"
+                            id="fileupload"
+                            accept="audio/*"
+                            onChange={(e) => uploadHandler(e)}
+                        />
+                    </div>
+                </div>
+
                 {isLoading && <p>Loading...</p>}
             </div>
         </>

@@ -150,6 +150,7 @@ const Visualizer = () => {
                 isLoading={isLoading}
                 musicHandler={playMusicHanlder}
                 uploadHandler={uploadFileHanlder}
+                stopHandler={stopMusicHandler}
             />
 
             <div ref={container}></div>
