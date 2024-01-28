@@ -59,6 +59,7 @@ export class SceneManager {
             1000,
         );
         this.renderer = new THREE.WebGLRenderer();
+
         this.mesh = null; //
         this.material = null;
         this.audioAnalyser = null;
@@ -73,6 +74,7 @@ export class SceneManager {
 
     private init() {
         this.renderer.setSize(this.width, this.height);
+        this.renderer.setClearColor(0xffffff, 0);
         this.container.appendChild(this.renderer.domElement);
     }
 
