@@ -1,4 +1,5 @@
 // import "./App.css";
+import "./styles/main.scss";
 import LanguageContextProvider from "./store/LanguageContext";
 import Visualizer from "./components/Visualizer/Visualizer";
 import Translator from "./components/Translator/Translator";
