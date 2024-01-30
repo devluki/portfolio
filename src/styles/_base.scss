@@ -19,6 +19,17 @@ body {
     font-weight: 300;
     line-height: 1.6;
     background-color: black;
+    // position: relative;
+    // &::before {
+    //     content: "<Header>";
+    //     display: inline-block;
+    //     position: absolute;
+    //     font-style: italic;
+    //     left: 2%;
+    //     top: 2%;
+    //     z-index: 2;
+    //     color: #ffffffde;
+    // }
 }
 
 .container {
