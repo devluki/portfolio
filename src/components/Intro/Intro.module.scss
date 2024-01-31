@@ -7,6 +7,7 @@
     width: 100vw;
     background-color: black;
     color: white;
+    //overflow: hidden;
     &__logo {
         svg {
             position: absolute;
@@ -19,6 +20,10 @@
             max-height: 300px;
 
             overflow: visible;
+
+            rect {
+                filter: url(#red-glow);
+            }
         }
 
         .intro__txt {
@@ -36,6 +41,11 @@
             margin: 0 auto;
             font-size: 2rem;
             font-weight: 900;
+            // #041520
+            // text-shadow: 0 0 7px #8dd9ff, 0 0 10px #8dd9ff, 0 0 21px #8dd9ff,
+            //     0 0 42px #051522, 0 0 82px #051522, 0 0 92px #051522,
+            //     0 0 102px #02173f, 0 0 151px #02173f;
+            text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
         }
     }
 }

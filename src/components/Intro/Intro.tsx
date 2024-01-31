@@ -42,6 +42,7 @@ const Intro = () => {
         gsap.to(svg, { x: 13, delay: 0.6, duration: 0.2 });
 
         txts.forEach((txt, i) => {
+            // if (i < 0) return;
             gsap.to(txt, {
                 // duration: 0.5,
                 duration: 1,
@@ -74,6 +75,71 @@ const Intro = () => {
             <div className={styles.intro} ref={intro}>
                 <div className={styles.intro__logo}>
                     <svg id="svg" viewBox="0 0 100 100" ref={container}>
+                        {/* Test */}
+                        <defs>
+                            <filter
+                                id="red-glow"
+                                filterUnits="userSpaceOnUse"
+                                x="-50%"
+                                y="-50%"
+                                width="200%"
+                                height="200%"
+                            >
+                                {/* <!-- blur the text at different levels--> */}
+                                <feGaussianBlur
+                                    in="SourceGraphic"
+                                    stdDeviation="1"
+                                    result="blur5"
+                                />
+                                <feGaussianBlur
+                                    in="SourceGraphic"
+                                    stdDeviation="2"
+                                    result="blur10"
+                                />
+                                {/* <feGaussianBlur
+                                    in="SourceGraphic"
+                                    stdDeviation="20"
+                                    result="blur20"
+                                /> */}
+                                {/* <feGaussianBlur
+                                    in="SourceGraphic"
+                                    stdDeviation="30"
+                                    result="blur30"
+                                />
+                                <feGaussianBlur
+                                    in="SourceGraphic"
+                                    stdDeviation="50"
+                                    result="blur50"
+                                /> */}
+                                {/* <!-- merge all the blurs except for the first one --> */}
+                                <feMerge result="blur-merged">
+                                    <feMergeNode in="blur10" />
+                                    {/* <feMergeNode in="blur20" /> */}
+                                    {/* <feMergeNode in="blur30" /> */}
+                                    {/* <feMergeNode in="blur50" /> */}
+                                </feMerge>
+                                {/* <!-- recolour the merged blurs red--> */}
+                                <feColorMatrix
+                                    result="red-blur"
+                                    in="blur-merged"
+                                    type="matrix"
+                                    values="0.55 0 0 0 0
+                             0 0.85 0 0 0
+                             0 0 1 0 0
+                             0 0 0 1 0"
+                                    //         values="0 0 0 0 0
+                                    //  0 0.06 0 0 0
+                                    //  0.1 0.01 0.1 0 0
+                                    //  0 0 0 1 0"
+                                />
+                                <feMerge>
+                                    <feMergeNode in="red-blur" />
+                                    <feMergeNode in="blur5" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        {/* Test */}
                         <rect
                             className={styles.svgBox}
                             id="svgBox"
