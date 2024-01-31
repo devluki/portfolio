@@ -8,26 +8,34 @@
     background-color: black;
     color: white;
     &__logo {
-        // height: 100%;
-        // width: 100%;
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            // 35px --> width of a single element
+            // transform: translate(calc(-50% - 35px), -50%);
+            transform: translate(calc(-50%), -50%);
+            //height: 90vh;
+            max-height: 300px;
 
-        .logo__element {
+            overflow: visible;
+        }
+
+        .intro__txt {
             display: block;
             position: absolute;
             top: 40%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            height: 1.5rem;
-            width: 1.5rem;
-            background-color: #fff;
-            border-radius: 50%;
-        }
-
-        svg {
-            height: 90vh;
-            max-height: 300px;
-            border: solid 2px white;
-            overflow: visible;
+            transform: translate(-50%, -50%) scale(0.1);
+            opacity: 0;
+            color: #252526;
+            // width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            margin: 0 auto;
+            font-size: 2rem;
+            font-weight: 900;
         }
     }
 }
