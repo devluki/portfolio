@@ -195,4 +195,4 @@ export class SceneManager {
 }
 
 // Intro Animation
-export const TIME = 2800;
+export const TIME = 3000;

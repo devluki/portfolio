@@ -1,6 +1,7 @@
 .progress {
-    width: 100%;
+    width: 90%;
     margin: 0 5%;
+    height: 0.5rem;
     color: red;
 
     //height: 5%;
@@ -8,6 +9,7 @@
 
 progress::-webkit-progress-value {
     background: #f9f9f9;
+
     border-radius: 5px;
 }
 

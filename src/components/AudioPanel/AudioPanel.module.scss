@@ -17,13 +17,12 @@ h1 {
     width: 400px;
     transform: translate(-10%, -50%);
     transition: transform 0.2s;
-
-    box-shadow: -1px 1px 3px lighten($primary-gray-light, 90);
+    // box-shadow: -1px 1px 3px lighten($primary-gray-light, 90);
 
     &__settings {
         position: absolute;
         right: calc(100% - 1px);
-        top: -1px;
+        //top: -1px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,7 +30,7 @@ h1 {
         height: 60px;
         border-radius: 1.5rem 0 0 1.5rem;
         background-color: inherit;
-        box-shadow: -2px 1px 1px lighten($primary-gray-light, 90);
+        // box-shadow: -2px 1px 1px lighten($primary-gray-light, 90);
         svg {
             animation: icon-spin 5s infinite linear;
 
