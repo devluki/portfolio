@@ -4,11 +4,11 @@ import { TIME } from "../../utils/utils";
 import styles from "./ProgressBar.module.scss";
 
 const ProgressBar = () => {
-    const [remaningTime, setRemaningTime] = useState(TIME);
+    const [remaningTime, setRemaningTime] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setRemaningTime((prev) => prev - 10);
+            setRemaningTime((prev) => prev + 10);
         }, 10);
 
         return () => {
