@@ -79,13 +79,15 @@ export class SceneManager {
     }
 
     createMesh() {
-        const geometry = new THREE.IcosahedronGeometry(1.3, 14); //22);
+        const geometry = new THREE.IcosahedronGeometry(1.3, 14); //14); //22); //1.3
+
         // const geometry = new THREE.IcosahedronGeometry(1.3, 24); //22);
         this.material = new THREE.ShaderMaterial({
             uniforms,
             vertexShader: GLSL_DATA.vertex,
             fragmentShader: GLSL_DATA.fragment,
         });
+
         this.mesh = new THREE.Points(geometry, this.material);
         this.scene.add(this.mesh);
         this.camera.position.z = 5;
@@ -195,4 +197,4 @@ export class SceneManager {
 }
 
 // Intro Animation
-export const TIME = 3000;
+export const TIME = 4000;

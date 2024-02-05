@@ -5,6 +5,8 @@ import styles from "./Intro.module.scss";
 
 import gsap from "gsap";
 
+import { TIME } from "../../utils/utils";
+
 const Intro = () => {
     const container = useRef<SVGSVGElement>(null);
     const intro = useRef<HTMLDivElement>(null);
@@ -49,24 +51,28 @@ const Intro = () => {
             gsap.to(txt, {
                 // duration: 0.5,
                 duration: 1,
-                delay: i,
+                delay: i + 0.3,
                 opacity: 1,
                 scale: 1.05,
                 color: "#f9f9f9",
             });
             gsap.to(txt, {
                 duration: 0.5,
-                delay: 1.15 + i,
-                opacity: 0,
-                scale: 0,
+                delay: 1 + i,
+                scale: 0.9,
+                y: i === 2 ? 0 : 50 + i * 50,
+
+                // opacity: 0,
+                //scale: 0,
             });
 
             gsap.to(intro.current, {
-                // y: -1 * window.innerHeight,
+                y: -1 * window.innerHeight,
 
                 opacity: 0,
-                duration: 1,
-                delay: 3.5,
+                duration: 0.8,
+                delay: TIME / 1000,
+                // delay: 3.5,
             });
         });
     }, []);
