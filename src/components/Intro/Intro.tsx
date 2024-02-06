@@ -54,7 +54,7 @@ const Intro = () => {
                 delay: i + 0.3,
                 opacity: 1,
                 scale: 1.05,
-                color: "#f9f9f9",
+                //color: "#f9f9f9",
             });
             gsap.to(txt, {
                 duration: 0.5,
@@ -66,20 +66,30 @@ const Intro = () => {
                 //scale: 0,
             });
 
-            gsap.to(intro.current, {
-                y: -1 * window.innerHeight,
+            // gsap.to(intro.current, {
+            //     y: -1 * window.innerHeight,
 
-                opacity: 0,
-                duration: 0.8,
-                delay: TIME / 1000,
-                // delay: 3.5,
-            });
+            //     opacity: 0,
+            //     duration: 0.8,
+            //     delay: TIME / 1000,
+            //     // delay: 3.5,
+            // });
         });
     }, []);
 
     return (
         <>
             <div className={styles.intro} ref={intro}>
+                <div className={styles.intro__bar}>
+                    {/* <span className={styles.brackets}>{"<progress>"}</span> */}
+                    <ProgressBar />
+                    {/* <span
+                        className={`${styles.brackets} ${styles["brackets--closing"]}`}
+                    >
+                        {"</progress>"}
+                    </span> */}
+                </div>
+
                 <div className={styles.intro__logo}>
                     <svg id="svg" viewBox="0 0 100 100" ref={container}>
                         <rect
@@ -123,31 +133,25 @@ const Intro = () => {
                             rx="50"
                         />
                     </svg>
-
+                </div>
+                <div className={styles.intro__txts}>
                     <h4 id="intro__txt--0" className={styles.intro__txt}>
-                        <span className={styles.brackets}>{"<span>"}</span>
+                        {/* <span className={styles.brackets}>{"<span>"}</span> */}
                         {"<Development/>"}
-                        <span className={styles.brackets}>{"</span>"}</span>
+                        {/* <span className={styles.brackets}>{"</span>"}</span> */}
                     </h4>
 
                     <h4 id="intro__txt--1" className={styles.intro__txt}>
-                        <span className={styles.brackets}>{"<span>"}</span>
+                        {/* <span className={styles.brackets}>{"<span>"}</span> */}
                         {"<Freelancing/>"}
-                        <span className={styles.brackets}>{"/></span>"}</span>
+                        {/* <span className={styles.brackets}>{"</span>"}</span> */}
                     </h4>
                     <h4 id="intro__txt--2" className={styles.intro__txt}>
-                        <span className={styles.brackets}>{"<span>"}</span>
+                        {/* <span className={styles.brackets}>{"<span>"}</span> */}
                         {"<Passion/>"}
-                        <span className={styles.brackets}>{"</span>"}</span>
+                        {/* <span className={styles.brackets}>{"</span>"}</span> */}
                     </h4>
                 </div>
-                <span className={styles.brackets}>{"<progress>"}</span>
-                <ProgressBar />
-                <span
-                    className={`${styles.brackets} ${styles["brackets--closing"]}`}
-                >
-                    {"</progress>"}
-                </span>
             </div>
         </>
     );

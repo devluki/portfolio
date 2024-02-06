@@ -19,6 +19,13 @@ body {
     font-weight: 300;
     line-height: 1.6;
     background-color: black;
+
+    // padding: 2rem;
+
+    #root {
+        position: relative;
+        // width: 100vw;
+    }
 }
 
 .container {
