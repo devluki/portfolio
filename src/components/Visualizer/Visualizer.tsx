@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import * as THREE from "three";
 
-import AudioPanel from "../AudioPanel/AudioPanel.js";
+// import AudioPanel from "../AudioPanel/AudioPanel.js";
 
 import { SceneManager } from "../../utils/utils.js";
 
@@ -29,7 +29,7 @@ const Visualizer = () => {
         listenerRef.current = new THREE.AudioListener();
         audioRef.current = new THREE.Audio(listenerRef.current);
         audioAnalyzer.current = new THREE.AudioAnalyser(audioRef.current!, 32);
-
+        console.log(container);
         sceneManagerRef.current = new SceneManager(
             container,
             window.innerHeight,
@@ -142,16 +142,16 @@ const Visualizer = () => {
                 onChange={(e) => uploadFileHanlder(e)}
             />
             {isLoading && <p>Loading...</p>} */}
-            <button onClick={musicVolumeHandlerPlus}>++</button>
+            {/* <button onClick={musicVolumeHandlerPlus}>++</button>
             <button onClick={musicVolumeHandlerMinus}>--</button>
-            <button onClick={stopMusicHandler}>STOP</button>
-            <AudioPanel
+            <button onClick={stopMusicHandler}>STOP</button> */}
+            {/* <AudioPanel
                 isMusicPlaying={isPlaying}
                 isLoading={isLoading}
                 musicHandler={playMusicHanlder}
                 uploadHandler={uploadFileHanlder}
                 stopHandler={stopMusicHandler}
-            />
+            /> */}
 
             <div ref={container}></div>
         </>

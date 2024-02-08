@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./AudioPanel.module.scss";
-import Translator from "../Translator/Translator";
+// import Translator from "../Translator/Translator";
 import panelIcons from "../../assets/sprite_audio_panel.svg";
 
 interface AudioPanelProps {

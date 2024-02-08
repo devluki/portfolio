@@ -48,7 +48,7 @@ export class SceneManager {
         width: number,
         // material: THREE.ShaderMaterial,
     ) {
-        (this.container = containerRef.current!), // I am sure that is not null
+        (this.container = containerRef.current!), //  that is not null
             (this.height = height),
             (this.width = width),
             (this.scene = new THREE.Scene());
@@ -74,6 +74,7 @@ export class SceneManager {
 
     private init() {
         this.renderer.setSize(this.width, this.height);
+        console.log(this.width);
         this.renderer.setClearColor(0xffffff, 0);
         this.container.appendChild(this.renderer.domElement);
     }

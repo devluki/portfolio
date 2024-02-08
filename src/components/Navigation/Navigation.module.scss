@@ -1,0 +1,111 @@
+@import "../../styles/main.scss";
+
+.nav {
+    position: relative;
+    width: 100%;
+    // background-color: yellowgreen;
+    padding: 1rem;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+        max-width: 1300px;
+    }
+
+    &__list {
+        display: grid;
+
+        list-style: none;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+
+        @include respond(tab-land) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-row: auto;
+        }
+
+        // @include respond(screen) {
+        //     grid-template-columns: repeat(4, 1fr);
+        //     grid-row: auto;
+        // }
+    }
+
+    &__link,
+    &__link:visited,
+    &__link:active {
+        position: relative;
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.2s;
+        // color: rgb(0.1, 230, 255);
+        color: white;
+    }
+
+    &__link {
+        &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            right: 0px;
+            bottom: -3px;
+            left: 0px;
+
+            background-color: white;
+        }
+    }
+
+    &__link:hover {
+        color: gray;
+
+        &::before {
+            background: linear-gradient(to right, white 40%, gray 75%);
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &:nth-child(1) {
+            grid-column: span 3;
+            justify-self: center;
+            @include respond(tab-land) {
+                grid-column: 1;
+            }
+        }
+
+        .svg {
+            height: 5rem;
+            width: 5rem;
+
+            rect {
+                height: 2rem;
+                width: 2rem;
+                @include respond(tab-land) {
+                    height: 2.5rem;
+                    width: 2.5rem;
+
+                    // &:nth-child(1) {
+                    //    //fill: red;
+                    // }
+                    &:nth-child(2) {
+                        // fill: green;
+                        transform: translateY(10%);
+                    }
+                    &:nth-child(3) {
+                        //  fill: blue;
+                        transform: translateY(20%);
+                    }
+                    &:nth-child(4) {
+                        // fill: yellow;
+                        transform: translate(10%, 20%);
+                    }
+                }
+            }
+        }
+    }
+}

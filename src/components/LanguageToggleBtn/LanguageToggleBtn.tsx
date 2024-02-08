@@ -14,20 +14,26 @@ const LanguageToggleBtn = () => {
 
     return (
         <>
-            <p className={styles.test}>Test napisu</p>
-            <button
-                className={styles.btn}
-                onClick={() => langToggleHandler("en")}
-            >
-                <span className={lang === "en" ? styles.active : ""}>EN</span>
-            </button>{" "}
-            <span> | </span>
-            <button
-                className={styles.btn}
-                onClick={() => langToggleHandler("pl")}
-            >
-                <span className={lang === "pl" ? styles.active : ""}>PL</span>
-            </button>
+            {/* <p className={styles.test}>Test napisu</p> */}
+            <div className={styles.toggle__btn}>
+                <button
+                    className={styles.btn}
+                    onClick={() => langToggleHandler("en")}
+                >
+                    <span className={lang === "en" ? styles.active : ""}>
+                        EN
+                    </span>
+                </button>{" "}
+                <span> | </span>
+                <button
+                    className={styles.btn}
+                    onClick={() => langToggleHandler("pl")}
+                >
+                    <span className={lang === "pl" ? styles.active : ""}>
+                        PL
+                    </span>
+                </button>
+            </div>
         </>
     );
 };

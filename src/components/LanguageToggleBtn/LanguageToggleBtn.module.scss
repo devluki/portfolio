@@ -1,47 +1,52 @@
-.btn {
-    display: inline-block;
-    background-color: transparent;
-
-    &,
-    &:active,
-    &:focus,
-    &:hover,
-    &:visited {
-        border: none;
-        border-radius: 0px;
-        outline: none;
-    }
-    // Change into class??
-    span {
+.toggle__btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    .btn {
         display: inline-block;
-        font-weight: 200;
-        color: darkgray;
-        transition: all 0.2s;
-        &:hover {
-            // font-weight: bold;
-            transform: translateY(-1px) scale(1.05);
+        background-color: transparent;
+
+        &,
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited {
+            border: none;
+            border-radius: 0px;
+            outline: none;
+        }
+        // Change into class??
+        span {
+            display: inline-block;
+            font-weight: 200;
+            color: darkgray;
+            transition: all 0.2s;
+            &:hover {
+                // font-weight: bold;
+                transform: translateY(-1px) scale(1.05);
+            }
+        }
+        .active {
+            font-weight: bold;
+            color: whitesmoke;
         }
     }
-    .active {
-        font-weight: bold;
-        color: whitesmoke;
+
+    // Test napisu
+
+    .test {
+        color: rgba(255, 255, 255, 0);
+        font-size: 3rem;
+        text-shadow: white 1px 0 20px;
+        // background-color: rgba(25,  175,  255,.7);
+        // font-style: italic;
+        transition: color 0.3s;
+        animation: 0.25s textanimation 0.85s forwards;
+        // &:hover {
+        //     color: rgba(255, 255, 255, 0.9);
+        //     text-shadow: rgb(0, 225, 255) 1px 0 10px;
+        // }
     }
-}
-
-// Test napisu
-
-.test {
-    color: rgba(255, 255, 255, 0);
-    font-size: 3rem;
-    text-shadow: white 1px 0 20px;
-    // background-color: rgba(25,  175,  255,.7);
-    // font-style: italic;
-    transition: color 0.3s;
-    animation: 0.25s textanimation 0.85s forwards;
-    // &:hover {
-    //     color: rgba(255, 255, 255, 0.9);
-    //     text-shadow: rgb(0, 225, 255) 1px 0 10px;
-    // }
 }
 
 @keyframes textanimation {
