@@ -1,10 +1,19 @@
+@import "../../styles/main.scss";
+
 .toggle__btn {
     position: fixed;
-    top: 1rem;
+    top: 2rem;
     right: 1rem;
+
     .btn {
         display: inline-block;
         background-color: transparent;
+        padding: 0 1rem;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            border-right: 2px solid $primary-white;
+        }
 
         &,
         &:active,
@@ -15,68 +24,23 @@
             border-radius: 0px;
             outline: none;
         }
+
         // Change into class??
         span {
             display: inline-block;
             font-weight: 200;
-            color: darkgray;
+            color: $primary-gray-dark;
             transition: all 0.2s;
-            &:hover {
-                // font-weight: bold;
-                transform: translateY(-1px) scale(1.05);
-            }
+            // pointer-events: none;
+
+            // &:hover {
+            //     // font-weight: bold;
+            //     transform: translateY(-1px);
+            // }
         }
         .active {
             font-weight: bold;
-            color: whitesmoke;
+            color: $primary-white;
         }
-    }
-
-    // Test napisu
-
-    .test {
-        color: rgba(255, 255, 255, 0);
-        font-size: 3rem;
-        text-shadow: white 1px 0 20px;
-        // background-color: rgba(25,  175,  255,.7);
-        // font-style: italic;
-        transition: color 0.3s;
-        animation: 0.25s textanimation 0.85s forwards;
-        // &:hover {
-        //     color: rgba(255, 255, 255, 0.9);
-        //     text-shadow: rgb(0, 225, 255) 1px 0 10px;
-        // }
-    }
-}
-
-@keyframes textanimation {
-    0% {
-        color: rgba(255, 255, 255, 0);
-    }
-    10% {
-        text-shadow: white 1px 0 15px;
-    }
-
-    15% {
-        text-shadow: white 1px 0 13px;
-    }
-
-    20% {
-        text-shadow: white 1px 0 10px;
-    }
-
-    30% {
-        color: rgba(255, 255, 255, 0.3);
-    }
-    50% {
-        color: rgba(255, 255, 255, 0.5);
-    }
-    80% {
-        color: rgba(255, 255, 255, 0.8);
-        text-shadow: rgba(25, 175, 255, 0.7) 3px -3px 10px;
-    }
-    100% {
-        color: rgba(255, 255, 255, 0.9);
-        text-shadow: rgba(25, 175, 255, 0.7) 1px 0px 5px;
     }
 }

@@ -14,7 +14,6 @@ const LanguageToggleBtn = () => {
 
     return (
         <>
-            {/* <p className={styles.test}>Test napisu</p> */}
             <div className={styles.toggle__btn}>
                 <button
                     className={styles.btn}
@@ -23,8 +22,8 @@ const LanguageToggleBtn = () => {
                     <span className={lang === "en" ? styles.active : ""}>
                         EN
                     </span>
-                </button>{" "}
-                <span> | </span>
+                </button>
+
                 <button
                     className={styles.btn}
                     onClick={() => langToggleHandler("pl")}

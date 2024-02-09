@@ -74,7 +74,7 @@ export class SceneManager {
 
     private init() {
         this.renderer.setSize(this.width, this.height);
-        console.log(this.width);
+        //console.log(this.width);
         this.renderer.setClearColor(0xffffff, 0);
         this.container.appendChild(this.renderer.domElement);
     }
@@ -153,8 +153,18 @@ export class SceneManager {
         }
     }
 
+    onResize() {
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.renderer.setSize(this.width, this.height);
+        // TODO check why there is no property/fn
+        this.camera.aspect = this.width / this.height;
+        this.camera.updateProjectionMatrix();
+    }
+
     addEventListeners() {
         window.addEventListener("scroll", this.onScroll.bind(this));
+        window.addEventListener("resize", this.onResize.bind(this));
     }
 
     animate() {

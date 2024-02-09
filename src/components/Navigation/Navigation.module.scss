@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    min-width: 100vw;
     // background-color: yellowgreen;
     padding: 1rem;
     margin: 1rem auto 0 auto;
@@ -64,17 +64,18 @@
             left: 0px;
 
             background-color: white;
-            //background: linear-gradient(to right, white 30%, #040c15 75%);
+
             background: linear-gradient(to right, white 10%, black 75%);
         }
     }
 
     &__link:hover {
         //color: gray;
+        transform: translateY(-1px);
 
         &::before {
             background: white;
-            // background: linear-gradient(to right, white 40%, gray 75%);
+            //pointer-events: none;
         }
     }
 

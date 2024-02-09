@@ -5,7 +5,7 @@ import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Navigation from "./components/Navigation/Navigation";
 // import Intro from "./components/Intro/Intro";
 import Visualizer from "./components/Visualizer/Visualizer";
-import Translator from "./components/Translator/Translator";
+// import Translator from "./components/Translator/Translator";
 import LanguageToggleBtn from "./components/LanguageToggleBtn/LanguageToggleBtn";
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
                 <ProgressBar />
                 <Navigation />
                 {/* <Intro /> */}
-                <h1>
+                {/* <h1>
                     <Translator translationKey="test.test" />
-                </h1>
+                </h1> */}
                 <LanguageToggleBtn />
                 <Visualizer />
             </LanguageContextProvider>
