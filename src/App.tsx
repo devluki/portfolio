@@ -1,6 +1,7 @@
 // import "./App.css";
 import "./styles/main.scss";
 import LanguageContextProvider from "./store/LanguageContext";
+import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Navigation from "./components/Navigation/Navigation";
 // import Intro from "./components/Intro/Intro";
 import Visualizer from "./components/Visualizer/Visualizer";
@@ -11,6 +12,7 @@ function App() {
     return (
         <>
             <LanguageContextProvider>
+                <ProgressBar />
                 <Navigation />
                 {/* <Intro /> */}
                 <h1>

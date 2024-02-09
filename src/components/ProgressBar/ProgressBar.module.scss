@@ -1,6 +1,9 @@
 .progress {
-    width: 90%;
-    margin: 0 5%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    // margin: 0 5%;
     height: 0.5rem;
     color: red;
 
@@ -19,7 +22,8 @@ progress[value] {
 }
 
 progress[value]::-webkit-progress-bar {
-    background-color: #252526;
+    background-color: black;
+
     border-radius: 2px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }

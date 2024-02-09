@@ -1,14 +1,16 @@
 @import "../../styles/main.scss";
 
 .nav {
-    position: relative;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     // background-color: yellowgreen;
     padding: 1rem;
-    margin: 0 auto;
+    margin: 1rem auto 0 auto;
 
     @include respond(tab-land) {
-        max-width: 1300px;
+        // max-width: 1300px;
         padding: 2rem;
     }
     @include respond(big-desktop) {
@@ -21,10 +23,12 @@
         list-style: none;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr 1fr;
+        margin: 0 auto;
 
         @include respond(tab-land) {
             grid-template-columns: repeat(4, 1fr);
             grid-row: 1fr;
+            max-width: 1300px;
         }
 
         @include respond(screen) {
@@ -44,10 +48,10 @@
         transition: all 0.2s;
 
         color: white;
-        background: -webkit-linear-gradient(white, rgb(188, 188, 188));
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        // background: -webkit-linear-gradient(white, rgb(188, 188, 188));
+        // background-clip: text;
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
     }
 
     &__link {
@@ -60,14 +64,17 @@
             left: 0px;
 
             background-color: white;
+            //background: linear-gradient(to right, white 30%, #040c15 75%);
+            background: linear-gradient(to right, white 10%, black 75%);
         }
     }
 
     &__link:hover {
-        color: gray;
+        //color: gray;
 
         &::before {
-            background: linear-gradient(to right, white 40%, gray 75%);
+            background: white;
+            // background: linear-gradient(to right, white 40%, gray 75%);
         }
     }
 

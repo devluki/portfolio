@@ -1,23 +1,31 @@
-import { useState, useEffect } from "react";
-import { TIME } from "../../utils/utils";
+import { useState, useEffect, useRef } from "react";
+// import { TIME } from "../../utils/utils";
 
 import styles from "./ProgressBar.module.scss";
 
 const ProgressBar = () => {
-    const [remaningTime, setRemaningTime] = useState(0);
+    const [currentPosition, setCurrentPosition] = useState(0);
+    const reference = useRef<HTMLSpanElement | null>(null);
+    const totalHeight = useRef(0);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setRemaningTime((prev) => prev + 10);
-        }, 10);
-
-        return () => {
-            clearInterval(interval);
-        };
+        totalHeight.current = 500;
+        window.addEventListener("scroll", () => {
+            totalHeight.current =
+                document.body.scrollHeight - window.innerHeight;
+            setCurrentPosition(window.scrollY);
+        });
     }, []);
 
     return (
-        <progress className={styles.progress} value={remaningTime} max={TIME} />
+        <>
+            <span className="reference" ref={reference}></span>
+            <progress
+                className={styles.progress}
+                value={currentPosition}
+                max={totalHeight.current}
+            />
+        </>
     );
 };
 
