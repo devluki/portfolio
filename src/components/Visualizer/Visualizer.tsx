@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import * as THREE from "three";
+import gsap from "gsap";
 
 // import AudioPanel from "../AudioPanel/AudioPanel.js";
 
@@ -39,6 +40,15 @@ const Visualizer = () => {
         );
 
         sceneManagerRef.current.startScene(audioAnalyzer);
+
+        const timeLine = gsap.timeline({
+            defaults: { duration: 1.5, delay: 2.1 },
+        });
+        timeLine.fromTo(
+            sceneManagerRef.current.mesh!.scale,
+            { z: 5, x: 5, y: 5 },
+            { z: 1, x: 1, y: 1 },
+        );
     }, []);
 
     useEffect(() => {

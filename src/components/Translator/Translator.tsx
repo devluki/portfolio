@@ -6,7 +6,6 @@ const Translator: FC<{ translationKey: string }> = ({ translationKey }) => {
     const langCtx = useContext(LanguageContext);
 
     const translatedTxt = langCtx?.getTranslatedValue(translationKey);
-    console.log(translatedTxt);
 
     return (
         <>

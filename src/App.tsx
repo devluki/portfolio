@@ -16,10 +16,6 @@ function App() {
                 <ProgressBar />
                 <Navigation />
                 <Intro />
-                {/* <Intro /> */}
-                {/* <h1>
-                    <Translator translationKey="test.test" />
-                </h1> */}
                 <LanguageToggleBtn />
                 <Visualizer />
             </LanguageContextProvider>

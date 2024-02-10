@@ -6,17 +6,14 @@ import SplitType from "split-type";
 interface AnimationParams {
     color?: string;
     opacity?: number;
-    stagger?: number;
+
     y?: number;
     x?: number;
-    scale?: number;
 }
 
 interface AnimatedTextProps {
     children: ReactNode;
-    animationStart?: string;
-    animationEnd?: string;
-    animationDuration?: number;
+    animationDuration: number;
     scrub?: boolean;
 
     animationParameters?: AnimationParams;

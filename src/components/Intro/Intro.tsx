@@ -14,6 +14,7 @@ const Intro = () => {
     const langCtx = useContext(LanguageContext);
 
     //Reset position to rerender component when language change
+    //Intro animation runs only when page is loaded for a first time
     useEffect(() => {
         setPosition({ x: 0, y: 0 });
     }, [langCtx]);
