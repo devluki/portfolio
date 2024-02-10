@@ -6,6 +6,8 @@ import * as THREE from "three";
 
 import { SceneManager } from "../../utils/utils.js";
 
+import styles from "./Visualizer.module.scss";
+
 const Visualizer = () => {
     console.log("RENDER");
     // Refereces for THREE Audio API
@@ -153,7 +155,7 @@ const Visualizer = () => {
                 stopHandler={stopMusicHandler}
             /> */}
 
-            <div ref={container}></div>
+            <div className={styles.containerV} ref={container}></div>
         </>
     );
 };

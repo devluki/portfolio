@@ -1,13 +1,20 @@
 import { useContext, FC } from "react";
 import { LanguageContext } from "../../store/LanguageContext";
+import styles from "./Translations.module.scss";
 
 const Translator: FC<{ translationKey: string }> = ({ translationKey }) => {
     const langCtx = useContext(LanguageContext);
+
     const translatedTxt = langCtx?.getTranslatedValue(translationKey);
+    console.log(translatedTxt);
 
     return (
         <>
-            <span data-test="translated-txt" data-test-key={translationKey}>
+            <span
+                className={styles.txt}
+                data-test="translated-txt"
+                data-test-key={translationKey}
+            >
                 {translatedTxt}
             </span>
         </>

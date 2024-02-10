@@ -1,43 +1,9 @@
-@import "../../styles/main.scss";
-
-.intro {
-    padding: 2rem 0rem;
-    display: flex;
-    flex-direction: column;
-
+.container {
     min-height: 100vh;
-    width: 100vw;
-    // background-color: yellowgreen;
-    overflow: hidden;
-    &__logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    svg {
-        max-height: 50vh;
-    }
+    min-width: 100vw;
 
-    .intro__txts {
-        // background-color: blue;
-        position: relative;
-        height: 100%;
-
-        .intro__txt {
-            display: block;
-            position: absolute;
-            width: 100%;
-            top: 0%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.1);
-            opacity: 0;
-            color: $primary-gray-dark;
-            text-transform: uppercase;
-            font-style: italic;
-            text-align: center;
-            letter-spacing: 0.3rem;
-            margin: 2rem auto;
-            font-size: 2rem;
-        }
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

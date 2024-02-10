@@ -8,4 +8,20 @@ body {
     color: $primary-white;
     // width: 100vw;
     // overflow-x: hidden;
+
+    .heading-primary {
+        color: $primary-white;
+        // text-transform: uppercase;
+
+        backface-visibility: hidden;
+        font-size: 3rem;
+        letter-spacing: 1.5px;
+
+        @include respond(tab-land) {
+            font-size: 5rem;
+        }
+        @include respond(screen) {
+            font-size: 6.5rem;
+        }
+    }
 }

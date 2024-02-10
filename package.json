@@ -17,6 +17,7 @@
         "react-audio-player": "^0.17.0",
         "react-dom": "^18.2.0",
         "sass": "^1.70.0",
+        "split-type": "^0.3.4",
         "three": "^0.159.0"
     },
     "devDependencies": {

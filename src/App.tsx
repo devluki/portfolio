@@ -3,6 +3,7 @@ import "./styles/main.scss";
 import LanguageContextProvider from "./store/LanguageContext";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Navigation from "./components/Navigation/Navigation";
+import Intro from "./components/intro/Intro";
 // import Intro from "./components/Intro/Intro";
 import Visualizer from "./components/Visualizer/Visualizer";
 // import Translator from "./components/Translator/Translator";
@@ -14,6 +15,7 @@ function App() {
             <LanguageContextProvider>
                 <ProgressBar />
                 <Navigation />
+                <Intro />
                 {/* <Intro /> */}
                 {/* <h1>
                     <Translator translationKey="test.test" />
