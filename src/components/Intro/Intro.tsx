@@ -47,6 +47,7 @@ const Intro = () => {
                 >
                     <Translator translationKey="intro.intro" />
                     <br />
+
                     <Translator translationKey="intro.profession" />
                 </h1>
             </AnimatedTxt>

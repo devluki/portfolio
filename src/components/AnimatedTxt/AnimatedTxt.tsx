@@ -30,9 +30,8 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
         const chars = container.current!.querySelector(
             "#animatedTxt",
         ) as HTMLElement;
-        console.log(chars);
 
-        const txt = new SplitType(chars, { types: "chars" });
+        const txt = new SplitType(chars, { types: "words,chars" });
         txt.chars?.forEach((txt, i) => {
             gsap.fromTo(
                 txt,
