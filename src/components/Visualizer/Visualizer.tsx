@@ -41,8 +41,9 @@ const Visualizer = () => {
 
         sceneManagerRef.current.startScene(audioAnalyzer);
 
+        //Intro aniamtion
         const timeLine = gsap.timeline({
-            defaults: { duration: 1.5, delay: 2.1 },
+            defaults: { duration: 1.5, delay: 1.2 },
         });
         timeLine.fromTo(
             sceneManagerRef.current.mesh!.scale,
@@ -157,13 +158,13 @@ const Visualizer = () => {
             {/* <button onClick={musicVolumeHandlerPlus}>++</button>
             <button onClick={musicVolumeHandlerMinus}>--</button>
             <button onClick={stopMusicHandler}>STOP</button> */}
-            {/* <AudioPanel
+            {/*<AudioPanel
                 isMusicPlaying={isPlaying}
                 isLoading={isLoading}
                 musicHandler={playMusicHanlder}
                 uploadHandler={uploadFileHanlder}
                 stopHandler={stopMusicHandler}
-            /> */}
+        />*/}
 
             <div className={styles.containerV} ref={container}></div>
         </>

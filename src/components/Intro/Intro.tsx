@@ -1,31 +1,22 @@
-import { useRef, useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../../store/LanguageContext";
+import { useRef } from "react";
 import Translator from "../Translator/Translator";
 
 import AnimatedTxt from "../AnimatedTxt/AnimatedTxt";
+import gsap from "gsap";
 
 import styles from "./Intro.module.scss";
 
 const Intro = () => {
     const container = useRef<HTMLDivElement | null>(null);
-    // const mousePosRef = useRef({ x: 0, y: 0 });
-    const [position, setPosition] = useState({ x: 0, y: 0 });
 
-    const langCtx = useContext(LanguageContext);
-
-    //Reset position to rerender component when language change
-    //Intro animation runs only when page is loaded for a first time
-    useEffect(() => {
-        setPosition({ x: 0, y: 0 });
-    }, [langCtx]);
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
 
     const onMouseMoveHandler = (e: React.MouseEvent) => {
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-
-        setPosition({
-            x: (centerX - e.clientX + 1) / 120,
-            y: (centerY - e.clientY + 1) / 120,
+        gsap.to(container.current!.querySelector(".heading-primary"), {
+            x: (centerX - e.clientX + 1) / 100,
+            y: (centerY - e.clientY + 1) / 100,
+            duration: 1,
         });
     };
 
@@ -35,17 +26,8 @@ const Intro = () => {
             className={styles.container}
             onMouseMove={onMouseMoveHandler}
         >
-            <AnimatedTxt
-                animationDuration={2}
-                animationParameters={{ color: "white" }}
-            >
-                <h1
-                    className="heading-primary"
-                    id="animatedTxt"
-                    style={{
-                        transform: `translate(${position.x}px,${position.y}px)`,
-                    }}
-                >
+            <AnimatedTxt animationParameters={{ color: "white" }}>
+                <h1 className="heading-primary" id="animatedTxt">
                     <Translator translationKey="intro.intro" />
                     <br />
 

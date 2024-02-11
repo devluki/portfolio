@@ -15,6 +15,7 @@ body {
 
         backface-visibility: hidden;
         font-size: 3rem;
+        font-weight: 300;
         letter-spacing: 1.5px;
 
         @include respond(tab-land) {

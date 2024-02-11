@@ -13,7 +13,7 @@ interface AnimationParams {
 
 interface AnimatedTextProps {
     children: ReactNode;
-    animationDuration: number;
+    animationDuration?: number;
     scrub?: boolean;
 
     animationParameters?: AnimationParams;
@@ -37,7 +37,7 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
                     x: -5 * i,
                     opacity: 0,
                 },
-                { ...animationParams, delay: 0.07 * i, x: i, opacity: 1 },
+                { ...animationParams, delay: 0.03 * i, x: i, opacity: 1 },
             );
         });
     }, []);
