@@ -15,7 +15,7 @@ const Intro = () => {
     const onMouseMoveHandler = (e: React.MouseEvent) => {
         gsap.to(container.current!.querySelector(".heading-primary"), {
             x: (centerX - e.clientX + 1) / 100,
-            y: (centerY - e.clientY + 1) / 100,
+            y: (centerY - e.clientY + 1) / 50,
             duration: 1,
         });
     };

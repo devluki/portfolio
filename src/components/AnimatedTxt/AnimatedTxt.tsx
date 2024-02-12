@@ -37,7 +37,12 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
                     x: -5 * i,
                     opacity: 0,
                 },
-                { ...animationParams, delay: 0.03 * i, x: i, opacity: 1 },
+                {
+                    ...animationParams,
+                    delay: 0.045 * i,
+                    x: i,
+                    opacity: 1,
+                },
             );
         });
     }, []);

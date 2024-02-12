@@ -28,6 +28,13 @@ const Visualizer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
+    const scaleAnimationHandler = (mesh: THREE.Mesh) => {
+        const timeLine = gsap.timeline({
+            defaults: { duration: 1.5, delay: 1.2 },
+        });
+        timeLine.fromTo(mesh.scale, { z: 5, x: 5, y: 5 }, { z: 1, x: 1, y: 1 });
+    };
+
     useEffect(() => {
         listenerRef.current = new THREE.AudioListener();
         audioRef.current = new THREE.Audio(listenerRef.current);
@@ -42,14 +49,14 @@ const Visualizer = () => {
         sceneManagerRef.current.startScene(audioAnalyzer);
 
         //Intro aniamtion
-        const timeLine = gsap.timeline({
-            defaults: { duration: 1.5, delay: 1.2 },
-        });
-        timeLine.fromTo(
-            sceneManagerRef.current.mesh!.scale,
-            { z: 5, x: 5, y: 5 },
-            { z: 1, x: 1, y: 1 },
-        );
+        // const timeLine = gsap.timeline({
+        //     defaults: { duration: 1.5, delay: 1.2 },
+        // });
+        // timeLine.fromTo(
+        //     sceneManagerRef.current.mesh!.scale,
+        //     { z: 5, x: 5, y: 5 },
+        //     { z: 1, x: 1, y: 1 },
+        // );
     }, []);
 
     useEffect(() => {

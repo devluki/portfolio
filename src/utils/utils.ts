@@ -26,6 +26,7 @@ export class SceneManager {
     container: HTMLDivElement;
     height: number;
     width: number;
+
     scene: THREE.Scene;
     camera: THREE.Camera;
     renderer: THREE.WebGLRenderer;
@@ -80,7 +81,8 @@ export class SceneManager {
     }
 
     createMesh() {
-        const geometry = new THREE.IcosahedronGeometry(1.3, 14); //14); //22); //1.3
+        // const geometry = new THREE.IcosahedronGeometry(1.6, 14); //14); //22); //1.3
+        const geometry = new THREE.IcosahedronGeometry(8.5, 14); //14); //22); //1.3
 
         // const geometry = new THREE.IcosahedronGeometry(1.3, 24); //22);
         this.material = new THREE.ShaderMaterial({
@@ -104,7 +106,7 @@ export class SceneManager {
         this.composer = new EffectComposer(this.renderer);
         this.composer.addPass(renderScene);
 
-        const bloomPass = new UnrealBloomPass(
+        this.bloomPass = new UnrealBloomPass(
             new THREE.Vector2(this.width, this.height),
             // 1.5,
             // 0.06,
@@ -113,7 +115,7 @@ export class SceneManager {
             0.06,
             0.1,
         );
-        this.composer.addPass(bloomPass);
+        this.composer.addPass(this.bloomPass);
     }
 
     // onMouseMove() {
@@ -160,6 +162,7 @@ export class SceneManager {
         // TODO check why there is no property/fn
         this.camera.aspect = this.width / this.height;
         this.camera.updateProjectionMatrix();
+        this.addPostProcessingEffect();
     }
 
     addEventListeners() {
