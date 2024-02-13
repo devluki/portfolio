@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "./AudioPanel.module.scss";
 // import Translator from "../Translator/Translator";
 import panelIcons from "../../assets/sprite_audio_panel.svg";
-import BtnTxt from "../BtnTxt/BtnTxt";
 
 interface AudioPanelProps {
     isLoading: boolean;
@@ -59,9 +58,7 @@ const AudioPanel = (props: AudioPanelProps) => {
 
     return (
         <>
-            <div className={styles["btn-container"]}>
-                <BtnTxt>Customize animation </BtnTxt>
-            </div>
+            <div className={styles["btn-container"]}></div>
 
             <div
                 onClick={panelActiveHandler}

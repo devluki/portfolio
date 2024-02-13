@@ -146,42 +146,65 @@ const Visualizer = () => {
         setModalIsOpen(true);
         console.log("Open modal");
     };
-    // const closeModalHandler = () => {
-    //     setModalIsOpen(true);
-    // };
+    const closeModalHandler = () => {
+        setModalIsOpen(false);
+    };
 
     return (
         <>
-            {/* <h1>Visualizer</h1> */}
-            {/* AUDIO PANEL */}
+            {/* Panel component! */}
+            <Modal isOpen={modalIsOpen} closeHandler={closeModalHandler}>
+                <div className={styles["audio-panel"]}>
+                    <div className={styles["audio-panel__txt"]}>Txt</div>
+                    <div className={styles["audio-panel__controls"]}>
+                        <button
+                            className={styles.panel__btn}
+                            disabled={isLoading}
+                            onClick={playMusicHanlder}
+                        >
+                            {!isMusicPlaying ? "play" : "pause"}
+                        </button>
+                        <button
+                            className={styles.panel__btn}
+                            disabled={!isMusicPlaying}
+                            onClick={stopMusicHandler}
+                        >
+                            {"stop"}
+                        </button>
 
-            {/* <button disabled={isLoading} onClick={playMusicHanlder}>
-                {!isPlaying ? "Play" : "Pause"}
-            </button>
-          
-            <input
-                type="file"
-                id="fileupload"
-                accept="audio/*"
-                onChange={(e) => uploadFileHanlder(e)}
-            />
-            {isLoading && <p>Loading...</p>} */}
-            {/* <button onClick={musicVolumeHandlerPlus}>++</button>
-            <button onClick={musicVolumeHandlerMinus}>--</button>
-            <button onClick={stopMusicHandler}>STOP</button> */}
-            <Modal isOpen={modalIsOpen}>
-                <h1>Dupa</h1>
+                        <label
+                            htmlFor="fileupload"
+                            className={
+                                !isLoading
+                                    ? styles.panel__btn
+                                    : `${styles.panel__btn} ${styles["panel__btn--disabled"]}`
+                            }
+                        >
+                            <span className={styles["panel__btn-upload"]}>
+                                {"upload"}
+                            </span>
+                        </label>
+                        <input
+                            className={styles["controls__btn-upload"]}
+                            type="file"
+                            id="fileupload"
+                            accept="audio/*"
+                            onChange={(e) => uploadFileHanlder(e)}
+                        />
+                    </div>
+                </div>
             </Modal>
-            <AudioPanel
+            {/* <AudioPanel
                 isMusicPlaying={isPlaying}
                 isLoading={isLoading}
                 musicHandler={playMusicHanlder}
                 uploadHandler={uploadFileHanlder}
                 stopHandler={stopMusicHandler}
-            />
+            /> */}
 
             <div className={styles.containerV} ref={container}></div>
             <BtnTxt openHandler={openModalHandler}>Customize animation</BtnTxt>
+            {/* <button onClick={openModalHandler}>Button test</button> */}
         </>
     );
 };

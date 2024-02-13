@@ -2,10 +2,11 @@ import { useEffect, useRef, FC, ReactNode } from "react";
 import { createPortal } from "react-dom";
 import styles from "./Modal.module.scss";
 
-const Modal: FC<{ children: ReactNode; isOpen: boolean }> = ({
-    children,
-    isOpen,
-}) => {
+const Modal: FC<{
+    children: ReactNode;
+    isOpen: boolean;
+    closeHandler: () => void;
+}> = ({ children, isOpen, closeHandler }) => {
     const dialog = useRef<HTMLDialogElement | null>(null);
 
     useEffect(() => {
@@ -23,7 +24,11 @@ const Modal: FC<{ children: ReactNode; isOpen: boolean }> = ({
     //     document.getElementById("modal") as HTMLDivElement,
     // );
     return createPortal(
-        <dialog className="modal" ref={dialog}>
+        <dialog className={styles.modal} ref={dialog} onClose={closeHandler}>
+            <form method="dialog" onSubmit={closeHandler}>
+                <button>Close</button>
+            </form>
+
             {isOpen ? children : null}
         </dialog>,
         document.getElementById("modal")!,

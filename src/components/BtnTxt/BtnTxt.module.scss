@@ -1,5 +1,5 @@
 @import "../../styles//main.scss";
-.btn-text {
+.btn-txt {
     position: absolute;
     z-index: 2;
     top: 30%;
@@ -15,8 +15,8 @@
     }
 
     &:hover {
-        background-color: darkcyan;
-        color: $primary-white;
+        background-color: rgba($primary-white, 0.9);
+        color: $primary-black;
         box-shadow: 0 1rem 2rem rgba($primary-black, 0.15);
         transform: translateY(-2px);
     }

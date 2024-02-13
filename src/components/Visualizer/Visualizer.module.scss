@@ -4,3 +4,18 @@
     left: 0;
     top: 0;
 }
+
+.audio-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__txt {
+        color: red;
+    }
+
+    &__controls {
+        color: blue;
+    }
+}

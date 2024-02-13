@@ -4,7 +4,9 @@ import styles from "./BtnTxt.module.scss";
 
 const BtnTxt: FC<{
     children: ReactNode;
+
     openHandler: () => void;
+
     closeHandler?: () => void;
     isOpen?: boolean;
 }> = ({ children, openHandler }) => {
@@ -14,7 +16,7 @@ const BtnTxt: FC<{
 
     return (
         <>
-            <a href="#" className={styles["btn-text"]} onClick={opener}>
+            <a href="#" className={styles["btn-txt"]} onClick={opener}>
                 {children} &rarr;
             </a>
         </>
