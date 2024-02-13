@@ -81,8 +81,7 @@ export class SceneManager {
     }
 
     createMesh() {
-        // const geometry = new THREE.IcosahedronGeometry(1.6, 14); //14); //22); //1.3
-        const geometry = new THREE.IcosahedronGeometry(8.5, 14); //14); //22); //1.3
+        const geometry = new THREE.IcosahedronGeometry(1.6, 14); //14); //22); //1.3
 
         // const geometry = new THREE.IcosahedronGeometry(1.3, 24); //22);
         this.material = new THREE.ShaderMaterial({

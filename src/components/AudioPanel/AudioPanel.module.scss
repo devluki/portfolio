@@ -7,15 +7,16 @@ h1 {
 .panel {
     display: grid;
 
-    // position: absolute;
-    // top: 50%;
-    // left: 50vw;
+    position: absolute;
+    top: 40%;
+    left: calc(100vw - 200px);
     border-radius: 0rem 0 0 1.5rem;
 
-    background-color: $primary-gray-dark;
+    background-color: rgba($primary-gray-dark, 1);
 
     width: 400px;
-    transform: translate(-10%, -50%);
+    max-width: 100%;
+    transform: translate(-50%, -50%);
     transition: transform 0.2s;
     // box-shadow: -1px 1px 3px lighten($primary-gray-light, 90);
 
@@ -29,7 +30,7 @@ h1 {
         width: 60px;
         height: 60px;
         border-radius: 1.5rem 0 0 1.5rem;
-        background-color: inherit;
+        // background-color: inherit;
         // box-shadow: -2px 1px 1px lighten($primary-gray-light, 90);
         svg {
             animation: icon-spin 5s infinite linear;
@@ -42,7 +43,8 @@ h1 {
     //
 
     &--active {
-        transform: translate(90%, -50%);
+        // transform: translate(90%, 0%);
+        transform: translate(200px, -50%);
     }
 
     &__controls {
@@ -103,4 +105,13 @@ h1 {
     to {
         transform: rotate(360deg);
     }
+}
+
+.btn-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    // width: 100%;
+    // left: 100px;
+    transform: rotate(-90deg);
 }

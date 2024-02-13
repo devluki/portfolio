@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 
 import * as THREE from "three";
 import gsap from "gsap";
-
-// import AudioPanel from "../AudioPanel/AudioPanel.js";
+import Modal from "../Modal/Modal.js";
+import AudioPanel from "../AudioPanel/AudioPanel.js";
+import BtnTxt from "../BtnTxt/BtnTxt.js";
 
 import { SceneManager } from "../../utils/utils.js";
 
@@ -28,12 +29,7 @@ const Visualizer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-    const scaleAnimationHandler = (mesh: THREE.Mesh) => {
-        const timeLine = gsap.timeline({
-            defaults: { duration: 1.5, delay: 1.2 },
-        });
-        timeLine.fromTo(mesh.scale, { z: 5, x: 5, y: 5 }, { z: 1, x: 1, y: 1 });
-    };
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     useEffect(() => {
         listenerRef.current = new THREE.AudioListener();
@@ -48,15 +44,15 @@ const Visualizer = () => {
 
         sceneManagerRef.current.startScene(audioAnalyzer);
 
-        //Intro aniamtion
-        // const timeLine = gsap.timeline({
-        //     defaults: { duration: 1.5, delay: 1.2 },
-        // });
-        // timeLine.fromTo(
-        //     sceneManagerRef.current.mesh!.scale,
-        //     { z: 5, x: 5, y: 5 },
-        //     { z: 1, x: 1, y: 1 },
-        // );
+        // Intro aniamtion
+        const timeLine = gsap.timeline({
+            defaults: { duration: 1.5, delay: 1.2 },
+        });
+        timeLine.fromTo(
+            sceneManagerRef.current.mesh!.scale,
+            { z: 5, x: 5, y: 5 },
+            { z: 1, x: 1, y: 1 },
+        );
     }, []);
 
     useEffect(() => {
@@ -100,18 +96,18 @@ const Visualizer = () => {
         setIsPlaying(false);
     };
 
-    const musicVolumeHandlerPlus = () => {
-        const volume = audioRef.current!.getVolume();
-        console.log("Plud", volume, audioRef.current!.getVolume());
-        if (volume > 10) return;
-        audioRef.current!.setVolume(volume + 0.5);
-    };
-    const musicVolumeHandlerMinus = () => {
-        const volume = audioRef.current!.getVolume();
-        console.log("Minus", volume, audioRef.current!.getVolume());
-        if (volume < 1) return;
-        audioRef.current!.setVolume(volume - 0.5);
-    };
+    // const musicVolumeHandlerPlus = () => {
+    //     const volume = audioRef.current!.getVolume();
+    //     console.log("Plud", volume, audioRef.current!.getVolume());
+    //     if (volume > 10) return;
+    //     audioRef.current!.setVolume(volume + 0.5);
+    // };
+    // const musicVolumeHandlerMinus = () => {
+    //     const volume = audioRef.current!.getVolume();
+    //     console.log("Minus", volume, audioRef.current!.getVolume());
+    //     if (volume < 1) return;
+    //     audioRef.current!.setVolume(volume - 0.5);
+    // };
 
     const uploadFileHanlder = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { files } = e.target;
@@ -146,6 +142,14 @@ const Visualizer = () => {
         }
     };
 
+    const openModalHandler = () => {
+        setModalIsOpen(true);
+        console.log("Open modal");
+    };
+    // const closeModalHandler = () => {
+    //     setModalIsOpen(true);
+    // };
+
     return (
         <>
             {/* <h1>Visualizer</h1> */}
@@ -165,15 +169,19 @@ const Visualizer = () => {
             {/* <button onClick={musicVolumeHandlerPlus}>++</button>
             <button onClick={musicVolumeHandlerMinus}>--</button>
             <button onClick={stopMusicHandler}>STOP</button> */}
-            {/*<AudioPanel
+            <Modal isOpen={modalIsOpen}>
+                <h1>Dupa</h1>
+            </Modal>
+            <AudioPanel
                 isMusicPlaying={isPlaying}
                 isLoading={isLoading}
                 musicHandler={playMusicHanlder}
                 uploadHandler={uploadFileHanlder}
                 stopHandler={stopMusicHandler}
-        />*/}
+            />
 
             <div className={styles.containerV} ref={container}></div>
+            <BtnTxt openHandler={openModalHandler}>Customize animation</BtnTxt>
         </>
     );
 };

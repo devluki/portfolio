@@ -1,0 +1,28 @@
+@import "../../styles//main.scss";
+.btn-text {
+    position: absolute;
+    z-index: 2;
+    top: 30%;
+    &:link,
+    &:visited {
+        font-size: 2rem;
+        color: $primary-white;
+        display: inline-block;
+        text-decoration: none;
+        // border-bottom: 1px solid $primary-white;
+        padding: 3px;
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        background-color: darkcyan;
+        color: $primary-white;
+        box-shadow: 0 1rem 2rem rgba($primary-black, 0.15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 0.5rem 1rem rgba($primary-black, 0.15);
+        transform: translateY(0);
+    }
+}
