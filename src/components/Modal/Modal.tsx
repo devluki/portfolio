@@ -1,5 +1,6 @@
 import { useEffect, useRef, FC, ReactNode } from "react";
 import { createPortal } from "react-dom";
+import panelIcons from "../../assets/sprite_audio_panel.svg";
 import styles from "./Modal.module.scss";
 
 const Modal: FC<{
@@ -9,6 +10,12 @@ const Modal: FC<{
 }> = ({ children, isOpen, closeHandler }) => {
     const dialog = useRef<HTMLDialogElement | null>(null);
 
+    const cross = (
+        <svg>
+            <use xlinkHref={`${panelIcons}#icon-cross`}></use>
+        </svg>
+    );
+
     useEffect(() => {
         if (isOpen) {
             dialog.current?.showModal();
@@ -17,16 +24,29 @@ const Modal: FC<{
         }
     }, [isOpen]);
 
-    // return createPortal(
-    //     <dialog ref={dialog} className={styles.modal}>
-    //         {isOpen ? children : null}
-    //     </dialog>,
-    //     document.getElementById("modal") as HTMLDivElement,
-    // );
+    const handleBackDropClick = (e: React.MouseEvent) => {
+        if (
+            e.target instanceof HTMLElement &&
+            e.target.getAttribute("id") === "dialog"
+        ) {
+            closeHandler();
+        }
+    };
+
     return createPortal(
-        <dialog className={styles.modal} ref={dialog} onClose={closeHandler}>
-            <form method="dialog" onSubmit={closeHandler}>
-                <button>Close</button>
+        <dialog
+            id="dialog"
+            className={styles.modal}
+            ref={dialog}
+            onClose={closeHandler}
+            onClick={handleBackDropClick}
+        >
+            <form
+                method="dialog"
+                onSubmit={closeHandler}
+                className={styles.modal__form}
+            >
+                <button className={styles.panel__btn}>{cross}</button>
             </form>
 
             {isOpen ? children : null}

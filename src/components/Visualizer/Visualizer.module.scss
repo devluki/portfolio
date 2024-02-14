@@ -1,3 +1,4 @@
+@import "../../styles/main.scss";
 .containerV {
     position: fixed;
     z-index: -1;
@@ -10,12 +11,61 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // background: linear-gradient(
+    //     $primary-gray-dark,
+    //     darken($primary-gray-dark, 9%)
+    // );
 
     &__txt {
         color: red;
     }
 
     &__controls {
-        color: blue;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        max-width: 300px;
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .panel__btn {
+            background-color: transparent;
+            transition: all 0.2s;
+            padding: 0px;
+            cursor: pointer;
+            svg {
+                height: 4rem;
+                width: 4rem;
+                fill: $primary-gray-light;
+            }
+
+            &,
+            &:active,
+            &:focus,
+            &:hover,
+            &:visited {
+                border: none;
+                border-radius: 0px;
+                outline: none;
+                box-shadow: none;
+            }
+
+            &:hover {
+                svg {
+                    fill: darken($primary-gray-light, 20);
+                }
+            }
+
+            &:disabled,
+            &--disabled {
+                cursor: not-allowed;
+                svg {
+                    fill: lighten($primary-gray-dark, 30);
+                }
+            }
+        }
     }
 }

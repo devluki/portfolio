@@ -4,6 +4,7 @@ const TRANSLATION_KEYS: string[] = [
     "navigation.contact",
     "intro.intro",
     "intro.profession",
+    "btn.custiomize",
     "audiopanel.heading",
     "test.test",
 ];
@@ -24,6 +25,7 @@ export const TRANSLATIONS: Record<
         "navigation.contact": "Contact",
         "intro.intro": "Hi! My name is Lukas.",
         "intro.profession": "I am freelance developer.",
+        "btn.custiomize": "Customize animation",
 
         "audiopanel.settings": "Settings",
         "audiopanel.heading": "Audio Panel EN",
@@ -36,6 +38,7 @@ export const TRANSLATIONS: Record<
         "navigation.contact": "Kontakt",
         "intro.intro": "Cześć! Nazywam się Łukasz.",
         "intro.profession": "Jestem programistą freelancerem.",
+        "btn.custiomize": "Dostosuj animacje",
         "audiopanel.settings": "Ustawienia",
         "audiopanel.heading": "Panel Audio PL",
         "test.test": "Po polsku",

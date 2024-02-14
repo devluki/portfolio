@@ -3,10 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import Modal from "../Modal/Modal.js";
-import AudioPanel from "../AudioPanel/AudioPanel.js";
+// import AudioPanel from "../AudioPanel/AudioPanel.js";
 import BtnTxt from "../BtnTxt/BtnTxt.js";
+import Translator from "../Translator/Translator.js";
 
 import { SceneManager } from "../../utils/utils.js";
+
+import panelIcons from "../../assets/sprite_audio_panel.svg";
 
 import styles from "./Visualizer.module.scss";
 
@@ -149,6 +152,28 @@ const Visualizer = () => {
     const closeModalHandler = () => {
         setModalIsOpen(false);
     };
+    const play = (
+        <svg>
+            <use xlinkHref={`${panelIcons}#icon-play2`}></use>
+        </svg>
+    );
+
+    const pause = (
+        <svg>
+            <use xlinkHref={`${panelIcons}#icon-pause`}></use>
+        </svg>
+    );
+    const stop = (
+        <svg>
+            <use xlinkHref={`${panelIcons}#icon-stop`}></use>
+        </svg>
+    );
+
+    const upload = (
+        <svg>
+            <use xlinkHref={`${panelIcons}#icon-upload3`}></use>
+        </svg>
+    );
 
     return (
         <>
@@ -162,14 +187,14 @@ const Visualizer = () => {
                             disabled={isLoading}
                             onClick={playMusicHanlder}
                         >
-                            {!isMusicPlaying ? "play" : "pause"}
+                            {!isPlaying ? play : pause}
                         </button>
                         <button
                             className={styles.panel__btn}
-                            disabled={!isMusicPlaying}
+                            disabled={!isPlaying}
                             onClick={stopMusicHandler}
                         >
-                            {"stop"}
+                            {stop}
                         </button>
 
                         <label
@@ -181,7 +206,7 @@ const Visualizer = () => {
                             }
                         >
                             <span className={styles["panel__btn-upload"]}>
-                                {"upload"}
+                                {upload}
                             </span>
                         </label>
                         <input
@@ -194,6 +219,7 @@ const Visualizer = () => {
                     </div>
                 </div>
             </Modal>
+
             {/* <AudioPanel
                 isMusicPlaying={isPlaying}
                 isLoading={isLoading}
@@ -203,7 +229,10 @@ const Visualizer = () => {
             /> */}
 
             <div className={styles.containerV} ref={container}></div>
-            <BtnTxt openHandler={openModalHandler}>Customize animation</BtnTxt>
+            <BtnTxt openHandler={openModalHandler}>
+                <Translator translationKey="btn.custiomize" />
+            </BtnTxt>
+
             {/* <button onClick={openModalHandler}>Button test</button> */}
         </>
     );
