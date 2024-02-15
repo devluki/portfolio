@@ -5,6 +5,7 @@ const TRANSLATION_KEYS: string[] = [
     "intro.intro",
     "intro.profession",
     "btn.custiomize",
+    "modal.custiomize",
     "audiopanel.heading",
     "test.test",
 ];
@@ -26,6 +27,8 @@ export const TRANSLATIONS: Record<
         "intro.intro": "Hi! My name is Lukas.",
         "intro.profession": "I am freelance developer.",
         "btn.custiomize": "Customize animation",
+        "modal.custiomize":
+            "You can customize animation, make a sound equalizer from particles. Just click play button, you can also upload your favorite song.",
 
         "audiopanel.settings": "Settings",
         "audiopanel.heading": "Audio Panel EN",
@@ -39,6 +42,8 @@ export const TRANSLATIONS: Record<
         "intro.intro": "Cześć! Nazywam się Łukasz.",
         "intro.profession": "Jestem programistą freelancerem.",
         "btn.custiomize": "Dostosuj animacje",
+        "modal.custiomize":
+            "Możesz zmienić animację, stworzyć z cząsteczek equalizer dźwięku. Wystarczy, że klikniesz play, możesz również załadować swoją ulubioną piosenkę.",
         "audiopanel.settings": "Ustawienia",
         "audiopanel.heading": "Panel Audio PL",
         "test.test": "Po polsku",

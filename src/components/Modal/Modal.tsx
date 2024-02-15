@@ -33,6 +33,11 @@ const Modal: FC<{
         }
     };
 
+    const handleEscKey = (e: React.KeyboardEvent) => {
+        if (e.keyCode !== 27) return;
+        closeHandler();
+    };
+
     return createPortal(
         <dialog
             id="dialog"
@@ -40,6 +45,7 @@ const Modal: FC<{
             ref={dialog}
             onClose={closeHandler}
             onClick={handleBackDropClick}
+            onKeyDown={handleEscKey}
         >
             <form
                 method="dialog"

@@ -6,6 +6,15 @@
     top: 0;
 }
 
+.btn-customize {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .audio-panel {
     display: flex;
     flex-direction: column;
@@ -17,7 +26,10 @@
     // );
 
     &__txt {
-        color: red;
+        color: $primary-gray-light;
+        font-size: 2rem;
+        padding: 2rem;
+        text-align: justify;
     }
 
     &__controls {
@@ -26,6 +38,7 @@
         align-items: center;
         width: 90%;
         max-width: 300px;
+        padding: 1rem;
 
         input[type="file"] {
             display: none;
@@ -34,6 +47,7 @@
         .panel__btn {
             background-color: transparent;
             transition: all 0.2s;
+            // Reset default styles --> check it
             padding: 0px;
             cursor: pointer;
             svg {

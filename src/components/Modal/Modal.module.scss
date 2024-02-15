@@ -11,12 +11,12 @@
     z-index: 12;
     // background: transparent;
     background: linear-gradient(
-        $primary-gray-dark,
+        rgba($primary-gray-dark, 0.9),
         darken($primary-gray-dark, 9%)
     );
 
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     animation: slide-down-fade-in 0.3s ease-out forwards;
     &::backdrop {
         position: fixed;
@@ -34,11 +34,11 @@
         .panel__btn {
             background-color: transparent;
             transition: all 0.2s;
-            padding: 0px;
+            padding: 2rem;
             cursor: pointer;
             svg {
-                height: 2rem;
-                width: 2rem;
+                height: 3rem;
+                width: 3rem;
                 fill: $primary-gray-light;
             }
 

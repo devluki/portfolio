@@ -76,7 +76,8 @@ const Visualizer = () => {
     // };
 
     const playMusicHanlder = () => {
-        console.log("Click play");
+        // console.log("Click play");
+        setModalIsOpen(false);
         if (!isPlaying) {
             console.log(audioRef.current!);
             audioRef.current!.play();
@@ -180,7 +181,9 @@ const Visualizer = () => {
             {/* Panel component! */}
             <Modal isOpen={modalIsOpen} closeHandler={closeModalHandler}>
                 <div className={styles["audio-panel"]}>
-                    <div className={styles["audio-panel__txt"]}>Txt</div>
+                    <div className={styles["audio-panel__txt"]}>
+                        <Translator translationKey="modal.custiomize" />
+                    </div>
                     <div className={styles["audio-panel__controls"]}>
                         <button
                             className={styles.panel__btn}
@@ -220,20 +223,12 @@ const Visualizer = () => {
                 </div>
             </Modal>
 
-            {/* <AudioPanel
-                isMusicPlaying={isPlaying}
-                isLoading={isLoading}
-                musicHandler={playMusicHanlder}
-                uploadHandler={uploadFileHanlder}
-                stopHandler={stopMusicHandler}
-            /> */}
-
             <div className={styles.containerV} ref={container}></div>
-            <BtnTxt openHandler={openModalHandler}>
-                <Translator translationKey="btn.custiomize" />
-            </BtnTxt>
-
-            {/* <button onClick={openModalHandler}>Button test</button> */}
+            <span className={styles["btn-customize"]}>
+                <BtnTxt openHandler={openModalHandler}>
+                    <Translator translationKey="btn.custiomize" />
+                </BtnTxt>
+            </span>
         </>
     );
 };
