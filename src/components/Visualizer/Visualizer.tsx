@@ -3,13 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import Modal from "../Modal/Modal.js";
-// import AudioPanel from "../AudioPanel/AudioPanel.js";
+import AudioPanel from "../AudioPanel/AudioPanel.js";
 import BtnTxt from "../BtnTxt/BtnTxt.js";
 import Translator from "../Translator/Translator.js";
 
 import { SceneManager } from "../../utils/utils.js";
-
-import panelIcons from "../../assets/sprite_audio_panel.svg";
 
 import styles from "./Visualizer.module.scss";
 
@@ -153,74 +151,18 @@ const Visualizer = () => {
     const closeModalHandler = () => {
         setModalIsOpen(false);
     };
-    const play = (
-        <svg>
-            <use xlinkHref={`${panelIcons}#icon-play2`}></use>
-        </svg>
-    );
-
-    const pause = (
-        <svg>
-            <use xlinkHref={`${panelIcons}#icon-pause`}></use>
-        </svg>
-    );
-    const stop = (
-        <svg>
-            <use xlinkHref={`${panelIcons}#icon-stop`}></use>
-        </svg>
-    );
-
-    const upload = (
-        <svg>
-            <use xlinkHref={`${panelIcons}#icon-upload3`}></use>
-        </svg>
-    );
 
     return (
         <>
             {/* Panel component! */}
             <Modal isOpen={modalIsOpen} closeHandler={closeModalHandler}>
-                <div className={styles["audio-panel"]}>
-                    <div className={styles["audio-panel__txt"]}>
-                        <Translator translationKey="modal.custiomize" />
-                    </div>
-                    <div className={styles["audio-panel__controls"]}>
-                        <button
-                            className={styles.panel__btn}
-                            disabled={isLoading}
-                            onClick={playMusicHanlder}
-                        >
-                            {!isPlaying ? play : pause}
-                        </button>
-                        <button
-                            className={styles.panel__btn}
-                            disabled={!isPlaying}
-                            onClick={stopMusicHandler}
-                        >
-                            {stop}
-                        </button>
-
-                        <label
-                            htmlFor="fileupload"
-                            className={
-                                !isLoading
-                                    ? styles.panel__btn
-                                    : `${styles.panel__btn} ${styles["panel__btn--disabled"]}`
-                            }
-                        >
-                            <span className={styles["panel__btn-upload"]}>
-                                {upload}
-                            </span>
-                        </label>
-                        <input
-                            className={styles["controls__btn-upload"]}
-                            type="file"
-                            id="fileupload"
-                            accept="audio/*"
-                            onChange={(e) => uploadFileHanlder(e)}
-                        />
-                    </div>
-                </div>
+                <AudioPanel
+                    musicHandler={playMusicHanlder}
+                    stopHandler={stopMusicHandler}
+                    uploadHandler={uploadFileHanlder}
+                    isMusicPlaying={isPlaying}
+                    isLoading={isLoading}
+                />
             </Modal>
 
             <div className={styles.containerV} ref={container}></div>

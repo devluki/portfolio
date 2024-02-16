@@ -48,10 +48,6 @@
         transition: all 0.2s;
 
         color: white;
-        // background: -webkit-linear-gradient(white, rgb(188, 188, 188));
-        // background-clip: text;
-        // -webkit-background-clip: text;
-        // -webkit-text-fill-color: transparent;
     }
 
     &__link {
@@ -70,12 +66,8 @@
     }
 
     &__link:hover {
-        //color: gray;
-        // transform: translateY(-1px);
-
         &::before {
             background: white;
-            //pointer-events: none;
         }
     }
 
