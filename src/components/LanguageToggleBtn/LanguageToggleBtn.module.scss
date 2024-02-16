@@ -17,8 +17,6 @@
 
         &,
         &:active,
-        &:focus,
-        &:hover,
         &:visited {
             border: none;
             border-radius: 0px;
@@ -31,12 +29,6 @@
             font-weight: 200;
             color: $primary-gray-dark;
             transition: all 0.2s;
-            // pointer-events: none;
-
-            // &:hover {
-            //     // font-weight: bold;
-            //     transform: translateY(-1px);
-            // }
         }
         .active {
             font-weight: bold;
