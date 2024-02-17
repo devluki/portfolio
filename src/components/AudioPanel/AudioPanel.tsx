@@ -96,7 +96,9 @@ const AudioPanel = (props: AudioPanelProps) => {
                         className={
                             !isLoading
                                 ? styles.panel__btn
-                                : `${styles.panel__btn} ${styles["panel__btn--disabled"]}`
+                                : `${styles.panel__btn} ${
+                                      isValid && styles["panel__btn--disabled"]
+                                  }`
                         }
                     >
                         <span className={styles["panel__btn-upload"]}>
