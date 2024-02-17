@@ -29,6 +29,9 @@ const Visualizer = () => {
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [isFileVaild, setIsFileValid] = useState<boolean | undefined>(
+        undefined,
+    );
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -64,17 +67,7 @@ const Visualizer = () => {
         });
     }, [url]);
 
-    // const endMusicHandler = () => {
-    //     audioRef.current!.onEnded = () => {
-    //         isMusicPlaying.current = false;
-    //         sceneManagerRef.current!.isMusicPlaying = false;
-    //         setIsPlaying(false);
-    //         console.log("Song ended!");
-    //     };
-    // };
-
     const playMusicHanlder = () => {
-        // console.log("Click play");
         setModalIsOpen(false);
         if (!isPlaying) {
             console.log(audioRef.current!);
@@ -85,7 +78,6 @@ const Visualizer = () => {
             audioRef.current!.pause();
             isMusicPlaying.current = false;
             sceneManagerRef.current!.isMusicPlaying = false;
-            //endMusicHandler();
         }
 
         setIsPlaying((prev) => !prev);
@@ -97,7 +89,7 @@ const Visualizer = () => {
         sceneManagerRef.current!.isMusicPlaying = false;
         setIsPlaying(false);
     };
-
+    // Volume controls
     // const musicVolumeHandlerPlus = () => {
     //     const volume = audioRef.current!.getVolume();
     //     console.log("Plud", volume, audioRef.current!.getVolume());
@@ -111,6 +103,14 @@ const Visualizer = () => {
     //     audioRef.current!.setVolume(volume - 0.5);
     // };
 
+    // const inputFileValidation = (songTitle: string) => {
+    //     if (songTitle.slice(-4) !== ".mp3") {
+    //         setIsFileValid(false);
+    //     } else {
+    //         setIsFileValid(true);
+    //     }
+    // };
+
     const uploadFileHanlder = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { files } = e.target;
 
@@ -122,25 +122,31 @@ const Visualizer = () => {
 
         if (files) {
             const [file] = Array.from(files);
-            const src = URL.createObjectURL(file);
-            // console.log("SRC", src);
+            if (file.name.slice(-4) !== ".mp3") {
+                setIsFileValid(false);
+                return;
+            } else {
+                setIsFileValid(true);
+                const src = URL.createObjectURL(file);
 
-            audioLoader.current!.load(
-                src,
+                audioLoader.current!.load(
+                    src,
 
-                function (buffer) {
-                    audioRef.current!.setBuffer(buffer);
-                    audioRef.current!.onEnded = () => {
-                        isMusicPlaying.current = false;
-                        sceneManagerRef.current!.isMusicPlaying = false;
-                        setIsPlaying(false);
-                        audioRef.current!.stop();
-                        console.log("Song ended!");
-                    };
-                    setIsLoading(false);
-                },
-            );
-            setUrl(src);
+                    function (buffer) {
+                        audioRef.current!.setBuffer(buffer);
+                        audioRef.current!.onEnded = () => {
+                            isMusicPlaying.current = false;
+                            sceneManagerRef.current!.isMusicPlaying = false;
+                            setIsPlaying(false);
+                            audioRef.current!.stop();
+                            console.log("Song ended!");
+                        };
+                        setIsLoading(false);
+                    },
+                );
+                setUrl(src);
+            }
+            // console.log("FILE:", file, "LAST THREE", file.name.slice(-4));
         }
     };
 
@@ -162,6 +168,7 @@ const Visualizer = () => {
                     uploadHandler={uploadFileHanlder}
                     isMusicPlaying={isPlaying}
                     isLoading={isLoading}
+                    isValid={isFileVaild}
                 />
             </Modal>
 

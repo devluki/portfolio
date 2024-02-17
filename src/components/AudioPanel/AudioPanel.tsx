@@ -5,6 +5,7 @@ import panelIcons from "../../assets/sprite_audio_panel.svg";
 interface AudioPanelProps {
     isLoading: boolean;
     isMusicPlaying: boolean;
+    isValid: boolean | undefined;
     uploadHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
     musicHandler: () => void;
     stopHandler: () => void;
@@ -17,6 +18,7 @@ const AudioPanel = (props: AudioPanelProps) => {
         isMusicPlaying,
         uploadHandler,
         stopHandler,
+        isValid,
     } = props;
 
     //   SVG icons
@@ -44,11 +46,34 @@ const AudioPanel = (props: AudioPanelProps) => {
         </svg>
     );
 
+    const validated =
+        typeof isValid === "undefined" ? (
+            <p className={styles.info}>
+                <Translator translationKey="modal.default-message" />
+            </p>
+        ) : (
+            <>
+                {!isValid && (
+                    <p className={`${styles.info} ${styles["info--error"]}`}>
+                        <Translator translationKey="modal.error-message" />
+                    </p>
+                )}
+
+                {isValid && (
+                    <p className={`${styles.info} ${styles["info--success"]}`}>
+                        <Translator translationKey="modal.success-message" />
+                    </p>
+                )}
+            </>
+        );
     return (
         <>
             <div className={styles["audio-panel"]}>
                 <div className={styles["audio-panel__txt"]}>
                     <Translator translationKey="modal.custiomize" />
+                </div>
+                <div className={styles["audio-panel__info"]}>
+                    {!isMusicPlaying && validated}
                 </div>
                 <div className={styles["audio-panel__controls"]}>
                     <button
