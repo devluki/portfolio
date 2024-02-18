@@ -1,0 +1,44 @@
+@import "../../styles/main.scss";
+.card {
+    // background-color: yellowgreen;
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 52rem;
+    width: 25rem;
+
+    &__side {
+        height: 52rem;
+        position: absolute;
+        transition: all 0.8s ease;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        // border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($primary-gray-dark, 0.15);
+
+        &--front {
+            background-color: rgba($primary-gray-dark, 0.9);
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            background-image: linear-gradient(
+                to right bottom,
+                $primary-gray-dark,
+                $primary-gray-light
+            );
+        }
+    }
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+}
