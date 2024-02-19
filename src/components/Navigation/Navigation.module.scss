@@ -2,18 +2,13 @@
 
 .nav {
     position: fixed;
-    // z-index: 999;
     top: 0;
     left: 0;
+    z-index: 2;
     min-width: 100vw;
 
     padding: 1rem;
     margin: 1rem auto 0 auto;
-
-    // background: rgba(255, 255, 255, 0);
-    // // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    // backdrop-filter: blur(20px);
-    // -webkit-backdrop-filter: blur(20px);
 
     @include respond(tab-land) {
         // max-width: 1300px;
@@ -52,6 +47,7 @@
     &__link:visited,
     &__link:active {
         position: relative;
+
         text-decoration: none;
         font-size: 1.3rem;
         font-weight: 900;
@@ -60,6 +56,7 @@
         transition: all 0.2s;
 
         color: white;
+
         @include respond(tab-land) {
             font-size: 1.8rem;
         }

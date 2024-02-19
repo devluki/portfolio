@@ -6,6 +6,7 @@ import Modal from "../Modal/Modal.js";
 import AudioPanel from "../AudioPanel/AudioPanel.js";
 import BtnTxt from "../BtnTxt/BtnTxt.js";
 import Translator from "../Translator/Translator.js";
+import Overtlay from "../Overlay/Overlay.js";
 
 import { SceneManager } from "../../utils/utils.js";
 
@@ -160,7 +161,7 @@ const Visualizer = () => {
 
     return (
         <>
-            {/* Panel component! */}
+            <Overtlay />
             <Modal isOpen={modalIsOpen} closeHandler={closeModalHandler}>
                 <AudioPanel
                     musicHandler={playMusicHanlder}

@@ -21,8 +21,12 @@ function App() {
                     <Intro />
                     <Visualizer />
                 </section>
-
-                <ProjectCard />
+                <section
+                    id="projects"
+                    style={{ height: "100vh", borderTop: "2px solid red" }}
+                >
+                    <ProjectCard />
+                </section>
             </LanguageContextProvider>
         </>
     );
