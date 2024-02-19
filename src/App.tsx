@@ -6,7 +6,8 @@ import Navigation from "./components/Navigation/Navigation";
 import Intro from "./components/intro/Intro";
 // import Intro from "./components/Intro/Intro";
 import Visualizer from "./components/Visualizer/Visualizer";
-import ProjectCard from "./components/ProjectCard/ProjectCard";
+// import ProjectCard from "./components/ProjectCard/ProjectCard";
+import TechStack from "./components/TechStack/TechStack";
 // import Translator from "./components/Translator/Translator";
 // import LanguageToggleBtn from "./components/LanguageToggleBtn/LanguageToggleBtn";
 // import Card from "./components/Card/Card";
@@ -25,7 +26,8 @@ function App() {
                     id="projects"
                     style={{ height: "100vh", borderTop: "2px solid red" }}
                 >
-                    <ProjectCard />
+                    {/* <ProjectCard /> */}
+                    <TechStack />
                 </section>
             </LanguageContextProvider>
         </>
