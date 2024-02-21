@@ -21,8 +21,10 @@ const TechStack = () => {
         //  4 left/bot | right/bot 3
         const x = (e.clientX - boundingRect!.left) / itemWidth;
         const y = (e.clientY - boundingRect!.top) / itemHeight;
-        const rX = (x - 0.5) * 60;
-        const rY = (y - 0.5) * 60;
+        // const rX = -x * 50;
+        // const rY = y * 50;
+        const rX = (x - 0.5) * 30;
+        const rY = (y - 0.5) * 30;
         console.log(x, y);
 
         // if (x < itemWidth / 2 && y < itemHeight / 2) {
@@ -90,7 +92,8 @@ const TechStack = () => {
         gsap.to("#fig", {
             rotationX: 0 + "deg",
             rotationY: 0 + "deg",
-            duration: 2,
+            background: `transparent`,
+            duration: 1,
             // backgroundColor: "red",
             // stagger: 0.1,
         });
@@ -167,37 +170,43 @@ const TechStack = () => {
                 </figure>
             </section>
             <div
-                id="fig"
-                ref={itemRef}
-                onMouseMove={onMouseMoveHandler}
-                onMouseLeave={onMouseLeaveHandler}
                 style={{
+                    background: "rgba(215,215,125,.3)",
                     height: "400px",
                     width: "400px",
-                    backgroundColor: "pink",
                     margin: "auto",
-                    borderRadius: "20px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    boxShadow: `-webkit-box-shadow: 8px 8px 24px 0px rgba(255, 68, 90, 1);
-                    -moz-box-shadow: 8px 8px 24px 0px rgba(255, 68, 90, 1);
-                    box-shadow: 8px 8px 24px 0px rgba(255, 68, 90, 1);`,
                 }}
             >
                 <div
+                    id="fig"
+                    ref={itemRef}
+                    onMouseMove={onMouseMoveHandler}
+                    onMouseLeave={onMouseLeaveHandler}
                     style={{
-                        width: "100%",
-                        height: "100%",
-                        border: "2px solid red",
+                        height: "400px",
+                        width: "400px",
+                        // backgroundColor: "pink",
+
+                        borderRadius: "20px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
                     }}
                 >
-                    <svg>
-                        <use xlinkHref={`${panelIcons}#icon-upload3`}></use>
-                    </svg>
-                    <svg style={{ transform: "rotateX(180deg)" }}>
-                        <use xlinkHref={`${panelIcons}#icon-upload3`}></use>
-                    </svg>
+                    <div
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            border: "2px solid red",
+                        }}
+                    >
+                        <svg style={{ mixBlendMode: "color-burn" }}>
+                            <use xlinkHref={`${panelIcons}#icon-upload3`}></use>
+                        </svg>
+                        <svg style={{ transform: "rotateX(180deg)" }}>
+                            <use xlinkHref={`${panelIcons}#icon-upload3`}></use>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </>
