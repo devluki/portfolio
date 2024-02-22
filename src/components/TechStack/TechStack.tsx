@@ -23,42 +23,46 @@ const TechStack = () => {
         const y = (e.clientY - boundingRect!.top) / itemHeight;
         // const rX = -x * 50;
         // const rY = y * 50;
-        const rX = (x - 0.5) * 30;
-        const rY = (y - 0.5) * 30;
-        console.log(x, y);
 
-        // if (x < itemWidth / 2 && y < itemHeight / 2) {
-        //     // quadrantCoefficientX = 1;
-        //     // quadrantCoefficientY = 1;
-        //     // boudingQuoterX = boundingRect!.left;
-        //     // boudingQuoterY = boundingRect!.top;
-        //     console.log("1");
-        // }
-        // if (x > itemWidth / 2 && y < itemHeight / 2) {
-        //     console.log("2");
-        //     // quadrantCoefficientX = -1;
-        //     // quadrantCoefficientY = 1;
-        //     // boudingQuoterX = boundingRect!.right;
-        //     // boudingQuoterY = boundingRect!.top;
-        // }
-        // if (x > itemWidth / 2 && y > itemHeight / 2) {
-        //     console.log("3");
-        //     // quadrantCoefficientX = -1;
-        //     // quadrantCoefficientY = -1;
-        //     // boudingQuoterX = boundingRect!.right;
-        //     // boudingQuoterY = boundingRect!.bottom;
-        // }
-        // if (x < itemWidth / 2 && y > itemHeight / 2) {
-        //     // quadrantCoefficientX = 1;
-        //     // quadrantCoefficientY = -1;
-        //     // boudingQuoterX = boundingRect!.left;
-        //     // boudingQuoterY = boundingRect!.bottom;
-        //     console.log("4");
-        // }
+        if (x < 1 / 2 && y < 1 / 2) {
+            quadrantCoefficientX = -1;
+            quadrantCoefficientY = 1;
+
+            console.log("1");
+        }
+        if (x > 1 / 2 && y < 1 / 2) {
+            console.log("2");
+            quadrantCoefficientX = -1;
+            quadrantCoefficientY = 1;
+            // boudingQuoterX = boundingRect!.right;
+            // boudingQuoterY = boundingRect!.top;
+        }
+        if (x > 1 / 2 && y > 1 / 2) {
+            console.log("3");
+            quadrantCoefficientX = 1;
+            quadrantCoefficientY = -1;
+            // boudingQuoterX = boundingRect!.right;
+            // boudingQuoterY = boundingRect!.bottom;
+        }
+        if (x < 1 / 2 && y > 1 / 2) {
+            quadrantCoefficientX = 1;
+            quadrantCoefficientY = -1;
+            // boudingQuoterX = boundingRect!.left;
+            // boudingQuoterY = boundingRect!.bottom;
+            console.log("4");
+        }
+
+        const rX = quadrantCoefficientX * (x - 0.5) * 35;
+        const rY = quadrantCoefficientY * (y - 0.5) * 35;
+        console.log(rX, rY);
 
         gsap.to("#fig", {
-            rotationX: rX + "deg",
-            rotationY: rY + "deg",
+            // rotationZ: rY,
+            // rotationX: rX, //+ "deg",
+            // rotationY: rY, // + "deg",
+            // transform: `rotate(${rX}deg,${rY}deg)`,
+            transform: `rotateX(${rY}deg) rotateY(${rX}deg)`,
+            // transformOrigin: "50% 50%",
             background: `radial-gradient(farthest-corner circle at ${
                 100 * x
             }% ${100 * y}%, rgba(255,255,255,.8) 10%, transparent 90%)`,
@@ -90,10 +94,10 @@ const TechStack = () => {
         // const itemWidth = itemRef.current!.clientWidth;
         // const boundingRect = itemRef.current?.getBoundingClientRect();
         gsap.to("#fig", {
-            rotationX: 0 + "deg",
-            rotationY: 0 + "deg",
+            transform: `rotateX(${0}deg) rotateY(${0}deg)`,
             background: `transparent`,
             duration: 1,
+            delay: 0.3,
             // backgroundColor: "red",
             // stagger: 0.1,
         });
@@ -171,9 +175,9 @@ const TechStack = () => {
             </section>
             <div
                 style={{
-                    background: "rgba(215,215,125,.3)",
+                    background: "rgba(215,215,225,.3)",
                     height: "400px",
-                    width: "400px",
+                    width: "300px",
                     margin: "auto",
                 }}
             >
@@ -184,7 +188,7 @@ const TechStack = () => {
                     onMouseLeave={onMouseLeaveHandler}
                     style={{
                         height: "400px",
-                        width: "400px",
+                        width: "300px",
                         // backgroundColor: "pink",
 
                         borderRadius: "20px",
@@ -197,10 +201,16 @@ const TechStack = () => {
                         style={{
                             width: "100%",
                             height: "100%",
-                            border: "2px solid red",
+                            border: "2px solid darkgray",
+                            borderRadius: "20px",
                         }}
                     >
-                        <svg style={{ mixBlendMode: "color-burn" }}>
+                        <svg
+                            style={{
+                                fill: "white",
+                                mixBlendMode: "hard-light",
+                            }}
+                        >
                             <use xlinkHref={`${panelIcons}#icon-upload3`}></use>
                         </svg>
                         <svg style={{ transform: "rotateX(180deg)" }}>
