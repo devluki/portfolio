@@ -17,11 +17,18 @@ const TechStack = () => {
         <>
             <section className={styles.gallery}>
                 {TECH_STACK.map((el, i) => (
+                    // <div className={styles[`gallery__item--${i}`]}>
                     <div className={styles[`gallery__item--${i}`]}>
                         <StackCard id={`fig-${i}`}>
                             <p>{el.name}</p>
-                            <svg style={{ width: "100%", height: "100%" }}>
-                                <use xlinkHref={`${el.path}`}></use>
+                            <svg
+                                style={{
+                                    maxWidth: "40%",
+                                    // aspectRatio: "1",
+                                    // fill: "white",
+                                }}
+                            >
+                                <use xlinkHref={el.path}></use>
                             </svg>
                         </StackCard>
                     </div>

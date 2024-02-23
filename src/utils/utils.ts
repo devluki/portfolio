@@ -6,6 +6,7 @@ import { GLSL_DATA } from "../js/glsl/glsl";
 import { RenderPass } from "three/examples/jsm/Addons.js";
 import { EffectComposer } from "three/examples/jsm/Addons.js";
 import { UnrealBloomPass } from "three/examples/jsm/Addons.js";
+import StackIcons from "../assets/sprite_stack_gallery.svg";
 
 const uniforms = {
     u_resolution: {
@@ -217,26 +218,26 @@ export const TIME = 4000;
 export const TECH_STACK = [
     {
         name: "Html",
-        path: "../assets/sprite_stack_gallery.svg/#icon-html-five2",
+        path: `${StackIcons}/#icon-html-five2`,
     },
-    { name: "Css", path: "../assets/sprite_stack_gallery.svg/#icon-css3" },
-    { name: "Sass", path: "../assets/sprite_stack_gallery.svg/#icon-sass" },
+    { name: "Css", path: `${StackIcons}/#icon-css3` },
+    { name: "Sass", path: `${StackIcons}/#icon-sass` },
     {
         name: "JavaScript",
-        path: "../assets/sprite_stack_gallery.svg/#icon-javascript",
+        path: `${StackIcons}/#icon-javascript`,
     },
-    { name: "React", path: "../assets/sprite_stack_gallery.svg/#icon-react" },
-    { name: "Redex", path: "../assets/sprite_stack_gallery.svg/#icon-redux" },
+    { name: "React", path: `${StackIcons}/#icon-react` },
+    { name: "Redex", path: `${StackIcons}/#icon-redux` },
     {
         name: "TypeScript",
-        path: "../assets/sprite_stack_gallery.svg/#icon-typescript",
+        path: `${StackIcons}/#icon-typescript`,
     },
     {
         name: "Node",
-        path: "../assets/sprite_stack_gallery.svg/#icon-node-dot-js",
+        path: `${StackIcons}/#icon-node-dot-js`,
     },
     {
         name: "MongoDB",
-        path: "../assets/sprite_stack_gallery.svg/#icon-mongodb",
+        path: `${StackIcons}/#icon-mongodb`,
     },
 ];

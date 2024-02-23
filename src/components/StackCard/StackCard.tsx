@@ -1,5 +1,6 @@
 import { useRef, ReactNode, FC } from "react";
 import gsap from "gsap";
+import styles from "./StackCard.module.scss";
 
 const StackCard: FC<{
     children: ReactNode;
@@ -46,6 +47,7 @@ const StackCard: FC<{
                 ref={itemRef}
                 onMouseMove={onMouseMoveHandler}
                 onMouseLeave={onMouseLeaveHandler}
+                className={styles.card}
             >
                 {children}
             </div>
