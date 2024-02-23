@@ -211,3 +211,32 @@ export class SceneManager {
 
 // Intro Animation
 export const TIME = 4000;
+
+// Consts
+
+export const TECH_STACK = [
+    {
+        name: "Html",
+        path: "../assets/sprite_stack_gallery.svg/#icon-html-five2",
+    },
+    { name: "Css", path: "../assets/sprite_stack_gallery.svg/#icon-css3" },
+    { name: "Sass", path: "../assets/sprite_stack_gallery.svg/#icon-sass" },
+    {
+        name: "JavaScript",
+        path: "../assets/sprite_stack_gallery.svg/#icon-javascript",
+    },
+    { name: "React", path: "../assets/sprite_stack_gallery.svg/#icon-react" },
+    { name: "Redex", path: "../assets/sprite_stack_gallery.svg/#icon-redux" },
+    {
+        name: "TypeScript",
+        path: "../assets/sprite_stack_gallery.svg/#icon-typescript",
+    },
+    {
+        name: "Node",
+        path: "../assets/sprite_stack_gallery.svg/#icon-node-dot-js",
+    },
+    {
+        name: "MongoDB",
+        path: "../assets/sprite_stack_gallery.svg/#icon-mongodb",
+    },
+];
