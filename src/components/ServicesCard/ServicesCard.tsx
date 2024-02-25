@@ -1,8 +1,8 @@
 import { useRef, ReactNode, FC } from "react";
 import gsap from "gsap";
-import styles from "./StackCard.module.scss";
+import styles from "./ServicesCard.module.scss";
 
-const StackCard: FC<{
+const ServicesCard: FC<{
     children: ReactNode;
     id: string;
 }> = ({ children, id }) => {
@@ -19,7 +19,7 @@ const StackCard: FC<{
         const rX = -1 * (x - 0.5) * 20;
         const rY = (y - 0.5) * 20;
         // console.log(x, rX, y, rY);
-        console.log(rX, rY);
+        // console.log(rX, rY);
 
         gsap.to(`#${id}`, {
             transform: `rotateX(${rY}deg) rotateY(${rX}deg)`,
@@ -55,4 +55,4 @@ const StackCard: FC<{
     );
 };
 
-export default StackCard;
+export default ServicesCard;

@@ -175,7 +175,7 @@ const Visualizer = () => {
 
             <div className={styles.containerV} ref={container}></div>
             <span className={styles["btn-customize"]}>
-                <BtnTxt openHandler={openModalHandler}>
+                <BtnTxt handler1={openModalHandler}>
                     <Translator translationKey="btn.custiomize" />
                 </BtnTxt>
             </span>

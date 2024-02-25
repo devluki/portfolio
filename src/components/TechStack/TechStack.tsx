@@ -1,5 +1,6 @@
 import styles from "./TechStack.module.scss";
-import StackCard from "../StackCard/StackCard";
+import ServicesCard from "../ServicesCard/ServicesCard";
+// import Ser from "../StackCard/ServicesCard";
 import { TECH_STACK } from "../../utils/utils";
 
 const TechStack = () => {
@@ -16,23 +17,20 @@ const TechStack = () => {
     return (
         <>
             <section className={styles.gallery}>
-                {TECH_STACK.map((el, i) => (
-                    // <div className={styles[`gallery__item--${i}`]}>
+                {/* {TECH_STACK.map((el, i) => (
                     <div className={styles[`gallery__item--${i}`]}>
-                        <StackCard id={`fig-${i}`}>
+                        <ServicesCard id={`fig-${i}`}>
                             <p>{el.name}</p>
                             <svg
                                 style={{
                                     maxWidth: "40%",
-                                    // aspectRatio: "1",
-                                    // fill: "white",
-                                }}
+                                                                  }}
                             >
                                 <use xlinkHref={el.path}></use>
                             </svg>
-                        </StackCard>
+                        </ServicesCard>
                     </div>
-                ))}
+                ))} */}
 
                 {/* <svg class="feature__icon">
                     <use xlink:href="img/sprite.svg#icon-global"></use>
@@ -93,6 +91,26 @@ const TechStack = () => {
                 >
                     MongoDb 10
                 </figure> */}
+            </section>
+            <section style={{ height: "100vh" }}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        maxWidth: "130rem",
+                    }}
+                >
+                    <ServicesCard id="fig-1">
+                        <div style={{ width: "30vw", height: "500px" }}></div>
+                    </ServicesCard>
+                    <ServicesCard id="fig-2">
+                        <div style={{ width: "30vw", height: "500px" }}></div>
+                    </ServicesCard>
+                    <ServicesCard id="fig-3">
+                        <div style={{ width: "30vw", height: "500px" }}></div>
+                    </ServicesCard>
+                </div>
             </section>
         </>
     );

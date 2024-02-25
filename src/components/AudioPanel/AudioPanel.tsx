@@ -46,6 +46,8 @@ const AudioPanel = (props: AudioPanelProps) => {
         </svg>
     );
 
+    // TODO isLoaded? Add file loaded successful
+
     const validated =
         typeof isValid === "undefined" ? (
             <p className={styles.info}>
