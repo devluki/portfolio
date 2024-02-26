@@ -1,7 +1,8 @@
 import styles from "./TechStack.module.scss";
 import ServicesCard from "../ServicesCard/ServicesCard";
-// import Ser from "../StackCard/ServicesCard";
-import { TECH_STACK } from "../../utils/utils";
+
+// import { TECH_STACK } from "../../utils/utils";
+import icons from "../../assets/sprite_stack_gallery.svg";
 
 const TechStack = () => {
     //     console.log("EFFECT");
@@ -92,24 +93,49 @@ const TechStack = () => {
                     MongoDb 10
                 </figure> */}
             </section>
-            <section style={{ height: "100vh" }}>
+            <section style={{ height: "auto" }}>
                 <div
                     style={{
                         display: "flex",
-                        justifyContent: "space-between",
+                        justifyContent: "center",
                         alignItems: "center",
                         maxWidth: "130rem",
                     }}
                 >
                     <ServicesCard id="fig-1">
-                        <div style={{ width: "30vw", height: "500px" }}></div>
+                        <div className={styles.card}>
+                            <div className={styles.card__header}>
+                                <svg className={styles.card__svg}>
+                                    <use
+                                        xlinkHref={`${icons}#icon-typescript`}
+                                    ></use>
+                                </svg>
+
+                                {/* <use
+                                        xlinkHref={`${icons}#icon-typescript`}
+                                    ></use> */}
+                                {/* {TECH_STACK[0].name} */}
+
+                                <h3>Software Development</h3>
+                            </div>
+                            <div className={styles.card__description}>
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Nam blanditiis saepe rerum
+                                    eveniet sint, vel incidunt sequi eos, nemo
+                                    labore, quidem deserunt. Voluptatum dolorem
+                                    quibusdam soluta inventore, vel voluptas
+                                    similique!
+                                </p>
+                            </div>
+                        </div>
                     </ServicesCard>
-                    <ServicesCard id="fig-2">
+                    {/* <ServicesCard id="fig-2">
                         <div style={{ width: "30vw", height: "500px" }}></div>
                     </ServicesCard>
                     <ServicesCard id="fig-3">
                         <div style={{ width: "30vw", height: "500px" }}></div>
-                    </ServicesCard>
+                    </ServicesCard> */}
                 </div>
             </section>
         </>

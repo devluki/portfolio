@@ -26,7 +26,7 @@ const ServicesCard: FC<{
 
             background: `radial-gradient(farthest-corner circle at ${
                 100 * x
-            }% ${100 * y}%, rgba(255,255,255,.8) 10%, transparent 90%)`,
+            }% ${100 * y}%, rgba(255,255,255,.5) 10%, transparent 90%)`,
             duration: 1,
         });
     };
@@ -34,7 +34,8 @@ const ServicesCard: FC<{
     const onMouseLeaveHandler = () => {
         gsap.to(`#${id}`, {
             transform: `rotateX(${0}deg) rotateY(${0}deg)`,
-            background: `transparent`,
+            // background: `transparent`,
+            background: "rgba(55,55,55,.6)",
             duration: 1,
             delay: 0.3,
         });
