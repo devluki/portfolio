@@ -20,13 +20,15 @@ const ServicesCard: FC<{
         const rY = (y - 0.5) * 20;
         // console.log(x, rX, y, rY);
         // console.log(rX, rY);
-
+        // vec4(.1, min(uDeepPurple, .9),  1., min(uOpacity, 1.))
         gsap.to(`#${id}`, {
             transform: `rotateX(${rY}deg) rotateY(${rX}deg)`,
 
             background: `radial-gradient(farthest-corner circle at ${
                 100 * x
-            }% ${100 * y}%, rgba(255,255,255,.5) 10%, transparent 90%)`,
+            }% ${100 * y}%, rgba(${25 + 10 * rX},${
+                230 - 10 * rY
+            },${255},.4) 10%, transparent 90%)`,
             duration: 1,
         });
     };

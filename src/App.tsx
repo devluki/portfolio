@@ -4,6 +4,7 @@ import LanguageContextProvider from "./store/LanguageContext";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Navigation from "./components/Navigation/Navigation";
 import Intro from "./components/intro/Intro";
+import AnimatedTxt from "./components/AnimatedTxt/AnimatedTxt";
 // import Intro from "./components/Intro/Intro";
 import Visualizer from "./components/Visualizer/Visualizer";
 // import ProjectCard from "./components/ProjectCard/ProjectCard";
@@ -26,6 +27,19 @@ function App() {
                     id="projects"
                     style={{ height: "100vh", borderTop: "2px solid red" }}
                 >
+                    <AnimatedTxt
+                        animationParameters={{
+                            color: "pink",
+                            isScrollTrigger: true,
+                            triggerId: "#projects",
+                            start: "top 50%",
+                            // stop: "top 45%",
+                        }}
+                    >
+                        <h1 className="heading-primary" id="animatedTxt">
+                            Test napisu ze scroll
+                        </h1>
+                    </AnimatedTxt>
                     {/* <ProjectCard /> */}
                     <TechStack />
                 </section>

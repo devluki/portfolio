@@ -35,6 +35,7 @@ export const TRANSLATIONS: Record<
         "modal.default-message": "Default audio file loaded.",
         "modal.error-message": "Please upload valid file format (*.mp3).",
         "modal.success-message": "Valid file format!",
+        // "modal.success-load": "File loaded success",
         "audiopanel.settings": "Settings",
         "audiopanel.heading": "Audio Panel EN",
         "test.test": "In English",

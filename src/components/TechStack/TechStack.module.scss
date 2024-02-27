@@ -74,7 +74,7 @@
     padding: 1rem;
     width: 30vw;
     height: 30vw;
-    color: rgb(240, 240, 240);
+    color: $primary-white;
     &__header {
         display: flex;
         justify-content: space-around;
@@ -83,13 +83,15 @@
         h3 {
             font-weight: 900;
             letter-spacing: 2px;
+            font-size: 1.4rem;
         }
     }
 
     &__svg {
         width: 25%;
         aspect-ratio: 1;
-        fill: rgba(255, 255, 255, 0.5);
+        // fill: rgba(255, 255, 255, 0.5);
+        fill: $primary-white;
     }
 
     &__description {
@@ -97,5 +99,6 @@
         padding: 1rem;
         text-align: justify;
         border-left: 2px solid rgba(255, 255, 255, 0.5);
+        font-size: 1.2rem;
     }
 }
