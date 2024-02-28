@@ -15,7 +15,6 @@ interface AnimationParams {
     isScrollTrigger?: boolean;
     triggerId?: string;
     start?: string;
-    stop?: string;
 }
 
 interface AnimatedTextProps {
@@ -64,10 +63,8 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
                         scrollTrigger: {
                             trigger: animationParams.triggerId,
                             start: animationParams.start,
-                            toggleActions: "play none none none",
-                            // end: animationParams.stop,
 
-                            markers: true,
+                            toggleActions: "play none none none",
                         },
                     },
                 );

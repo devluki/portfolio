@@ -5,6 +5,7 @@ import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Navigation from "./components/Navigation/Navigation";
 import Intro from "./components/intro/Intro";
 import AnimatedTxt from "./components/AnimatedTxt/AnimatedTxt";
+import Translator from "./components/Translator/Translator";
 // import Intro from "./components/Intro/Intro";
 import Visualizer from "./components/Visualizer/Visualizer";
 // import ProjectCard from "./components/ProjectCard/ProjectCard";
@@ -29,15 +30,14 @@ function App() {
                 >
                     <AnimatedTxt
                         animationParameters={{
-                            color: "pink",
+                            color: "white",
                             isScrollTrigger: true,
                             triggerId: "#projects",
                             start: "top 50%",
-                            // stop: "top 45%",
                         }}
                     >
                         <h1 className="heading-primary" id="animatedTxt">
-                            Test napisu ze scroll
+                            <Translator translationKey="section-2.animated-heading" />
                         </h1>
                     </AnimatedTxt>
                     {/* <ProjectCard /> */}

@@ -1,5 +1,6 @@
 import styles from "./TechStack.module.scss";
 import ServicesCard from "../ServicesCard/ServicesCard";
+import Translator from "../Translator/Translator";
 
 // import { TECH_STACK } from "../../utils/utils";
 import icons from "../../assets/sprite_stack_gallery.svg";
@@ -110,13 +111,15 @@ const TechStack = () => {
                                         xlinkHref={`${icons}#icon-typescript`}
                                     ></use>
                                 </svg>
+                                <div>
+                                    <h3 className={styles.card__heading}>
+                                        <Translator translationKey="servicesCard.heading--1" />
+                                    </h3>
 
-                                {/* <use
-                                        xlinkHref={`${icons}#icon-typescript`}
-                                    ></use> */}
-                                {/* {TECH_STACK[0].name} */}
-
-                                <h3>Software Development</h3>
+                                    <h3 className={styles.card__heading}>
+                                        <Translator translationKey="servicesCard.heading--2" />
+                                    </h3>
+                                </div>
                             </div>
                             <div className={styles.card__description}>
                                 <p>

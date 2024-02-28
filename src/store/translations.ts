@@ -9,7 +9,11 @@ const TRANSLATION_KEYS: string[] = [
     "modal.default-message",
     "modal.error-message",
     "modal.success-message",
+    "section-2.animated-heading",
+    "servicesCard.heading--1",
+    "servicesCard.heading--2",
     "audiopanel.heading",
+
     "test.test",
 ];
 
@@ -35,6 +39,9 @@ export const TRANSLATIONS: Record<
         "modal.default-message": "Default audio file loaded.",
         "modal.error-message": "Please upload valid file format (*.mp3).",
         "modal.success-message": "Valid file format!",
+        "section-2.animated-heading": "What I can do for you?",
+        "servicesCard.heading--1": "Tailor made",
+        "servicesCard.heading--2": "Solutions",
         // "modal.success-load": "File loaded success",
         "audiopanel.settings": "Settings",
         "audiopanel.heading": "Audio Panel EN",
@@ -53,6 +60,11 @@ export const TRANSLATIONS: Record<
         "modal.default-message": "Załadowano domyślny plik audio.",
         "modal.error-message": "Możesz załadować tylko pliki w formacie *.mp3.",
         "modal.success-message": "Poprawny format pliku!",
+        "section-2.animated-heading": "Co mogę dla Ciebie zrobić?",
+
+        //
+        "servicesCard.heading--1": "Rozwiązania",
+        "servicesCard.heading--2": "Szyte na miarę",
         "audiopanel.settings": "Ustawienia",
         "audiopanel.heading": "Panel Audio PL",
         "test.test": "Po polsku",

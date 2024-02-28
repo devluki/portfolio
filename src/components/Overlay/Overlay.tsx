@@ -12,7 +12,7 @@ const Overtlay = () => {
             duration: 0.5,
             scrollTrigger: {
                 trigger: "#projects",
-                start: "top 50%", //Top of trigger element hits the center of scroller lement - view port
+                start: "top 50%",
                 toggleActions: "restart none reverse none",
                 end: "top 45%",
 
