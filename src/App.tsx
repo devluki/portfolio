@@ -43,6 +43,7 @@ function App() {
                     {/* <ProjectCard /> */}
                     <TechStack />
                 </section>
+                <footer id="footer"></footer>
             </LanguageContextProvider>
         </>
     );

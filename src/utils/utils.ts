@@ -6,6 +6,9 @@ import { GLSL_DATA } from "../js/glsl/glsl";
 import { RenderPass } from "three/examples/jsm/Addons.js";
 import { EffectComposer } from "three/examples/jsm/Addons.js";
 import { UnrealBloomPass } from "three/examples/jsm/Addons.js";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 import StackIcons from "../assets/sprite_stack_gallery.svg";
 
 const uniforms = {
@@ -50,7 +53,7 @@ export class SceneManager {
         width: number,
         // material: THREE.ShaderMaterial,
     ) {
-        (this.container = containerRef.current!), //  that is not null
+        (this.container = containerRef.current!), //   is not null
             (this.height = height),
             (this.width = width),
             (this.scene = new THREE.Scene());
@@ -138,17 +141,37 @@ export class SceneManager {
     // }
 
     onScroll() {
-        // console.log("Is music playing:", this.isMusicPlaying);
+        //    Select lat element of a page
+        const footer = document.getElementById("footer");
+        const distance = footer!.getBoundingClientRect().top;
+        const totalHeight = document.body.clientHeight;
+        // console.log(distance / totalHeight);
+        this.scrollValue = totalHeight - distance;
         if (this.isMusicPlaying) return;
-        this.scrollValue = this.container.getBoundingClientRect().top;
+        // Add condition have music played
 
-        if (this.scrollValue < 150 && this.scrollValue > 0) {
-            this.isScroll = false;
-            this.material!.uniforms.u_amplifier.value = this.scrollValue / 33.6;
-        } else if (this.scrollValue < 0) {
+        // this.scrollValue = this.container.getBoundingClientRect().top;
+
+        // console.log("scroll value:", this.scrollValue);
+
+        // if (this.scrollValue > 0 && this.scrollValue < 150) {
+        //     console.log(
+        //         "<50",
+        //         this.scrollValue,
+        //         this.scrollValue / totalHeight,
+        //     );
+        //     this.isScroll = false;
+        //     this.material!.uniforms.u_amplifier.value = 5; //this.scrollValue / 33.6;
+        // } else
+        if (this.scrollValue > 10) {
+            console.log(
+                ">50",
+                this.scrollValue,
+                this.scrollValue / totalHeight,
+            );
             this.isScroll = true;
-
-            this.material!.uniforms.u_amplifier.value = this.scrollValue;
+            this.material!.uniforms.u_amplifier.value =
+                5.0 + (this.scrollValue / totalHeight) * 20;
         } else {
             this.isScroll = false;
             this.material!.uniforms.u_amplifier.value = 5.0;
@@ -204,6 +227,7 @@ export class SceneManager {
         this.init();
         this.createMesh();
         this.connectAudio(audioAnalyzer);
+        this.onScroll();
         this.addPostProcessingEffect();
         this.addEventListeners();
         this.animate();

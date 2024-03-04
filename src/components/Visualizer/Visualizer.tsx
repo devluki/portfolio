@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 import * as THREE from "three";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 import Modal from "../Modal/Modal.js";
 import AudioPanel from "../AudioPanel/AudioPanel.js";
 import BtnTxt from "../BtnTxt/BtnTxt.js";
@@ -12,6 +14,7 @@ import { SceneManager } from "../../utils/utils.js";
 
 import styles from "./Visualizer.module.scss";
 
+gsap.registerPlugin(ScrollTrigger);
 const Visualizer = () => {
     console.log("RENDER");
     // Refereces for THREE Audio API
@@ -58,6 +61,41 @@ const Visualizer = () => {
             { z: 5, x: 5, y: 5 },
             { z: 1, x: 1, y: 1 },
         );
+
+        // Scroll animation
+
+        // const timeLineScroll = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: "#projects",
+        //         start: "top 95%", //Top of trigger element hits the center of scroller lement - view port
+        //         toggleActions: "restart none reverse none",
+        //         end: "top 0%",
+
+        //         scrub: true,
+
+        //         // markers: true,
+        //     },
+        // });
+        // timeLineScroll
+        //     .to(
+        //         sceneManagerRef.current.mesh!.position,
+        //         {
+        //             z: 0,
+        //             x: -5,
+        //             y: -5,
+        //         },
+        //         "simultaneously",
+        //     )
+        //     .to(
+        //         sceneManagerRef.current.mesh!.scale,
+        //         { z: 2, x: 2, y: 2 },
+        //         "simultaneously",
+        //     );
+        // timeLineScroll.to(sceneManagerRef.current.mesh!.scale, {
+        //     z: 0,
+        //     x: -5,
+        //     y: -5,
+        // });
     }, []);
 
     useEffect(() => {
