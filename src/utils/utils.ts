@@ -121,24 +121,33 @@ export class SceneManager {
         this.composer.addPass(this.bloomPass);
     }
 
-    // onMouseMove() {
-    //     window.addEventListener("mousemove", (e: MouseEvent) => {
-    //         const mouseX = e.clientX;
-    //         //console.log((1.2 * this.width) / mouseX);
+    onMouseMove() {
+        window.addEventListener("mousemove", (e: MouseEvent) => {
+            const mouseX = e.clientX;
 
-    //         // gsap.to(this.material!.uniforms.u_frequency, {
-    //         //     value: mouseX,
-    //         // });
+            gsap.to(this.mesh?.material.uniforms.u_frequency, {
+                value: window.innerHeight / mouseX,
+            });
+            gsap.to(this.mesh?.material.uniforms.uDeepPurple, {
+                value: mouseX / window.innerWidth,
+            });
 
-    //         // gsap.to(this, {
-    //         //     velocity: mouseX / this.width,
-    //         // });
-    //         // gsap.to(this.material!.uniforms.uDeepPurple, {
-    //         //     value: mouseX / this.width,
-    //         // });
-    //         // console.log(mouseX);
-    //     });
-    // }
+            // uniforms.u_frequency.value += mouseX;
+            //console.log((1.2 * this.width) / mouseX);
+
+            // gsap.to(this.material!.uniforms.u_frequency, {
+            //     value: mouseX,
+            // });
+
+            // gsap.to(this, {
+            //     velocity: mouseX / this.width,
+            // });
+            // gsap.to(this.material!.uniforms.uDeepPurple, {
+            //     value: mouseX / this.width,
+            // });
+            // console.log(mouseX);
+        });
+    }
 
     onScroll() {
         //    Select lat element of a page
@@ -164,18 +173,27 @@ export class SceneManager {
         //     this.material!.uniforms.u_amplifier.value = 5; //this.scrollValue / 33.6;
         // } else
         if (this.scrollValue > 10) {
-            console.log(
-                ">50",
-                this.scrollValue,
-                this.scrollValue / totalHeight,
-            );
-            this.isScroll = true;
-            this.material!.uniforms.u_amplifier.value =
-                5.0 + (this.scrollValue / totalHeight) * 20;
-        } else {
-            this.isScroll = false;
-            this.material!.uniforms.u_amplifier.value = 5.0;
+            console.log("SCROLL >10");
+            // gsap.to(this.mesh?.material.uniforms.u_frequency, {
+            //     value: this.scrollValue,
+            // });
+            // gsap.to(this.mesh?.material.uniforms.u_Amplitude, {
+            //     value: this.scrollValue,
+            // });
+
+            // console.log(
+            //     ">50",
+            //     this.scrollValue,
+            //     this.scrollValue / totalHeight,
+            // );
+            // this.isScroll = true;
+            // this.material!.uniforms.u_amplifier.value =
+            //     5.0 + (this.scrollValue / totalHeight) * 20;
         }
+        // } else {
+        //     this.isScroll = false;
+        //     this.material!.uniforms.u_amplifier.value = 5.0;
+        // }
     }
 
     onResize() {
@@ -227,7 +245,8 @@ export class SceneManager {
         this.init();
         this.createMesh();
         this.connectAudio(audioAnalyzer);
-        this.onScroll();
+        // this.onScroll();
+        // this.onMouseMove();
         this.addPostProcessingEffect();
         this.addEventListeners();
         this.animate();

@@ -40,7 +40,7 @@ function App() {
                             <Translator translationKey="section-2.animated-heading" />
                         </h1>
                     </AnimatedTxt>
-                    {/* <ProjectCard /> */}
+
                     <TechStack />
                 </section>
                 <footer id="footer"></footer>

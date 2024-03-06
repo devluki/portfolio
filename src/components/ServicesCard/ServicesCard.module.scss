@@ -3,16 +3,6 @@
 .card {
     cursor: pointer;
     border-radius: 20px;
-    border: 2px solid darkgray;
-    // background-color: rgba(222, 222, 222, 0.4);
-
-    // svg {
-    //     fill: white;
-
-    //     use {
-    //         fill: darken($primary-gray-dark, 15);
-    //         backdrop-filter: hue-rotate(120deg);
-    //         backdrop-filter: sepia(90%);
-    //     }
-    // }
+    border: 2px solid $primary-gray-light;
+    overflow: hidden;
 }

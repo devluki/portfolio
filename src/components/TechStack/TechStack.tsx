@@ -99,8 +99,9 @@ const TechStack = () => {
                     style={{
                         display: "flex",
                         justifyContent: "center",
-                        alignItems: "center",
+                        alignItems: "space-between",
                         maxWidth: "130rem",
+                        margin: "0 auto",
                     }}
                 >
                     <ServicesCard id="fig-1">
@@ -133,12 +134,6 @@ const TechStack = () => {
                             </div>
                         </div>
                     </ServicesCard>
-                    {/* <ServicesCard id="fig-2">
-                        <div style={{ width: "30vw", height: "500px" }}></div>
-                    </ServicesCard>
-                    <ServicesCard id="fig-3">
-                        <div style={{ width: "30vw", height: "500px" }}></div>
-                    </ServicesCard> */}
                 </div>
             </section>
         </>
