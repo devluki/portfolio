@@ -1,8 +1,6 @@
 @import "../../styles/main.scss";
 
-$color-primary-gold: #d6a11f;
-
-// $color-primary-purple: #1e1b36;
+$color-primary-gold: #678cc2;
 
 $color-white: #ffffeb;
 
@@ -35,6 +33,9 @@ $menu-toggle-speed: 0.4s;
         .container {
             cursor: grab;
             transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             &:active {
                 cursor: grabbing;
                 transform: scale(1.2);

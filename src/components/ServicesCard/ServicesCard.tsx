@@ -18,9 +18,7 @@ const ServicesCard: FC<{
 
         const rX = -1 * (x - 0.5) * 20;
         const rY = (y - 0.5) * 20;
-        // console.log(x, rX, y, rY);
-        // console.log(rX, rY);
-        // vec4(.1, min(uDeepPurple, .9),  1., min(uOpacity, 1.))
+
         gsap.to(`#${id}`, {
             transform: `rotateX(${rY}deg) rotateY(${rX}deg)`,
 

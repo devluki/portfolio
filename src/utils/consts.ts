@@ -11,8 +11,8 @@ export const SOFTWARE = [
 ];
 
 export const TECH_STACK_ROW = [
-    { name: "Swift", icon: `${spriteIcons}#icon-swift` },
-    { name: "Flutter", icon: `${spriteIcons}#icon-flutter` },
+    // { name: "Swift", icon: `${spriteIcons}#icon-swift` },
+    // { name: "Flutter", icon: `${spriteIcons}#icon-flutter` },
     { name: "TypeScript", icon: `${spriteIcons}#icon-typescript` },
     { name: "React", icon: `${spriteIcons}#icon-react` },
     { name: "Node", icon: `${spriteIcons}#icon-node-dot-js` },
