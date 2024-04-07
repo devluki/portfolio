@@ -10,6 +10,8 @@ import Translator from "./components/Translator/Translator";
 import Visualizer from "./components/Visualizer/Visualizer";
 // import ProjectCard from "./components/ProjectCard/ProjectCard";
 import TechStack from "./components/TechStack/TechStack";
+import StackCarousel from "./components/StackCarousel/StackCarosel";
+import { TECH_STACK_ROW } from "./utils/consts";
 // import Translator from "./components/Translator/Translator";
 // import LanguageToggleBtn from "./components/LanguageToggleBtn/LanguageToggleBtn";
 // import Card from "./components/Card/Card";
@@ -42,6 +44,7 @@ function App() {
                     </AnimatedTxt>
 
                     <TechStack />
+                    <StackCarousel data={TECH_STACK_ROW} />
                 </section>
                 <footer id="footer"></footer>
             </LanguageContextProvider>

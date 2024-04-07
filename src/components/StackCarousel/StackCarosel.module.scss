@@ -1,0 +1,74 @@
+@import "../../styles/main.scss";
+
+$color-primary-gold: #d6a11f;
+
+// $color-primary-purple: #1e1b36;
+
+$color-white: #ffffeb;
+
+// TRANSITION SPEED
+$menu-toggle-speed: 0.4s;
+
+.slider {
+    width: 100%;
+
+    white-space: nowrap;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+    &__item {
+        display: inline-block;
+        margin: 1.5rem;
+
+        width: 12rem;
+        text-align: center;
+
+        @include respond(tab-land) {
+            margin: 4.5rem;
+        }
+        @include respond(screen) {
+            margin: 5rem;
+            width: 14rem;
+        }
+
+        .container {
+            cursor: grab;
+            transition: all 0.2s;
+            &:active {
+                cursor: grabbing;
+                transform: scale(1.2);
+            }
+
+            .item__title {
+                position: relative;
+                font-size: 2.2rem;
+                // opacity: 0;
+                transform: scale(0.5);
+                transition: all 0.3s;
+                margin-bottom: 1rem;
+                text-shadow: 0 0 1px #fff, 0 0 3px #fff,
+                    0 0 7px rgba($color-primary-gold, 0.9);
+                @include respond(screen) {
+                    opacity: 0;
+                }
+            }
+            &:hover .item__title {
+                opacity: 1;
+                transform: scale(1);
+                text-shadow: 0 0 1px #fff, 0 0 3px #fff,
+                    0 0 7px rgba($color-primary-gold, 0.9);
+            }
+            &:hover svg {
+                fill: rgba($color-primary-gold, 0.6);
+            }
+
+            svg {
+                width: 10rem;
+                height: 10rem;
+                fill: rgba($color-primary-gold, 0.2);
+                transition: all 0.3s;
+            }
+        }
+    }
+}
