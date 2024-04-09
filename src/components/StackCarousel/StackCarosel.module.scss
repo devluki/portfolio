@@ -1,6 +1,6 @@
 @import "../../styles/main.scss";
 
-$color-primary-gold: #678cc2;
+$color-primary-gold: #ffffff;
 
 $color-white: #ffffeb;
 
@@ -61,7 +61,7 @@ $menu-toggle-speed: 0.4s;
                     0 0 7px rgba($color-primary-gold, 0.9);
             }
             &:hover svg {
-                fill: rgba($color-primary-gold, 0.6);
+                fill: rgba($color-primary-gold, 0.75);
             }
 
             svg {

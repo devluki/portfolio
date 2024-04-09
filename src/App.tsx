@@ -44,6 +44,18 @@ function App() {
                     </AnimatedTxt>
 
                     <TechStack />
+                    <AnimatedTxt
+                        animationParameters={{
+                            color: "white",
+                            isScrollTrigger: true,
+                            triggerId: "#projects",
+                            start: "top 50%",
+                        }}
+                    >
+                        <h1 className="heading-primary" id="animatedTxt">
+                            <Translator translationKey="section-2.animated-heading" />
+                        </h1>
+                    </AnimatedTxt>
                     <StackCarousel data={TECH_STACK_ROW} />
                 </section>
                 <footer id="footer"></footer>

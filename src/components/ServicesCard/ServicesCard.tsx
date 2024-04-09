@@ -16,12 +16,10 @@ const ServicesCard: FC<{
         const x = (e.clientX - boundingRect!.left) / itemWidth;
         const y = (e.clientY - boundingRect!.top) / itemHeight;
 
-        const rX = -1 * (x - 0.5) * 20;
-        const rY = (y - 0.5) * 20;
+        const rX = -1 * (x - 0.5) * 15; //* 40;
+        const rY = (y - 0.5) * 15; //* 40;
 
         gsap.to(`#${id}`, {
-            transform: `rotateX(${rY}deg) rotateY(${rX}deg)`,
-
             background: `radial-gradient(farthest-corner circle at ${
                 100 * x
             }% ${100 * y}%, rgba(${25 + 10 * rX},${
@@ -33,7 +31,6 @@ const ServicesCard: FC<{
 
     const onMouseLeaveHandler = () => {
         gsap.to(`#${id}`, {
-            transform: `rotateX(${0}deg) rotateY(${0}deg)`,
             // background: `transparent`,
             background: "rgba(55,55,55,.6)",
             duration: 1,
