@@ -12,9 +12,11 @@ const TRANSLATION_KEYS: string[] = [
     "section-2.animated-heading",
     "servicesCard.heading--1",
     "servicesCard.heading--2",
+    "servicesCard.heading--3",
+    "servicesCard.heading--4",
     "audiopanel.heading",
-
     "test.test",
+    "services.title",
 ];
 
 // type KeyTuple = typeof TRANSLATION_KEYS;
@@ -42,6 +44,9 @@ export const TRANSLATIONS: Record<
         "section-2.animated-heading": "What I can do for you?",
         "servicesCard.heading--1": "Tailor made",
         "servicesCard.heading--2": "Solutions",
+        "servicesCard.heading--3": "FrontEnd",
+        "servicesCard.heading--4": "BackEnd",
+
         // "modal.success-load": "File loaded success",
         "audiopanel.settings": "Settings",
         "audiopanel.heading": "Audio Panel EN",
@@ -65,6 +70,8 @@ export const TRANSLATIONS: Record<
         //
         "servicesCard.heading--1": "Rozwiązania",
         "servicesCard.heading--2": "Szyte na miarę",
+        "servicesCard.heading--3": "FrontEnd",
+        "servicesCard.heading--4": "BackEnd",
         "audiopanel.settings": "Ustawienia",
         "audiopanel.heading": "Panel Audio PL",
         "test.test": "Po polsku",

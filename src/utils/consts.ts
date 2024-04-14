@@ -21,8 +21,34 @@ export const TECH_STACK_ROW = [
     { name: "JavaScript", icon: `${spriteIcons}#icon-javascript` },
     { name: "Figma", icon: `${spriteIcons}#icon-figma` },
     { name: "MongoDB", icon: `${spriteIcons}#icon-mongodb` },
-    { name: "MySQL", icon: `${spriteIcons}#icon-mysql` },
+    // { name: "MySQL", icon: `${spriteIcons}#icon-mysql` },
     { name: "Redux", icon: `${spriteIcons}#icon-redux` },
+];
+
+export const SERVICES = [
+    //TODO: Add second row?
+    {
+        title: ["servicesCard.heading--1", "servicesCard.heading--2"],
+
+        icon: `${spriteIcons}#icon-typescript`,
+        row1: "key1",
+        row2: "key2",
+        row3: "key3",
+    },
+    {
+        title: ["servicesCard.heading--3"],
+        icon: `${spriteIcons}#icon-mongodb`,
+        row1: "key1",
+        row2: "key2",
+        row3: "key3",
+    },
+    {
+        title: ["servicesCard.heading--4"],
+        icon: `${spriteIcons}#icon-redux`,
+        row1: "key1",
+        row2: "key2",
+        row3: "key3",
+    },
 ];
 
 // Data for background particle animation
