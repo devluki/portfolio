@@ -1,11 +1,13 @@
 @import "../../styles/main.scss";
 
 .nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
     &--sticky {
         position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 2;
+
         animation: fadeInDown 0.7s ease-out;
         backdrop-filter: blur(10px);
     }
