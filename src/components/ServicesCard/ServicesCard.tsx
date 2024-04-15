@@ -25,7 +25,7 @@ const ServicesCard: FC<{
             }% ${100 * y}%, rgba(${25 + 10 * rX},${
                 230 - 10 * rY
             },${255},.4) 10%, transparent 90%)`,
-            duration: 1,
+            duration: 0.71,
         });
     };
 
@@ -33,8 +33,8 @@ const ServicesCard: FC<{
         gsap.to(`#${id}`, {
             // background: `transparent`,
             background: "rgba(55,55,55,.6)",
-            duration: 1,
-            delay: 0.3,
+            duration: 0.71,
+            delay: 0.15,
         });
     };
 

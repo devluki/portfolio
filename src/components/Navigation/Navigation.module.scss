@@ -1,10 +1,14 @@
 @import "../../styles/main.scss";
 
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
+    &--sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        animation: fadeInDown 0.7s ease-out;
+        backdrop-filter: blur(10px);
+    }
     min-width: 100vw;
 
     padding: 1rem;
@@ -17,7 +21,7 @@
     }
 
     @include respond(screen) {
-        margin: 1rem auto 0 auto;
+        margin: 0rem auto 0 auto;
     }
 
     @include respond(big-desktop) {
@@ -34,7 +38,7 @@
 
         @include respond(tab-land) {
             grid-template-columns: repeat(4, 1fr);
-            grid-row: 1fr;
+            grid-template-rows: 1fr;
             max-width: 1300px;
         }
 
@@ -143,5 +147,16 @@
                 }
             }
         }
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

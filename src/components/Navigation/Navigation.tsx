@@ -1,10 +1,21 @@
+import { useEffect, useState } from "react";
+
 import styles from "./Navigation.module.scss";
 import LanguageToggleBtn from "../LanguageToggleBtn/LanguageToggleBtn";
 import Translator from "../Translator/Translator";
 
 const Navigation = () => {
+    const [scroll, setScroll] = useState(false);
+    const sticky = scroll ? styles["nav--sticky"] : "";
+    const height = window.innerHeight / 3;
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > height);
+        });
+    });
     return (
-        <nav className={styles.nav}>
+        <nav className={`${styles.nav} ${sticky}`}>
             <LanguageToggleBtn />
             <ul className={styles.nav__list}>
                 <li className={styles.nav__item}>
