@@ -1,6 +1,7 @@
 // Data for Card components
 
 import spriteIcons from "../assets/sprite.svg";
+import spriteIconsDefs from "../assets/symbol-defs.svg";
 
 export const SOFTWARE = [
     { name: "Web Apps", icon: `${spriteIcons}#icon-window` },
@@ -30,24 +31,18 @@ export const SERVICES = [
     {
         title: ["servicesCard.heading--1", "servicesCard.heading--2"],
 
-        icon: `${spriteIcons}#icon-typescript`,
-        row1: "key1",
-        row2: "key2",
-        row3: "key3",
+        icon: `${spriteIconsDefs}#icon-cut`,
+        description: "services.description",
     },
     {
         title: ["servicesCard.heading--3"],
-        icon: `${spriteIcons}#icon-mongodb`,
-        row1: "key1",
-        row2: "key2",
-        row3: "key3",
+        icon: `${spriteIconsDefs}#icon-display`,
+        description: "services.description",
     },
     {
         title: ["servicesCard.heading--4"],
-        icon: `${spriteIcons}#icon-redux`,
-        row1: "key1",
-        row2: "key2",
-        row3: "key3",
+        icon: `${spriteIconsDefs}#icon-cogs`,
+        description: "services.description",
     },
 ];
 

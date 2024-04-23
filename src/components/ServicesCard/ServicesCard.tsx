@@ -31,8 +31,8 @@ const ServicesCard: FC<{
 
     const onMouseLeaveHandler = () => {
         gsap.to(`#${id}`, {
-            // background: `transparent`,
-            background: "rgba(55,55,55,.6)",
+            background: `transparent`,
+            // background: "rgba(55,55,55,.6)",
             duration: 0.71,
             delay: 0.15,
         });

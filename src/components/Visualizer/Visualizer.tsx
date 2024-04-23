@@ -64,33 +64,33 @@ const Visualizer = () => {
 
         // Scroll animation
 
-        // const timeLineScroll = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: "#projects",
-        //         start: "top 95%", //Top of trigger element hits the center of scroller lement - view port
-        //         toggleActions: "restart none reverse none",
-        //         end: "top 0%",
+        const timeLineScroll = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#projects",
+                start: "top 95%", //Top of trigger element hits the center of scroller lement - view port
+                toggleActions: "restart none reverse none",
+                end: "top 0%",
 
-        //         scrub: true,
+                scrub: true,
 
-        //         // markers: true,
-        //     },
-        // });
-        // timeLineScroll
-        //     .to(
-        //         sceneManagerRef.current.mesh!.position,
-        //         {
-        //             z: 0,
-        //             x: -5,
-        //             y: -5,
-        //         },
-        //         "simultaneously",
-        //     )
-        //     .to(
-        //         sceneManagerRef.current.mesh!.scale,
-        //         { z: 2, x: 2, y: 2 },
-        //         "simultaneously",
-        //     );
+                // markers: true,
+            },
+        });
+        timeLineScroll
+            .to(
+                sceneManagerRef.current.mesh!.position,
+                {
+                    z: 0,
+                    x: 0,
+                    y: -8,
+                },
+                "simultaneously",
+            )
+            .to(
+                sceneManagerRef.current.mesh!.scale,
+                { z: 4, x: 4, y: 5 },
+                "simultaneously",
+            );
         // timeLineScroll.to(sceneManagerRef.current.mesh!.scale, {
         //     z: 0,
         //     x: -5,

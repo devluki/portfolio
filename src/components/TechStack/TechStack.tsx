@@ -48,14 +48,9 @@ const TechStack = () => {
                                     </div>
                                 </div>
                                 <div className={styles.card__description}>
-                                    <p>
-                                        Lorem ipsum dolor sit, amet consectetur
-                                        adipisicing elit. Nam blanditiis saepe
-                                        rerum eveniet sint, vel incidunt sequi
-                                        eos, nemo labore, quidem deserunt.
-                                        Voluptatum dolorem quibusdam soluta
-                                        inventore, vel voluptas similique!
-                                    </p>
+                                    <Translator
+                                        translationKey={service.description}
+                                    />
                                 </div>
                             </div>
                         </ServicesCard>
