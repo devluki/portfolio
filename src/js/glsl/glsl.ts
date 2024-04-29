@@ -160,7 +160,7 @@ varying float vDistortion;
     
         // 
         
-        gl_PointSize = 5.0 * (1.0 / - mvPosition.z);
+        gl_PointSize = 2.0 * (1.0 / - mvPosition.z);
         gl_Position=projectionMatrix*modelViewMatrix*vec4(newPosition,1.0);
     }`,
 };

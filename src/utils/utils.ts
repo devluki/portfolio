@@ -111,12 +111,15 @@ export class SceneManager {
 
         this.bloomPass = new UnrealBloomPass(
             new THREE.Vector2(this.width, this.height),
+            2.15,
+            1,
+            0.1,
             // 1.5,
             // 0.06,
             // 0.01,
-            1.5,
-            0.06,
-            0.1,
+            // 1.5,
+            // 0.06,
+            // 0.1,
         );
         this.composer.addPass(this.bloomPass);
     }
