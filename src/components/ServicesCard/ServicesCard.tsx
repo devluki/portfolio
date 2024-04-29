@@ -43,8 +43,8 @@ const ServicesCard: FC<{
             <div
                 id={id}
                 ref={itemRef}
-                onMouseMove={onMouseMoveHandler}
-                onMouseLeave={onMouseLeaveHandler}
+                // onMouseMove={onMouseMoveHandler}
+                // onMouseLeave={onMouseLeaveHandler}
                 className={styles.card}
             >
                 {children}

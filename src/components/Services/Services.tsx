@@ -1,10 +1,10 @@
-import styles from "./TechStack.module.scss";
+import styles from "./Services.module.scss";
 import ServicesCard from "../ServicesCard/ServicesCard";
 import Translator from "../Translator/Translator";
 
 import { SERVICES } from "../../utils/consts";
 
-const TechStack = () => {
+const Services = () => {
     //     console.log("EFFECT");
     //     gsap.to("#fig", {
     //         rotationX: mouseRef.current.x * 100,
@@ -61,4 +61,4 @@ const TechStack = () => {
     );
 };
 
-export default TechStack;
+export default Services;

@@ -9,7 +9,7 @@ import Translator from "./components/Translator/Translator";
 // import Intro from "./components/Intro/Intro";
 import Visualizer from "./components/Visualizer/Visualizer";
 // import ProjectCard from "./components/ProjectCard/ProjectCard";
-import TechStack from "./components/TechStack/TechStack";
+import Services from "./components/Services/Services";
 import StackCarousel from "./components/StackCarousel/StackCarosel";
 import { TECH_STACK_ROW } from "./utils/consts";
 // import Translator from "./components/Translator/Translator";
@@ -43,7 +43,7 @@ function App() {
                         </h1>
                     </AnimatedTxt>
 
-                    <TechStack />
+                    <Services />
                     <AnimatedTxt
                         animationParameters={{
                             color: "white",
