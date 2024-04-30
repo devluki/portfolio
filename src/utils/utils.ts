@@ -128,23 +128,6 @@ export class SceneManager {
         window.addEventListener("mousemove", (e: MouseEvent) => {
             const mouseX = e.clientX;
 
-            // gsap.to(this.mesh?.material.uniforms.u_frequency, {
-            //     value: window.innerHeight / mouseX,
-            // });
-            // gsap.to(this.mesh?.material.uniforms.uDeepPurple, {
-            //     value: mouseX / window.innerWidth,
-            // });
-
-            // uniforms.u_frequency.value += mouseX;
-            //console.log((1.2 * this.width) / mouseX);
-
-            // gsap.to(this.material!.uniforms.u_frequency, {
-            //     value: mouseX,
-            // });
-
-            // gsap.to(this, {
-            //     velocity: mouseX / this.width,
-            // });
             gsap.to(this.material!.uniforms.uDeepPurple, {
                 value: mouseX / this.width,
             });
@@ -157,7 +140,9 @@ export class SceneManager {
         this.height = window.innerHeight;
         this.renderer.setSize(this.width, this.height);
         // TODO check why there is no property/fn
+        // @ts-expect-error - type needs to be corrected
         this.camera.aspect = this.width / this.height;
+        // @ts-expect-error - type needs to be corrected
         this.camera.updateProjectionMatrix();
         this.addPostProcessingEffect();
     }
