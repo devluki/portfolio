@@ -19,13 +19,14 @@ const Services = () => {
         <>
             <section style={{ height: "auto" }}>
                 <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "space-between",
-                        maxWidth: "130rem",
-                        margin: "0 auto",
-                    }}
+                    className={styles.container}
+                    // style={{
+                    //     display: "flex",
+                    //     justifyContent: "center",
+                    //     alignItems: "space-between",
+                    //     maxWidth: "130rem",
+                    //     margin: "0 auto",
+                    // }}
                 >
                     {SERVICES.map((service, i) => (
                         <ServicesCard key={i} id={`card-${i}`}>
