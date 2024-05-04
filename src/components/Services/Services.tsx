@@ -18,16 +18,7 @@ const Services = () => {
     return (
         <>
             <section style={{ height: "auto" }}>
-                <div
-                    className={styles.container}
-                    // style={{
-                    //     display: "flex",
-                    //     justifyContent: "center",
-                    //     alignItems: "space-between",
-                    //     maxWidth: "130rem",
-                    //     margin: "0 auto",
-                    // }}
-                >
+                <div className={styles.container}>
                     {SERVICES.map((service, i) => (
                         <ServicesCard key={i} id={`card-${i}`}>
                             <div className={styles.card}>

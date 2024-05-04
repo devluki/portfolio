@@ -53,7 +53,7 @@ function App() {
                         }}
                     >
                         <h1 className="heading-primary" id="animatedTxt">
-                            <Translator translationKey="section-2.animated-heading" />
+                            <Translator translationKey="section-2.animated-heading--2" />
                         </h1>
                     </AnimatedTxt>
                     <StackCarousel data={TECH_STACK_ROW} />

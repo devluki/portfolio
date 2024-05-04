@@ -10,6 +10,7 @@ const TRANSLATION_KEYS: string[] = [
     "modal.error-message",
     "modal.success-message",
     "section-2.animated-heading",
+    "section-2.animated-heading--2",
     "servicesCard.heading--1",
     "servicesCard.heading--2",
     "servicesCard.heading--3",
@@ -43,6 +44,7 @@ export const TRANSLATIONS: Record<
         "modal.error-message": "Please upload valid file format (*.mp3).",
         "modal.success-message": "Valid file format!",
         "section-2.animated-heading": "What I can do for you?",
+        "section-2.animated-heading--2": "My Tech Toolkit",
         "servicesCard.heading--1": "Tailor made solutions",
         // "servicesCard.heading--2": "Solutions",
         "servicesCard.heading--3": "FrontEnd",
@@ -69,6 +71,7 @@ export const TRANSLATIONS: Record<
         "modal.error-message": "Możesz załadować tylko pliki w formacie *.mp3.",
         "modal.success-message": "Poprawny format pliku!",
         "section-2.animated-heading": "Co mogę dla Ciebie zrobić?",
+        "section-2.animated-heading--2": "Technologie z którymi pracuję",
 
         //
         "servicesCard.heading--1": "Rozwiązania Szyte na miarę",

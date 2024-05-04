@@ -90,12 +90,12 @@ const Visualizer = () => {
                 sceneManagerRef.current.mesh!.scale,
                 { z: 4, x: 4, y: 5 },
                 "simultaneously",
+            )
+            .to(
+                sceneManagerRef.current.mesh!.rotation,
+                { z: 0, x: 0, y: 2.5 },
+                "simultaneously",
             );
-        // timeLineScroll.to(sceneManagerRef.current.mesh!.scale, {
-        //     z: 0,
-        //     x: -5,
-        //     y: -5,
-        // });
     }, []);
 
     useEffect(() => {
