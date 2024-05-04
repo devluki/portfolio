@@ -32,7 +32,7 @@ export const SERVICES = [
         title: ["servicesCard.heading--1", "servicesCard.heading--2"],
 
         icon: `${spriteIconsDefs}#icon-cut`,
-        description: "services.description",
+        description: "services.description-tailor-made-solutions",
     },
     {
         title: ["servicesCard.heading--3"],

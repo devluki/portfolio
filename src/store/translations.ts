@@ -19,6 +19,7 @@ const TRANSLATION_KEYS: string[] = [
     "test.test",
     "services.title",
     "services.description",
+    "services.description-tailor-made-solutions",
 ];
 
 // type KeyTuple = typeof TRANSLATION_KEYS;
@@ -56,6 +57,8 @@ export const TRANSLATIONS: Record<
         "test.test": "In English",
         "services.description":
             "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine",
+        "services.description-tailor-made-solutions":
+            "I specialize in creating custom software that is tailored to meet your specific business needs. I’m here to help, let’s Build Something Great Together!",
     },
 
     pl: {
@@ -83,5 +86,7 @@ export const TRANSLATIONS: Record<
         "test.test": "Po polsku",
         "services.description":
             "Cudowny spokój ogarnął całą moją duszę, jak te słodkie wiosenne poranki, którymi cieszę się całym sercem. Jestem sama i czuję urok istnienia w tym miejscu, które zostało stworzone z myślą o błogości dusz takich jak moja.",
+        "services.description-tailor-made-solutions":
+            "Specjalizuje się w tworzeniu oprogramowania skrojonego do Twoich potrzeb biznesowych. Jestem tu żeby Ci pomóc, stwórzmy razem coś wyjątkowego",
     },
 };
