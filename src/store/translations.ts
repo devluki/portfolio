@@ -63,6 +63,8 @@ export const TRANSLATIONS: Record<
             "I specialize in creating custom software that is tailored to meet your specific business needs. I’m here to help, let’s Build Something Great Together!",
         "services.description-frontend":
             "I love to code things from scratch. Whether it’s a small business website or a complex web application, my goal is to create a frontend experience that stands out.  ",
+        "services.description-backend":
+            "I love to code things from scratch. Whether it’s a small business website or a complex web application, my goal is to create a frontend experience that stands out.  ",
     },
 
     pl: {
@@ -94,6 +96,8 @@ export const TRANSLATIONS: Record<
             "Specjalizuje się w tworzeniu oprogramowania skrojonego do Twoich potrzeb biznesowych. Jestem tu żeby Ci pomóc, stwórzmy razem coś wyjątkowego!",
 
         "services.description-frontend":
+            "Uwielbiam kodować rzeczy od zera. Niezależnie od tego, czy jest to witryna małej firmy, czy złożona aplikacja internetowa, moim celem jest stworzenie wyróżniającego się interfejsu.",
+        "services.description-backend":
             "Uwielbiam kodować rzeczy od zera. Niezależnie od tego, czy jest to witryna małej firmy, czy złożona aplikacja internetowa, moim celem jest stworzenie wyróżniającego się interfejsu.",
     },
 };

@@ -3,6 +3,13 @@ import { FPS, ANIMATION_STROKE } from "../../utils/consts";
 
 import styles from "./StackCarosel.module.scss";
 
+interface StackCarouselProps {
+    data: {
+        name: string;
+        icon: string;
+    }[];
+}
+
 const StackCarousel = (props: StackCarouselProps) => {
     // Data for cards inside carousel passed in props
     // Offset stored in state -> to render on different position each time
