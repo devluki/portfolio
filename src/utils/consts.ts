@@ -37,12 +37,12 @@ export const SERVICES = [
     {
         title: ["servicesCard.heading--3"],
         icon: `${spriteIconsDefs}#icon-display`,
-        description: "services.description",
+        description: "services.description-frontend",
     },
     {
         title: ["servicesCard.heading--4"],
         icon: `${spriteIconsDefs}#icon-cogs`,
-        description: "services.description",
+        description: "services.description-backend",
     },
 ];
 

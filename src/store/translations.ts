@@ -20,6 +20,8 @@ const TRANSLATION_KEYS: string[] = [
     "services.title",
     "services.description",
     "services.description-tailor-made-solutions",
+    "services.description-frontend",
+    "services.description-backend",
 ];
 
 // type KeyTuple = typeof TRANSLATION_KEYS;
@@ -59,6 +61,8 @@ export const TRANSLATIONS: Record<
             "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine",
         "services.description-tailor-made-solutions":
             "I specialize in creating custom software that is tailored to meet your specific business needs. I’m here to help, let’s Build Something Great Together!",
+        "services.description-frontend":
+            "I love to code things from scratch. Whether it’s a small business website or a complex web application, my goal is to create a frontend experience that stands out.  ",
     },
 
     pl: {
@@ -87,6 +91,9 @@ export const TRANSLATIONS: Record<
         "services.description":
             "Cudowny spokój ogarnął całą moją duszę, jak te słodkie wiosenne poranki, którymi cieszę się całym sercem. Jestem sama i czuję urok istnienia w tym miejscu, które zostało stworzone z myślą o błogości dusz takich jak moja.",
         "services.description-tailor-made-solutions":
-            "Specjalizuje się w tworzeniu oprogramowania skrojonego do Twoich potrzeb biznesowych. Jestem tu żeby Ci pomóc, stwórzmy razem coś wyjątkowego",
+            "Specjalizuje się w tworzeniu oprogramowania skrojonego do Twoich potrzeb biznesowych. Jestem tu żeby Ci pomóc, stwórzmy razem coś wyjątkowego!",
+
+        "services.description-frontend":
+            "Uwielbiam kodować rzeczy od zera. Niezależnie od tego, czy jest to witryna małej firmy, czy złożona aplikacja internetowa, moim celem jest stworzenie wyróżniającego się interfejsu.",
     },
 };
