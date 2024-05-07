@@ -64,7 +64,7 @@ export const TRANSLATIONS: Record<
         "services.description-frontend":
             "I love to code things from scratch. Whether it’s a small business website or a complex web application, my goal is to create a frontend experience that stands out.  ",
         "services.description-backend":
-            "I love to code things from scratch. Whether it’s a small business website or a complex web application, my goal is to create a frontend experience that stands out.  ",
+            "I write clean, efficient code to power dynamic website features.  Create server-side solutions, I ensure your website performs seamlessly.   ",
     },
 
     pl: {
@@ -98,6 +98,6 @@ export const TRANSLATIONS: Record<
         "services.description-frontend":
             "Uwielbiam kodować rzeczy od zera. Niezależnie od tego, czy jest to witryna małej firmy, czy złożona aplikacja internetowa, moim celem jest stworzenie wyróżniającego się interfejsu.",
         "services.description-backend":
-            "Uwielbiam kodować rzeczy od zera. Niezależnie od tego, czy jest to witryna małej firmy, czy złożona aplikacja internetowa, moim celem jest stworzenie wyróżniającego się interfejsu.",
+            "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Twórz rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
     },
 };
