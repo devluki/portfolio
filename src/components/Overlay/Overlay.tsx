@@ -8,8 +8,10 @@ gsap.registerPlugin(ScrollTrigger);
 const Overtlay = () => {
     useEffect(() => {
         gsap.to("#overlay", {
-            backdropFilter: "invert(2.5%)",
-            duration: 0.5,
+            // backdropFilter: "invert(2.5%)",
+            backdropFilter: "hue-rotate(120deg)",
+            duration: 0.8,
+            stagger: 0.5,
             scrollTrigger: {
                 trigger: "#projects",
                 start: "top 50%",
