@@ -18,7 +18,7 @@ const Overtlay = () => {
                 toggleActions: "restart none reverse none",
                 end: "top 45%",
 
-                markers: true,
+                // markers: true,
             },
         });
     }, []);

@@ -1,5 +1,7 @@
 // import "./App.css";
+import Lenis from "@studio-freight/lenis";
 import "./styles/main.scss";
+
 import LanguageContextProvider from "./store/LanguageContext";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Navigation from "./components/Navigation/Navigation";
@@ -17,6 +19,14 @@ import { TECH_STACK_ROW } from "./utils/consts";
 // import Card from "./components/Card/Card";
 
 function App() {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
     return (
         <>
             <LanguageContextProvider>
