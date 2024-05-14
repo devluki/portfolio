@@ -98,6 +98,6 @@ export const TRANSLATIONS: Record<
         "services.description-frontend":
             "Uwielbiam kodować rzeczy od zera. Niezależnie od tego, czy jest to witryna małej firmy, czy złożona aplikacja internetowa, moim celem jest stworzenie wyróżniającego się interfejsu.",
         "services.description-backend":
-            "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Twórz rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
+            "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Tworzę rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
     },
 };

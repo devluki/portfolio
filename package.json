@@ -3,6 +3,7 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "proxy": "http://localhost:3001",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
@@ -12,7 +13,12 @@
     "dependencies": {
         "@studio-freight/lenis": "^1.0.42",
         "@types/three": "^0.159.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
         "gsap": "^3.12.5",
+        "nodemailer": "^6.9.13",
+        "path": "^0.12.7",
         "postprocessing": "^6.34.1",
         "react": "^18.2.0",
         "react-audio-player": "^0.17.0",

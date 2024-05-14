@@ -1,4 +1,5 @@
 // import "./App.css";
+import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import "./styles/main.scss";
 
@@ -6,6 +7,7 @@ import LanguageContextProvider from "./store/LanguageContext";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Navigation from "./components/Navigation/Navigation";
 import Intro from "./components/intro/Intro";
+// import Intro from "./components/Intro-dlete/Intro";
 import AnimatedTxt from "./components/AnimatedTxt/AnimatedTxt";
 import Translator from "./components/Translator/Translator";
 // import Intro from "./components/Intro/Intro";
@@ -27,6 +29,13 @@ function App() {
     }
 
     requestAnimationFrame(raf);
+
+    useEffect(() => {
+        console.log("fetch");
+        fetch("http://localhost:3001/api")
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+    }, []);
     return (
         <>
             <LanguageContextProvider>
