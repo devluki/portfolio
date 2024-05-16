@@ -36,6 +36,28 @@ function App() {
             .then((res) => res.json())
             .then((data) => console.log(data));
     }, []);
+    const emailHandler = async () => {
+        // e.preventDefault();
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify({
+                name: "name",
+                lastName: "lastName2",
+                message: "message3",
+                phone: "phone4",
+            }),
+        });
+        const result = await res.json();
+
+        if (result.code == 200) {
+            console.log("SUCCES, check email");
+        } else {
+            console.log("ERROR, check stackoverflow");
+        }
+    };
     return (
         <>
             <LanguageContextProvider>
@@ -44,6 +66,7 @@ function App() {
                     <Navigation />
                     <Intro />
                     <Visualizer />
+                    <button onClick={emailHandler}>Sent email</button>
                 </section>
                 <section
                     id="projects"
