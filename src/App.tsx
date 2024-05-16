@@ -38,18 +38,20 @@ function App() {
     }, []);
     const emailHandler = async () => {
         // e.preventDefault();
-        const res = await fetch("/api/contact", {
+        const res = await fetch("http://localhost:3001/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
             },
             body: JSON.stringify({
-                name: "name",
-                lastName: "lastName2",
+                firstName: "Imię",
+                lastName: "lastName22222",
+                email: "email",
                 message: "message3",
                 phone: "phone4",
             }),
         });
+        console.log("RESPONSE", res);
         const result = await res.json();
 
         if (result.code == 200) {
