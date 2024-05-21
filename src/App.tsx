@@ -16,6 +16,7 @@ import Visualizer from "./components/Visualizer/Visualizer";
 import Services from "./components/Services/Services";
 import StackCarousel from "./components/StackCarousel/StackCarosel";
 import { TECH_STACK_ROW } from "./utils/consts";
+import ContactForm from "./components/ContactForm/ContactForm";
 // import Translator from "./components/Translator/Translator";
 // import LanguageToggleBtn from "./components/LanguageToggleBtn/LanguageToggleBtn";
 // import Card from "./components/Card/Card";
@@ -44,11 +45,12 @@ function App() {
                 "Content-Type": "application/json;charset=utf-8",
             },
             body: JSON.stringify({
-                firstName: "Imię",
-                lastName: "lastName22222",
-                email: "email",
-                message: "message3",
-                phone: "phone4",
+                firstName: "Łukasz",
+                lastName: "Srukasz",
+                email: "luki.kurs@g",
+                message:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                phone: "123456789",
             }),
         });
         console.log("RESPONSE", res);
@@ -68,6 +70,7 @@ function App() {
                     <Navigation />
                     <Intro />
                     <Visualizer />
+                    <ContactForm />
                     <button onClick={emailHandler}>Sent email</button>
                 </section>
                 <section

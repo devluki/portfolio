@@ -5,6 +5,7 @@ const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
+const fs = require("fs");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
@@ -50,7 +51,9 @@ app.post(
             html: `<p>Name: ${name}</p>
         <p>Name: ${email}</p>
         <p>Name: ${phone}</p>
-        <p>Name: ${message}</p>`,
+        <p>Name: ${message}</p>
+
+        <h1>TEST test Test<h1/>`,
         };
         contactEmail.sendMail(mail, (err) => {
             if (err) {

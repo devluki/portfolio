@@ -7,7 +7,6 @@ const BtnTxt: FC<{
 
     handler1?: () => void;
 
-    // closeHandler?: () => void;
     isOpen?: boolean;
 }> = ({ children, handler1 }) => {
     const handler = () => {
