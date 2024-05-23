@@ -16,8 +16,28 @@ const ContactForm = () => {
         formState: { errors },
     } = useForm<FormFileds>();
 
-    const submitHandler: SubmitHandler<FormFileds> = (data) => {
-        console.log(data);
+    const submitHandler: SubmitHandler<FormFileds> = async (data) => {
+        const response = await fetch("http://localhost:3001/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify({
+                firstName: data.firstName,
+                lastName: data.lastName,
+                email: data.email,
+                message: data.message,
+                phone: data.phone,
+            }),
+            // console.log("RESPONSE", res);
+            // const result = await res.json();
+        });
+        const result = await response.json();
+        if (result.code == 200) {
+            console.log("SUCCES, check email");
+        } else {
+            console.log("ERROR, check stackoverflow");
+        }
     };
 
     return (
@@ -80,12 +100,24 @@ const ContactForm = () => {
                     className={styles.form__input}
                     {...register("message", {
                         required: "Message is required",
+                        minLength: {
+                            value: 100,
+                            message: "min length is 100",
+                        },
                     })}
                     placeholder="Message"
                     aria-invalid={errors.message ? "true" : "false"}
                 ></textarea>
                 {errors.message && <p role="alert">{errors.message.message}</p>}
-                <button type="submit">Submit</button>
+                <button
+                    type="submit"
+                    disabled={
+                        errors.phone?.message !== undefined ||
+                        errors.email?.message !== undefined
+                    }
+                >
+                    Submit
+                </button>
             </form>
         </div>
     );
