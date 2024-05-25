@@ -17,6 +17,7 @@ import Services from "./components/Services/Services";
 import StackCarousel from "./components/StackCarousel/StackCarosel";
 import { TECH_STACK_ROW } from "./utils/consts";
 import ContactForm from "./components/ContactForm/ContactForm";
+import Introdel from "./components/Intro-dlete/Intro";
 // import Translator from "./components/Translator/Translator";
 // import LanguageToggleBtn from "./components/LanguageToggleBtn/LanguageToggleBtn";
 // import Card from "./components/Card/Card";
@@ -38,6 +39,7 @@ function App() {
                     <ProgressBar />
                     <Navigation />
                     <Intro />
+                    <Introdel />
                     <Visualizer />
                     <ContactForm />
                 </section>

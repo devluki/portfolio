@@ -1,3 +1,5 @@
+@import "../../styles//main.scss";
+
 .container {
     // display: flex;
     // flex-direction: column;
@@ -49,6 +51,44 @@
     }
 }
 
-button:disabled {
-    background-color: yellow;
+.btn {
+    font-size: 2rem;
+    color: $primary-gray-dark;
+    display: inline-block;
+    text-decoration: none;
+
+    // background-color: $primary-white;
+    padding: 3px;
+    transition: all 0.2s;
+
+    cursor: pointer;
+    // Reset default styles of button
+    &,
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
+        border: none;
+        border-radius: 0px;
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:hover {
+        background-color: darken($primary-white, 10%);
+        color: darken($primary-gray-dark, 30%);
+    }
+
+    &:disabled {
+        color: $primary-gray-dark;
+        background-color: rgb(96, 96, 96);
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        background-color: rgba($primary-white, 0.9);
+        color: $primary-black;
+        box-shadow: 0 1rem 2rem rgba($primary-black, 0.15);
+        transform: translateY(-2px);
+    }
 }

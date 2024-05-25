@@ -125,6 +125,7 @@ const ContactForm = () => {
                 ></textarea>
                 {errors.message && <p role="alert">{errors.message.message}</p>}
                 <button
+                    className={styles.btn}
                     type="submit"
                     disabled={
                         errors.phone?.message !== undefined ||
