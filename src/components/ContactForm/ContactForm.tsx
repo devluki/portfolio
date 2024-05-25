@@ -1,4 +1,6 @@
 import styles from "./ContactForm.module.scss";
+import { useContext } from "react";
+import { LanguageContext } from "../../store/LanguageContext";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormFileds = {
@@ -10,6 +12,7 @@ type FormFileds = {
 };
 
 const ContactForm = () => {
+    const langCtx = useContext(LanguageContext);
     const {
         register,
         handleSubmit,
@@ -42,8 +45,18 @@ const ContactForm = () => {
         }
     };
 
+    const namePlaceHolder =
+        langCtx?.currentLanguage === "en" ? "First name" : "Imię";
+    const lasetNamePlaceHolder =
+        langCtx?.currentLanguage === "en" ? "Last name" : "Nazwisko";
+    const phonePlaceHolder =
+        langCtx?.currentLanguage === "en" ? "Phone" : "Numer telefonu";
+    const messagePlaceHolder =
+        langCtx?.currentLanguage === "en" ? "Message" : "Wiadomość";
+
     return (
         <div className={styles.container}>
+            <h1>{langCtx?.currentLanguage}</h1>
             <form
                 action="POST"
                 onSubmit={handleSubmit(submitHandler)}
@@ -54,7 +67,7 @@ const ContactForm = () => {
                     {...register("firstName", {
                         required: "First name is required",
                     })}
-                    placeholder="First Name"
+                    placeholder={namePlaceHolder}
                     aria-invalid={errors.firstName ? "true" : "false"}
                 />
                 {errors.firstName && (
@@ -65,7 +78,7 @@ const ContactForm = () => {
                     {...register("lastName", {
                         required: "Last name is required",
                     })}
-                    placeholder="Last Name"
+                    placeholder={lasetNamePlaceHolder}
                     aria-invalid={errors.lastName ? "true" : "false"}
                 />
                 {errors.lastName && (
@@ -93,7 +106,7 @@ const ContactForm = () => {
                             message: "Please eneter a valid number",
                         },
                     })}
-                    placeholder="Phone"
+                    placeholder={phonePlaceHolder}
                     aria-invalid={errors.phone ? "true" : "false"}
                 />
                 {errors.phone && <p role="alert">{errors.phone.message}</p>}
@@ -107,7 +120,7 @@ const ContactForm = () => {
                             message: "min length is 100",
                         },
                     })}
-                    placeholder="Message"
+                    placeholder={messagePlaceHolder}
                     aria-invalid={errors.message ? "true" : "false"}
                 ></textarea>
                 {errors.message && <p role="alert">{errors.message.message}</p>}
