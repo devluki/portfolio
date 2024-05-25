@@ -13,7 +13,7 @@ const ContactForm = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { isSubmiitting, errors },
     } = useForm<FormFileds>();
 
     const submitHandler: SubmitHandler<FormFileds> = async (data) => {
@@ -116,7 +116,7 @@ const ContactForm = () => {
                         errors.email?.message !== undefined
                     }
                 >
-                    Submit
+                    {!isSubmiitting ? "Submit" : "Loading..."}
                 </button>
             </form>
         </div>

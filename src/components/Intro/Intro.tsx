@@ -27,7 +27,10 @@ const Intro = () => {
             onMouseMove={onMouseMoveHandler}
         >
             <AnimatedTxt
-                animationParameters={{ color: "white", isScrollTrigger: false }}
+                animationParameters={{
+                    color: "white",
+                    isScrollTrigger: false,
+                }}
             >
                 <h1 className="heading-primary" id="animatedTxt">
                     <Translator translationKey="intro.intro" />

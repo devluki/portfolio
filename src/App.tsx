@@ -91,10 +91,10 @@ function App() {
                     </AnimatedTxt>
 
                     <Services />
-                    <AnimatedTxt
+                    {/* <AnimatedTxt
                         animationParameters={{
                             color: "white",
-                            isScrollTrigger: true,
+                            // isScrollTrigger: true,
                             triggerId: "#projects",
                             start: "top 50%",
                         }}
@@ -102,7 +102,7 @@ function App() {
                         <h1 className="heading-primary" id="animatedTxt">
                             <Translator translationKey="section-2.animated-heading--2" />
                         </h1>
-                    </AnimatedTxt>
+                    </AnimatedTxt> */}
                     <StackCarousel data={TECH_STACK_ROW} />
                 </section>
                 <footer id="footer"></footer>

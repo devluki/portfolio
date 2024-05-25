@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface AnimationParams {
     color?: string;
-    opacity?: number;
-    y?: number;
-    x?: number;
+    // opacity?: number;
+    // y?: number;
+    // x?: number;
     //
     isScrollTrigger?: boolean;
     triggerId?: string;
@@ -35,13 +35,7 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
         ) as HTMLElement;
 
         const txt = new SplitType(chars, { types: "words,chars" });
-        // console.log(
-        //     "SCROLL TRIGGER:",
-        //     animationParams.triggerId,
-        //     animationParams.start,
-        //     animationParams.stop,
-        // );
-        console.log("SCROLL TRIGGER");
+
         txt.chars?.forEach((txt, i) => {
             gsap.set(txt, {
                 color: animationParams.color,
@@ -49,24 +43,18 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
                 opacity: 0,
             });
 
-            if (animationParams.isScrollTrigger) {
-                console.log("SCROLL TRIGGER");
+            if (!animationParams.isScrollTrigger) {
+                console.log("SCROLL TRIGGER", animationParams.isScrollTrigger);
 
                 gsap.to(
                     txt,
 
                     {
-                        ...animationParams,
+                        color: animationParams.color,
                         delay: 0.045 * i,
                         x: i,
                         opacity: 1,
                         duration: 0.5,
-                        scrollTrigger: {
-                            trigger: animationParams.triggerId,
-                            start: animationParams.start,
-
-                            toggleActions: "play none none none",
-                        },
                     },
                 );
             } else {
@@ -74,7 +62,11 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
                     txt,
 
                     {
-                        ...animationParams,
+                        color: animationParams.color,
+                        scrollTrigger: {
+                            trigger: animationParams.triggerId,
+                            start: animationParams.start,
+                        },
                         delay: 0.045 * i,
                         x: i,
                         opacity: 1,
