@@ -13,7 +13,8 @@ const ContactForm = () => {
     const {
         register,
         handleSubmit,
-        formState: { isSubmiitting, errors },
+        formState: { isSubmitting, errors },
+        reset,
     } = useForm<FormFileds>();
 
     const submitHandler: SubmitHandler<FormFileds> = async (data) => {
@@ -35,6 +36,7 @@ const ContactForm = () => {
         const result = await response.json();
         if (result.code == 200) {
             console.log("SUCCES, check email");
+            reset();
         } else {
             console.log("ERROR, check stackoverflow");
         }
@@ -116,7 +118,7 @@ const ContactForm = () => {
                         errors.email?.message !== undefined
                     }
                 >
-                    {!isSubmiitting ? "Submit" : "Loading..."}
+                    {!isSubmitting ? "Submit" : "Loading..."}
                 </button>
             </form>
         </div>

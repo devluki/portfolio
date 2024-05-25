@@ -48,12 +48,11 @@ app.post(
             from: name,
             to: process.env.EMAIL_ADDRESS,
             subject: "Contact Form Sub",
-            html: `<p>Name: ${name}</p>
-        <p>Name: ${email}</p>
-        <p>Name: ${phone}</p>
-        <p>Name: ${message}</p>
 
-        <h1>TEST test Test<h1/>`,
+            html: `<p>Name: ${name}</p>
+            <p>Email: ${email}</p>
+            <p>Phone: ${phone}</p>
+            <p>Message: ${message}</p>`,
         };
         contactEmail.sendMail(mail, (err) => {
             if (err) {
