@@ -14,29 +14,56 @@
         justify-content: center;
         align-items: center;
     }
-    svg {
-        max-height: 50vh;
-    }
+    // svg {
+    //     max-height: 50vh;
+    // }
     .svg {
         height: 6rem;
         width: 5rem;
+        cursor: pointer;
+        &:hover rect:nth-child(2) {
+            fill: pink;
+            transform: translateY(-1rem);
+        }
+        &:hover rect:nth-child(3) {
+            fill: pink;
+            transform: translate(-1rem, -1rem);
+        }
+        &:hover rect:nth-child(4) {
+            fill: pink;
+            transform: translateY(-2rem);
+        }
+
+        @include respond(tab-land) {
+            height: 10rem;
+            width: 5rem;
+        }
 
         rect {
             height: 2rem;
             width: 2rem;
+            transition: 0.3s;
+
             // @include respond(tab-land) {
             //     height: 2.5rem;
             //     width: 2.5rem;
 
-            //     // &:nth-child(2) {
-            //     //     transform: translateY(10%);
+            //     // &:nth-child(1) {
+            //     //     transform: translateY(1.5rem);
             //     // }
-            //     // &:nth-child(3) {
-            //     //     transform: translateY(20%);
-            //     // }
-            //     // &:nth-child(4) {
-            //     //     transform: translate(10%, 20%);
-            //     // }
+
+            //     &:nth-child(2) {
+            //         transform: translateY(3.5rem);
+            //         // display: none;
+            //     }
+            //     &:nth-child(3) {
+            //         transform: translateY(7rem);
+            //         // display: none;
+            //     }
+            //     &:nth-child(4) {
+            //         transform: translate(3.5rem, 7rem);
+            //         // display: none;
+            //     }
             // }
         }
     }

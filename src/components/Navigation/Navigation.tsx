@@ -9,6 +9,17 @@ const Navigation = () => {
     const sticky = scroll ? styles["nav--sticky"] : "";
     const height = window.innerHeight / 3;
 
+    const changeShapeHandler = (e: React.PointerEvent | React.MouseEvent) => {
+        const element = e.target as HTMLElement;
+        element.setAttribute("rx", "50");
+        element.setAttribute("fill", "#252526");
+    };
+    const reChangeShapeHandler = (e: React.PointerEvent | React.MouseEvent) => {
+        const element = e.target as HTMLElement;
+        element.setAttribute("rx", "5");
+        element.setAttribute("fill", "#f9f9f9");
+    };
+
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > height);
@@ -32,6 +43,8 @@ const Navigation = () => {
                                     x="37"
                                     y="0"
                                     rx="5"
+                                    onMouseOver={changeShapeHandler}
+                                    onMouseLeave={reChangeShapeHandler}
                                 />
                                 <rect
                                     id="svgBox--0"
@@ -39,6 +52,8 @@ const Navigation = () => {
                                     x="37"
                                     y="25"
                                     rx="5"
+                                    onMouseOver={changeShapeHandler}
+                                    onMouseLeave={reChangeShapeHandler}
                                 />
                                 <rect
                                     id="svgBox--1"
@@ -46,6 +61,8 @@ const Navigation = () => {
                                     x="37"
                                     y="50"
                                     rx="5"
+                                    onMouseOver={changeShapeHandler}
+                                    onMouseLeave={reChangeShapeHandler}
                                 />
                                 <rect
                                     id="svgBox--2"
@@ -53,6 +70,8 @@ const Navigation = () => {
                                     x="63"
                                     y="50"
                                     rx="5"
+                                    onMouseOver={changeShapeHandler}
+                                    onMouseLeave={reChangeShapeHandler}
                                 />
                             </svg>
                         </a>

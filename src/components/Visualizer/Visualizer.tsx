@@ -16,7 +16,7 @@ import styles from "./Visualizer.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 const Visualizer = () => {
-    console.log("RENDER");
+    // console.log("RENDER");
     // Refereces for THREE Audio API
     const listenerRef = useRef<THREE.AudioListener | null>(null);
     const audioRef = useRef<THREE.Audio | null>(null);
@@ -43,7 +43,7 @@ const Visualizer = () => {
         listenerRef.current = new THREE.AudioListener();
         audioRef.current = new THREE.Audio(listenerRef.current);
         audioAnalyzer.current = new THREE.AudioAnalyser(audioRef.current!, 32);
-        console.log(container);
+        // console.log(container);
         sceneManagerRef.current = new SceneManager(
             container,
             window.innerHeight,

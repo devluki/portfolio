@@ -1,5 +1,5 @@
 // import "./App.css";
-
+import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
 import "./styles/main.scss";
 
@@ -17,13 +17,14 @@ import Services from "./components/Services/Services";
 import StackCarousel from "./components/StackCarousel/StackCarosel";
 import { TECH_STACK_ROW } from "./utils/consts";
 import ContactForm from "./components/ContactForm/ContactForm";
-import Introdel from "./components/Intro-dlete/Intro";
+// import Introdel from "./components/Intro-dlete/Intro";
 // import Translator from "./components/Translator/Translator";
 // import LanguageToggleBtn from "./components/LanguageToggleBtn/LanguageToggleBtn";
 // import Card from "./components/Card/Card";
 
 function App() {
     const lenis = new Lenis();
+    const parent = useRef<HTMLElement | null>(null);
 
     function raf(time: number) {
         lenis.raf(time);
@@ -32,16 +33,28 @@ function App() {
 
     requestAnimationFrame(raf);
 
+    const updateHeight = (div: HTMLDivElement) => {
+        setTimeout(() => {
+            div.style.height = "auto";
+            div.style.overflowY = "auto";
+        }, 2500);
+    };
+
+    useEffect(() => {
+        const rootElement = parent.current?.parentElement as HTMLDivElement;
+        // console.log(rootElement);
+        updateHeight(rootElement);
+    }, []);
+
     return (
         <>
             <LanguageContextProvider>
-                <section style={{ position: "relative" }}>
+                <section style={{ position: "relative" }} ref={parent}>
                     <ProgressBar />
                     <Navigation />
                     <Intro />
-                    <Introdel />
+                    {/* <Introdel /> */}
                     <Visualizer />
-                    <ContactForm />
                 </section>
                 <section
                     id="projects"
@@ -74,6 +87,17 @@ function App() {
                         </h1>
                     </AnimatedTxt>
                     <StackCarousel data={TECH_STACK_ROW} />
+                </section>
+                <section>
+                    <div>
+                        <h1>
+                            <Translator translationKey="contactForm.getInTouch" />
+                        </h1>
+                        <div>
+                            <div></div>
+                            <ContactForm />
+                        </div>
+                    </div>
                 </section>
                 <footer id="footer"></footer>
             </LanguageContextProvider>

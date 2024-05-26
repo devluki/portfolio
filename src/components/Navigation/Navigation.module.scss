@@ -133,6 +133,8 @@
             rect {
                 height: 2rem;
                 width: 2rem;
+                transition: 0.5s;
+
                 @include respond(tab-land) {
                     height: 2.5rem;
                     width: 2.5rem;
