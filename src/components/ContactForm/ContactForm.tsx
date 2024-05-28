@@ -56,7 +56,7 @@ const ContactForm = () => {
 
     return (
         <div className={styles.container}>
-            <h1>{langCtx?.currentLanguage}</h1>
+            {/* <h1>{langCtx?.currentLanguage}</h1> */}
             <form
                 action="POST"
                 onSubmit={handleSubmit(submitHandler)}

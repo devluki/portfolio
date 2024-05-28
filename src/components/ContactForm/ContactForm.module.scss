@@ -5,7 +5,7 @@
     // flex-direction: column;
     width: 90vw;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
     // background-color: lightgoldenrodyellow;
     border-radius: 2rem;
     display: flex;
@@ -32,7 +32,9 @@
 
             border: none;
             border-radius: 0.5rem;
-            background-color: #282726;
+            // background-color: #282726;
+            background-color: rgba(255, 255, 255, 0.2);
+
             color: white;
             // font-size: 0.7rem;
             padding: 0.5rem 0.3rem;

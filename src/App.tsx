@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.scss";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
 import "./styles/main.scss";
@@ -39,10 +39,9 @@ function App() {
             div.style.overflowY = "auto";
         }, 2500);
     };
-
+    // Update height and overflowY values after intro animation is finished
     useEffect(() => {
         const rootElement = parent.current?.parentElement as HTMLDivElement;
-        // console.log(rootElement);
         updateHeight(rootElement);
     }, []);
 
@@ -56,10 +55,8 @@ function App() {
                     {/* <Introdel /> */}
                     <Visualizer />
                 </section>
-                <section
-                    id="projects"
-                    style={{ height: "100vh", borderTop: "2px solid red" }}
-                >
+                <section id="projects">
+                    {/* //</LanguageContextProvider>style={{ height: "100vh" }}> */}
                     <AnimatedTxt
                         animationParameters={{
                             color: "white",
@@ -68,7 +65,10 @@ function App() {
                             start: "top 50%",
                         }}
                     >
-                        <h1 className="heading-primary" id="animatedTxt">
+                        <h1
+                            className="heading-primary heading-primary--uppercase"
+                            id="animatedTxt"
+                        >
                             <Translator translationKey="section-2.animated-heading" />
                         </h1>
                     </AnimatedTxt>
@@ -88,13 +88,27 @@ function App() {
                     </AnimatedTxt>
                     <StackCarousel data={TECH_STACK_ROW} />
                 </section>
-                <section>
-                    <div>
-                        <h1>
+                <section className="section section--contact">
+                    <div className="contact">
+                        <h1 className="heading-primary">
                             <Translator translationKey="contactForm.getInTouch" />
                         </h1>
-                        <div>
-                            <div></div>
+                        <div className="form-container">
+                            <div className="form-container__txt">
+                                <p>
+                                    {/* TO DO: use <Translator/> */}
+                                    Whether you have a project in mind, need
+                                    expert advice, or just want to say hello,
+                                    I’m here to listen. Fill out the form below
+                                    with your details and message, and I’ll make
+                                    sure to get back to you swiftly.
+                                </p>
+                                <p>
+                                    {/* TO DO: use <Translator/> */}
+                                    Don’t hesitate to reach out. Your next great
+                                    idea is just a conversation away!{" "}
+                                </p>
+                            </div>
                             <ContactForm />
                         </div>
                     </div>

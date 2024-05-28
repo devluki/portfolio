@@ -66,7 +66,7 @@ export const TRANSLATIONS: Record<
             "I love to code things from scratch. Whether it’s a small business website or a complex web application, my goal is to create a frontend experience that stands out.  ",
         "services.description-backend":
             "I write clean, efficient code to power dynamic website features.  Create server-side solutions, I ensure your website performs seamlessly.   ",
-        "contactForm.getInTouch": "Lets get in touch",
+        "contactForm.getInTouch": "Get in touch!",
     },
 
     pl: {
@@ -101,6 +101,6 @@ export const TRANSLATIONS: Record<
             "Uwielbiam kodować rzeczy od zera. Niezależnie od tego, czy jest to witryna małej firmy, czy złożona aplikacja internetowa, moim celem jest stworzenie wyróżniającego się interfejsu.",
         "services.description-backend":
             "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Tworzę rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
-        "contactForm.getInTouch": "Skontaktuj się ze mną",
+        "contactForm.getInTouch": "Skontaktuj się!",
     },
 };
