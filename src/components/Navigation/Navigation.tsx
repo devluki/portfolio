@@ -46,6 +46,7 @@ const Navigation = () => {
                                     onMouseOver={changeShapeHandler}
                                     onMouseLeave={reChangeShapeHandler}
                                 />
+
                                 <rect
                                     id="svgBox--0"
                                     fill="#f9f9f9"

@@ -23,6 +23,8 @@ const TRANSLATION_KEYS: string[] = [
     "services.description-frontend",
     "services.description-backend",
     "contactForm.getInTouch",
+    "contactForm.successMessage",
+    "contactForm.returnBtn",
 ];
 
 // type KeyTuple = typeof TRANSLATION_KEYS;
@@ -67,6 +69,9 @@ export const TRANSLATIONS: Record<
         "services.description-backend":
             "I write clean, efficient code to power dynamic website features.  Create server-side solutions, I ensure your website performs seamlessly.   ",
         "contactForm.getInTouch": "Get in touch!",
+        "contactForm.successMessage":
+            "Thank you! Your message has been successfully sent.",
+        "contactForm.returnBtn": "Back",
     },
 
     pl: {
@@ -102,5 +107,7 @@ export const TRANSLATIONS: Record<
         "services.description-backend":
             "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Tworzę rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
         "contactForm.getInTouch": "Skontaktuj się!",
+        "contactForm.successMessage": "Dzięki! Twoja wiadomość została wysłana",
+        "contactForm.returnBtn": "Wstecz",
     },
 };

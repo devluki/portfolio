@@ -44,11 +44,20 @@
             // &:focus {
             //     background-color: #282726;
             // }
+
+            &:focus {
+                color: darken($primary-white, 95%);
+                background-color: rgba($primary-white, 0.75);
+            }
         }
         textarea {
             width: 100%;
             min-height: 15rem;
             resize: none;
+            &:focus {
+                color: darken($primary-white, 95%);
+                background-color: rgba($primary-white, 0.75);
+            }
         }
     }
 }
@@ -97,5 +106,43 @@
         color: $primary-black;
         box-shadow: 0 1rem 2rem rgba($primary-black, 0.15);
         transform: translateY(-2px);
+    }
+}
+
+.pathAt {
+    stroke-dasharray: 734.7;
+    stroke-dashoffset: 734.7;
+    animation: dash 2.2s linear forwards;
+}
+
+.errorOutline {
+    stroke-dasharray: 305.5;
+    stroke-dashoffset: 305.5;
+    animation: dashOutline 0.8s linear forwards;
+}
+
+.errorLine {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: dashOutline 0.8s linear forwards;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 734.7;
+        fill: transparent;
+    }
+    70% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+@keyframes dashOutline {
+    to {
+        stroke-dashoffset: 0;
     }
 }
