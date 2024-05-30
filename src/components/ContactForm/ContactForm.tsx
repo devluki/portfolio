@@ -56,6 +56,13 @@ const ContactForm = () => {
     const messagePlaceHolder =
         langCtx?.currentLanguage === "en" ? "Message" : "Wiadomość";
 
+    const isFormComplete =
+        errors.phone?.message !== undefined ||
+        errors.email?.message !== undefined ||
+        errors.firstName?.message !== undefined ||
+        errors.lastName !== undefined ||
+        errors.phone !== undefined;
+
     return (
         <div className={styles.container}>
             {/* <h1>{langCtx?.currentLanguage}</h1> */}
@@ -138,10 +145,7 @@ const ContactForm = () => {
                 </button> */}
                 <BtnTxt
                     handler1={handleSubmit(submitHandler)}
-                    isDisabled={
-                        errors.phone?.message !== undefined ||
-                        errors.email?.message !== undefined
-                    }
+                    isDisabled={isFormComplete}
                 >
                     {!isSubmitting ? "Submit" : "Loading..."}
                 </BtnTxt>

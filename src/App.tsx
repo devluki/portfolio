@@ -7,20 +7,16 @@ import LanguageContextProvider from "./store/LanguageContext";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Navigation from "./components/Navigation/Navigation";
 import Intro from "./components/intro/Intro";
-// import Intro from "./components/Intro-dlete/Intro";
+
 import AnimatedTxt from "./components/AnimatedTxt/AnimatedTxt";
 import Translator from "./components/Translator/Translator";
-// import Intro from "./components/Intro/Intro";
+
 import Visualizer from "./components/Visualizer/Visualizer";
-// import ProjectCard from "./components/ProjectCard/ProjectCard";
+
 import Services from "./components/Services/Services";
 import StackCarousel from "./components/StackCarousel/StackCarosel";
 import { TECH_STACK_ROW } from "./utils/consts";
 import ContactForm from "./components/ContactForm/ContactForm";
-// import Introdel from "./components/Intro-dlete/Intro";
-// import Translator from "./components/Translator/Translator";
-// import LanguageToggleBtn from "./components/LanguageToggleBtn/LanguageToggleBtn";
-// import Card from "./components/Card/Card";
 
 function App() {
     const lenis = new Lenis();
@@ -52,11 +48,10 @@ function App() {
                     <ProgressBar />
                     <Navigation />
                     <Intro />
-                    {/* <Introdel /> */}
+
                     <Visualizer />
                 </section>
                 <section id="projects">
-                    {/* //</LanguageContextProvider>style={{ height: "100vh" }}> */}
                     <AnimatedTxt
                         animationParameters={{
                             color: "white",
