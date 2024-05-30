@@ -25,4 +25,15 @@
         box-shadow: 0 0.5rem 1rem rgba($primary-black, 0.15);
         transform: translateY(0);
     }
+
+    &--disabled {
+        color: $primary-gray-dark;
+        background-color: rgb(96, 96, 96);
+        cursor: not-allowed;
+
+        &:hover {
+            color: $primary-gray-dark;
+            background-color: rgb(96, 96, 96);
+        }
+    }
 }

@@ -2,6 +2,7 @@ import styles from "./ContactForm.module.scss";
 import { useContext } from "react";
 import { LanguageContext } from "../../store/LanguageContext";
 import { useForm, SubmitHandler } from "react-hook-form";
+import BtnTxt from "../BtnTxt/BtnTxt";
 
 type FormFileds = {
     firstName: string;
@@ -13,6 +14,7 @@ type FormFileds = {
 
 const ContactForm = () => {
     const langCtx = useContext(LanguageContext);
+
     const {
         register,
         handleSubmit,
@@ -41,7 +43,7 @@ const ContactForm = () => {
             console.log("SUCCES, check email");
             reset();
         } else {
-            console.log("ERROR, check stackoverflow");
+            console.log("ERROR");
         }
     };
 
@@ -124,7 +126,7 @@ const ContactForm = () => {
                     aria-invalid={errors.message ? "true" : "false"}
                 ></textarea>
                 {errors.message && <p role="alert">{errors.message.message}</p>}
-                <button
+                {/* <button
                     className={styles.btn}
                     type="submit"
                     disabled={
@@ -133,7 +135,16 @@ const ContactForm = () => {
                     }
                 >
                     {!isSubmitting ? "Submit" : "Loading..."}
-                </button>
+                </button> */}
+                <BtnTxt
+                    handler1={handleSubmit(submitHandler)}
+                    isDisabled={
+                        errors.phone?.message !== undefined ||
+                        errors.email?.message !== undefined
+                    }
+                >
+                    {!isSubmitting ? "Submit" : "Loading..."}
+                </BtnTxt>
             </form>
         </div>
     );

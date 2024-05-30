@@ -4,19 +4,27 @@ import styles from "./BtnTxt.module.scss";
 
 const BtnTxt: FC<{
     children: ReactNode;
-
     handler1?: () => void;
-
     isOpen?: boolean;
-}> = ({ children, handler1 }) => {
-    const handler = () => {
+    isDisabled?: boolean;
+}> = ({ children, handler1, isDisabled }) => {
+    const handler = (e: React.MouseEvent) => {
+        e.preventDefault();
         if (!handler1) return;
         handler1();
     };
 
     return (
         <>
-            <a href="#" className={styles["btn-txt"]} onClick={handler}>
+            <a
+                href="#"
+                className={`${
+                    !isDisabled
+                        ? styles["btn-txt"]
+                        : `${styles["btn-txt"]} ${styles["btn-txt--disabled"]}`
+                }`}
+                onClick={handler}
+            >
                 {children} &rarr;
             </a>
         </>
