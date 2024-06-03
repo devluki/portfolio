@@ -40,7 +40,7 @@ app.post(
     "/api/contact",
     bodyParser.urlencoded({ extended: false }),
     (req, res) => {
-        const name = req.body.firstName + req.body.lastName;
+        const name = req.body.firstName + " " + req.body.lastName;
         const email = req.body.email;
         const message = req.body.message;
         const phone = req.body.phone;

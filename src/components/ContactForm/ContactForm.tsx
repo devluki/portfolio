@@ -64,6 +64,8 @@ const ContactForm = () => {
         setFormSubmited(true);
     };
 
+    // Extra translations for elements that can't be wrapped in Translator component
+
     const namePlaceHolder =
         langCtx?.currentLanguage === "en" ? "First name" : "Imię";
     const lasetNamePlaceHolder =
@@ -72,13 +74,19 @@ const ContactForm = () => {
         langCtx?.currentLanguage === "en" ? "Phone" : "Numer telefonu";
     const messagePlaceHolder =
         langCtx?.currentLanguage === "en" ? "Message" : "Wiadomość";
+    const btnTranslation =
+        langCtx?.currentLanguage === "en" ? "Submit" : "Wyślij";
+    const btnTranslationLoading =
+        langCtx?.currentLanguage === "en" ? "Loading..." : "Przesyłam...";
 
+    // Conditional statement for disabling button when inputs are not filled
     const isFormComplete =
         errors.phone?.message !== undefined ||
         errors.email?.message !== undefined ||
         errors.firstName?.message !== undefined ||
         errors.lastName !== undefined ||
-        errors.phone !== undefined;
+        errors.phone !== undefined ||
+        errors.message !== undefined;
 
     return (
         <div className={styles.container}>
@@ -143,7 +151,7 @@ const ContactForm = () => {
                             required: "Message is required",
                             minLength: {
                                 value: 100,
-                                message: "min length is 100",
+                                message: "Minimum length is 100",
                             },
                         })}
                         placeholder={messagePlaceHolder}
@@ -156,7 +164,8 @@ const ContactForm = () => {
                         handler1={handleSubmit(submitHandler)}
                         isDisabled={isFormComplete}
                     >
-                        {!isSubmitting ? "Submit" : "Loading..."}
+                        {/* {!isSubmitting ? "Submit" : "Loading..."} */}
+                        {!isSubmitting ? btnTranslation : btnTranslationLoading}
                     </BtnTxt>
                 </form>
             )}

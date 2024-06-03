@@ -92,16 +92,18 @@ function App() {
                             <div className="form-container__txt">
                                 <p className="text-primary">
                                     {/* TO DO: use <Translator/> */}
-                                    Whether you have a project in mind, need
-                                    expert advice, or just want to say hello,
-                                    I’m here to listen. Fill out the form below
-                                    with your details and message, and I’ll make
-                                    sure to get back to you swiftly.
+                                    Ready to start your project or have any
+                                    questions? Let's connect! Fill out the form
+                                    , and I'll get back to you as soon as
+                                    possible. Whether it's web development,
+                                    troubleshooting, or a custom solution, I'm
+                                    here to help bring your vision to life.
+                                    Looking forward to working with you!
                                 </p>
                                 <p className="text-primary">
                                     {/* TO DO: use <Translator/> */}
-                                    Don’t hesitate to reach out. Your next great
-                                    idea is just a conversation away!{" "}
+                                    Your next great idea is just a conversation
+                                    away!{" "}
                                 </p>
                             </div>
                             <ContactForm />
