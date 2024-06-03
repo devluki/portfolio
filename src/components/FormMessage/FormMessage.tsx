@@ -4,15 +4,15 @@ import BtnTxt from "../BtnTxt/BtnTxt";
 import styles from "./FormMessage.module.scss";
 
 const FormMessage = (props: {
-    formSubmited: boolean;
-    sendSuccessfully: boolean;
+    isformSubmited: boolean;
+    isSendSuccessfully: boolean;
     formHandler: () => void;
 }) => {
-    const { formSubmited, sendSuccessfully, formHandler } = props;
+    const { isformSubmited, isSendSuccessfully, formHandler } = props;
 
     return (
         <>
-            {formSubmited && sendSuccessfully && (
+            {isformSubmited && isSendSuccessfully && (
                 <>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const FormMessage = (props: {
                 </>
             )}
             {/* Error animation */}
-            {formSubmited && !sendSuccessfully && (
+            {isformSubmited && !isSendSuccessfully && (
                 <>
                     {" "}
                     <svg
@@ -65,13 +65,13 @@ const FormMessage = (props: {
                     </svg>
                 </>
             )}
-            {formSubmited && (
+            {isformSubmited && (
                 <>
                     <p className={styles["text-primary"]}>
-                        {sendSuccessfully && (
+                        {isSendSuccessfully && (
                             <Translator translationKey="contactForm.successMessage" />
                         )}
-                        {!sendSuccessfully && (
+                        {!isSendSuccessfully && (
                             <Translator translationKey="contactForm.ErrorMessage" />
                         )}
                     </p>
