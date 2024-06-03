@@ -24,6 +24,7 @@ const TRANSLATION_KEYS: string[] = [
     "services.description-backend",
     "contactForm.getInTouch",
     "contactForm.successMessage",
+    "contactForm.ErrorMessage",
     "contactForm.returnBtn",
 ];
 
@@ -71,6 +72,8 @@ export const TRANSLATIONS: Record<
         "contactForm.getInTouch": "Get in touch!",
         "contactForm.successMessage":
             "Thank you! Your message has been successfully sent.",
+        "contactForm.ErrorMessage":
+            "Something went wrong, try again in a few minutes...",
         "contactForm.returnBtn": "Back",
     },
 
@@ -108,6 +111,8 @@ export const TRANSLATIONS: Record<
             "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Tworzę rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
         "contactForm.getInTouch": "Skontaktuj się!",
         "contactForm.successMessage": "Dzięki! Twoja wiadomość została wysłana",
+        "contactForm.ErrorMessage":
+            "Coś poszło nie tak, spróbuj pownownie za kilka minut...",
         "contactForm.returnBtn": "Wstecz",
     },
 };

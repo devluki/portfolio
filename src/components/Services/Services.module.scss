@@ -6,10 +6,11 @@
     justify-content: space-around;
     align-items: center;
 
-    @include respond(tab-port) {
-        flex-direction: row;
-    }
+    // @include respond(tab-port) {
+    //     flex-direction: row;
+    // }
     @include respond(tab-land) {
+        flex-direction: row;
         margin: 0 auto;
         max-width: 130rem;
         flex: 0 0 20%;
@@ -23,6 +24,10 @@
     width: 90vw;
 
     @include respond(tab-port) {
+        max-width: 50vw;
+    }
+
+    @include respond(tab-land) {
         max-width: 20vw;
     }
 
@@ -38,6 +43,13 @@
             letter-spacing: 3px;
             font-size: 2.4rem;
             display: block;
+        }
+
+        @include respond(tab-land) {
+            flex-direction: column;
+        }
+        @include respond(screen) {
+            flex-direction: row;
         }
     }
 

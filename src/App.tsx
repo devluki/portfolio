@@ -90,7 +90,7 @@ function App() {
                         </h1>
                         <div className="form-container">
                             <div className="form-container__txt">
-                                <p>
+                                <p className="text-primary">
                                     {/* TO DO: use <Translator/> */}
                                     Whether you have a project in mind, need
                                     expert advice, or just want to say hello,
@@ -98,7 +98,7 @@ function App() {
                                     with your details and message, and I’ll make
                                     sure to get back to you swiftly.
                                 </p>
-                                <p>
+                                <p className="text-primary">
                                     {/* TO DO: use <Translator/> */}
                                     Don’t hesitate to reach out. Your next great
                                     idea is just a conversation away!{" "}

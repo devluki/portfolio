@@ -17,6 +17,9 @@
         &__txt {
             display: flex;
             flex-direction: column;
+            margin-top: 3rem;
+            padding: 2rem;
+            flex: 0 0 50%;
             // align-items: center;
         }
     }
