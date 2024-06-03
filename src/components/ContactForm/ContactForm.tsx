@@ -81,6 +81,7 @@ const ContactForm = () => {
 
     // Conditional statement for disabling button when inputs are not filled
     const isFormComplete =
+        isSubmitting ||
         errors.phone?.message !== undefined ||
         errors.email?.message !== undefined ||
         errors.firstName?.message !== undefined ||
@@ -164,7 +165,6 @@ const ContactForm = () => {
                         handler1={handleSubmit(submitHandler)}
                         isDisabled={isFormComplete}
                     >
-                        {/* {!isSubmitting ? "Submit" : "Loading..."} */}
                         {!isSubmitting ? btnTranslation : btnTranslationLoading}
                     </BtnTxt>
                 </form>

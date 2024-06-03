@@ -26,6 +26,7 @@ const TRANSLATION_KEYS: string[] = [
     "contactForm.successMessage",
     "contactForm.ErrorMessage",
     "contactForm.returnBtn",
+    "contactForm.text",
 ];
 
 // type KeyTuple = typeof TRANSLATION_KEYS;
@@ -66,7 +67,7 @@ export const TRANSLATIONS: Record<
         "services.description-tailor-made-solutions":
             "I specialize in creating custom software that is tailored to meet your specific business needs. I’m here to help, let’s Build Something Great Together!",
         "services.description-frontend":
-            "I love to code things from scratch. Whether it’s a small business website or a complex web application, my goal is to create a frontend experience that stands out.  ",
+            "I love to code things from scratch. Whether it's a small business website or a complex web application, my goal is to create a frontend experience that stands out.",
         "services.description-backend":
             "I write clean, efficient code to power dynamic website features.  Create server-side solutions, I ensure your website performs seamlessly.   ",
         "contactForm.getInTouch": "Get in touch!",
@@ -75,6 +76,10 @@ export const TRANSLATIONS: Record<
         "contactForm.ErrorMessage":
             "Something went wrong, try again in a few minutes...",
         "contactForm.returnBtn": "Back",
+        "contactForm.text":
+            "Ready to start your project or have any questions? Let's connect! Fill out the form , and I'll get back to you as soon as possible. Whether it's web development, troubleshooting, or a custom solution, I'm here to help bring your vision to life. Looking forward to working with you!",
+        "contactForm.text_bottom":
+            "Your next great idea is just a conversation away!",
     },
 
     pl: {
@@ -103,10 +108,10 @@ export const TRANSLATIONS: Record<
         "services.description":
             "Cudowny spokój ogarnął całą moją duszę, jak te słodkie wiosenne poranki, którymi cieszę się całym sercem. Jestem sama i czuję urok istnienia w tym miejscu, które zostało stworzone z myślą o błogości dusz takich jak moja.",
         "services.description-tailor-made-solutions":
-            "Specjalizuje się w tworzeniu oprogramowania skrojonego do Twoich potrzeb biznesowych. Jestem tu żeby Ci pomóc, stwórzmy razem coś wyjątkowego!",
+            "Tworzę oprogramowanie dostosowane do Twoich potrzeb biznesowych. Jestem tu, aby pomóc. Zbudujmy coś wspaniałego razem!",
 
         "services.description-frontend":
-            "Uwielbiam kodować rzeczy od zera. Niezależnie od tego, czy jest to witryna małej firmy, czy złożona aplikacja internetowa, moim celem jest stworzenie wyróżniającego się interfejsu.",
+            "Uwielbiam kodować od podstaw. Niezależnie czy to mała strona firmowa, czy skomplikowana aplikacja, moim celem jest stworzenie wyjątkowego frontend.",
         "services.description-backend":
             "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Tworzę rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
         "contactForm.getInTouch": "Skontaktuj się!",
@@ -114,5 +119,9 @@ export const TRANSLATIONS: Record<
         "contactForm.ErrorMessage":
             "Coś poszło nie tak, spróbuj pownownie za kilka minut...",
         "contactForm.returnBtn": "Wstecz",
+        "contactForm.text":
+            "Jesteś gotowy, aby rozpocząć swój projekt lub masz jakieś pytania? Napisz do mnie! Wypełnij formularz, a odezwę się do Ciebie tak szybko, jak to możliwe. Niezależnie od tego, czy chodzi o stworzenie strony internetowej, rozwiązywanie problemów, czy indywidualne rozwiązanie, jestem tu, aby pomóc urzeczywistnić Twoją wizję. Nie mogę się doczekać współpracy z Tobą!",
+        "contactForm.text_bottom":
+            "Twój wspaniały pomysł jest na wyciągnięcie ręki!",
     },
 };
