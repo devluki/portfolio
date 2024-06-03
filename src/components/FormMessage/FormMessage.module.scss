@@ -1,0 +1,37 @@
+.pathAt {
+    stroke-dasharray: 734.7;
+    stroke-dashoffset: 734.7;
+    animation: dash 2.2s linear forwards;
+}
+
+.errorOutline {
+    stroke-dasharray: 305.5;
+    stroke-dashoffset: 305.5;
+    animation: dashOutline 0.8s linear forwards;
+}
+
+.errorLine {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: dashOutline 0.8s linear forwards;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 734.7;
+        fill: transparent;
+    }
+    70% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+@keyframes dashOutline {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
