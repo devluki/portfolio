@@ -26,6 +26,7 @@ const Services = () => {
                                     <svg className={styles.card__svg}>
                                         <use xlinkHref={service.icon}></use>
                                     </svg>
+
                                     <div>
                                         {service.title.map((row, i) => (
                                             <h3
