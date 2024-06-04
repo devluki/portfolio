@@ -18,9 +18,14 @@
         &__txt {
             display: flex;
             flex-direction: column;
+            margin: 0 auto;
             margin-top: 3rem;
             padding: 2rem;
-            flex: 0 0 50%;
+            width: 90%;
+            @include respond(tab-port) {
+                flex: 0 0 50%;
+            }
+
             // align-items: center;
         }
     }

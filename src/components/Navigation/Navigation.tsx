@@ -6,9 +6,13 @@ import Translator from "../Translator/Translator";
 
 const Navigation = () => {
     const [scroll, setScroll] = useState(false);
+    const [isMenuActive, setIsMenuActive] = useState(false);
+    // Set dynamic CSS styles, navigation sticky and navigation active
     const sticky = scroll ? styles["nav--sticky"] : "";
+    const active = isMenuActive && scroll ? styles["nav--active"] : "";
     const height = window.innerHeight / 3;
 
+    // Change shape of SVG's in logo TODO: Add animation with text between <> tags
     const changeShapeHandler = (e: React.PointerEvent | React.MouseEvent) => {
         const element = e.target as HTMLElement;
         element.setAttribute("rx", "50");
@@ -20,6 +24,13 @@ const Navigation = () => {
         element.setAttribute("fill", "#f9f9f9");
     };
 
+    const activeMenuHandler = () => {
+        setIsMenuActive((prev) => !prev);
+        if (window.innerWidth > 600) {
+            setIsMenuActive(false);
+        }
+    };
+
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > height);
@@ -28,7 +39,11 @@ const Navigation = () => {
     return (
         <>
             <LanguageToggleBtn />
-            <nav className={`${styles.nav} ${sticky}`}>
+            <nav className={`${styles.nav} ${sticky} ${active}`}>
+                <div
+                    className={styles.burger}
+                    onClick={activeMenuHandler}
+                ></div>
                 <ul className={styles.nav__list}>
                     <li className={styles.nav__item}>
                         <a href="#" className={styles.nav__logo}>

@@ -18,6 +18,10 @@
     animation: dashOutline 0.8s linear forwards;
 }
 
+svg {
+    margin: 5rem 0 0 0;
+}
+
 @keyframes dash {
     0% {
         stroke-dashoffset: 734.7;

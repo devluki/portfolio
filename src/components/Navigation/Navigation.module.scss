@@ -5,11 +5,24 @@
     top: 0;
     left: 0;
     z-index: 2;
+    transition: 0.4s;
+    .burger {
+        display: none;
+    }
     &--sticky {
         position: fixed;
 
         animation: fadeInDown 0.7s ease-out;
         backdrop-filter: blur(10px);
+        .burger {
+            display: block;
+        }
+    }
+
+    &--active {
+        // top: -18rem;
+        transform: translateY(-18rem);
+        background-color: pink;
     }
     min-width: 100vw;
 
@@ -18,7 +31,7 @@
 
     @include respond(tab-land) {
         // max-width: 1300px;
-        margin: 3rem auto 0 auto;
+        margin: 0 auto 0 auto;
         padding: 2rem;
     }
 
@@ -152,6 +165,17 @@
             }
         }
     }
+}
+
+.burger {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, 0);
 }
 
 @keyframes fadeInDown {

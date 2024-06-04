@@ -83,6 +83,7 @@ function App() {
                     </AnimatedTxt>
                     <StackCarousel data={TECH_STACK_ROW} />
                 </section>
+                <section></section>
                 <section className="section section--contact">
                     <div className="contact">
                         <div className="form-container">
