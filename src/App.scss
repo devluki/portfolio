@@ -9,6 +9,7 @@
     .form-container {
         display: flex;
         flex-direction: column;
+        max-width: 130rem;
 
         @include respond(tab-port) {
             flex-direction: row;

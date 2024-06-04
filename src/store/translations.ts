@@ -53,7 +53,8 @@ export const TRANSLATIONS: Record<
         "modal.success-message": "Valid file format!",
         "section-2.animated-heading": "What I can do for you?",
         "section-2.animated-heading--2": "My Tech Toolkit",
-        "servicesCard.heading--1": "Tailor made solutions",
+        // "servicesCard.heading--1": "Tailor made solutions",
+        "servicesCard.heading--1": "Custom software",
         // "servicesCard.heading--2": "Solutions",
         "servicesCard.heading--3": "FrontEnd",
         "servicesCard.heading--4": "BackEnd",
@@ -114,13 +115,13 @@ export const TRANSLATIONS: Record<
             "Uwielbiam kodować od podstaw. Niezależnie czy to mała strona firmowa, czy skomplikowana aplikacja, moim celem jest stworzenie wyjątkowego frontend.",
         "services.description-backend":
             "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Tworzę rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
-        "contactForm.getInTouch": "Skontaktuj się!",
+        "contactForm.getInTouch": "Napisz do mnie!",
         "contactForm.successMessage": "Dzięki! Twoja wiadomość została wysłana",
         "contactForm.ErrorMessage":
             "Coś poszło nie tak, spróbuj pownownie za kilka minut...",
         "contactForm.returnBtn": "Wstecz",
         "contactForm.text":
-            "Jesteś gotowy, aby rozpocząć swój projekt lub masz jakieś pytania? Napisz do mnie! Wypełnij formularz, a odezwę się do Ciebie tak szybko, jak to możliwe. Niezależnie od tego, czy chodzi o stworzenie strony internetowej, rozwiązywanie problemów, czy indywidualne rozwiązanie, jestem tu, aby pomóc urzeczywistnić Twoją wizję. Nie mogę się doczekać współpracy z Tobą!",
+            "Jesteś gotowy, aby rozpocząć swój projekt lub masz jakieś pytania? Napisz do mnie! Wypełnij formularz, a odezwę się do Ciebie tak szybko, jak to możliwe. Niezależnie od tego, czy chodzi o stworzenie strony internetowej, usunięcie problemów w istniejącym projekcie, czy indywidualne rozwiązanie, jestem tu, aby pomóc urzeczywistnić Twoją wizję. Nie mogę się doczekać współpracy z Tobą!",
         "contactForm.text_bottom":
             "Twój wspaniały pomysł jest na wyciągnięcie ręki!",
     },

@@ -18,8 +18,12 @@ body {
         font-weight: 300;
         letter-spacing: 1.5px;
 
-        &--upercase {
+        &--uppercase {
             text-transform: uppercase;
+        }
+
+        &--bold {
+            font-weight: 700;
         }
 
         @include respond(tab-land) {

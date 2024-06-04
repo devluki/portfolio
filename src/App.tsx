@@ -85,15 +85,16 @@ function App() {
                 </section>
                 <section className="section section--contact">
                     <div className="contact">
-                        <h1 className="heading-primary">
-                            <Translator translationKey="contactForm.getInTouch" />
-                        </h1>
                         <div className="form-container">
                             <div className="form-container__txt">
+                                <h1 className="heading-primary heading-primary--bold">
+                                    <Translator translationKey="contactForm.getInTouch" />
+                                </h1>
                                 <p className="text-primary">
                                     <Translator translationKey="contactForm.text" />
                                 </p>
-                                <p className="text-primary">
+
+                                <p className="text-primary u-margin-top-huge">
                                     <Translator translationKey="contactForm.text__bottom" />
                                 </p>
                             </div>
