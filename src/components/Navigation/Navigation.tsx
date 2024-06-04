@@ -9,7 +9,9 @@ const Navigation = () => {
     const [isMenuActive, setIsMenuActive] = useState(false);
     // Set dynamic CSS styles, navigation sticky and navigation active
     const sticky = scroll ? styles["nav--sticky"] : "";
-    const active = !isMenuActive && scroll ? styles["nav--active"] : "";
+    const isMobile = window.innerWidth > 600;
+    const active =
+        !isMobile && !isMenuActive && scroll ? styles["nav--active"] : "";
     const height = window.innerHeight / 3;
 
     // Change shape of SVG's in logo TODO: Add animation with text between <> tags
@@ -26,10 +28,6 @@ const Navigation = () => {
 
     const activeMenuHandler = () => {
         setIsMenuActive((prev) => !prev);
-        if (window.innerWidth > 600) {
-            console.log("NOT ACTIVE");
-            setIsMenuActive(false);
-        }
     };
 
     useEffect(() => {

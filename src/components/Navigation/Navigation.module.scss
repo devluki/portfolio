@@ -5,6 +5,7 @@
     top: 0;
     left: 0;
     z-index: 2;
+    animation: fadeInDown 0.7s ease-out;
 
     .burger {
         display: none;
@@ -15,23 +16,23 @@
         backdrop-filter: blur(10px);
         // transition: 0.4s;
 
-        @include respond(tab-land) {
-            animation: fadeInDown 0.7s ease-out;
-        }
         .burger {
             display: block;
+            @include respond(tab-port) {
+                display: none;
+            }
         }
     }
 
     &--active {
         // top: -18rem;
-        transform: translateY(-18rem);
+        transform: translateY(-13.5rem);
         // transition: 0.4s;
         background-color: pink;
     }
     min-width: 100vw;
 
-    padding: 1rem;
+    padding: 4rem 0rem;
     margin: 0rem auto 0 auto;
 
     @include respond(tab-land) {

@@ -40,7 +40,9 @@ body {
         font-weight: 300;
         text-align: justify;
         // letter-spacing: 1.5px;
-
+        &--bold {
+            font-weight: 700;
+        }
         @include respond(tab-land) {
             font-size: 1.7rem;
         }

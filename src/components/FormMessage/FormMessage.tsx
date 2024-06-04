@@ -69,7 +69,9 @@ const FormMessage = (props: {
             )}
             {isformSubmited && (
                 <>
-                    <p className={styles["text-primary"]}>
+                    <p
+                        className={`${styles["text-primary"]} ${styles["text-primary--bold"]}`}
+                    >
                         {isSendSuccessfully && (
                             <Translator translationKey="contactForm.successMessage" />
                         )}
