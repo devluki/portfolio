@@ -9,5 +9,11 @@
 <symbol id="icon-display" viewBox="0 0 32 32">
 <path d="M0 2v20h32v-20h-32zM30 20h-28v-16h28v16zM21 24h-10l-1 4-2 2h16l-2-2z"></path>
 </symbol>
+<symbol id="icon-clear" viewBox="0 0 24 24">
+<path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+</symbol>
+<symbol id="icon-menu" viewBox="0 0 24 24">
+<path d="M3 6h18v2.016h-18v-2.016zM3 12.984v-1.969h18v1.969h-18zM3 18v-2.016h18v2.016h-18z"></path>
+</symbol>
 </defs>
 </svg>

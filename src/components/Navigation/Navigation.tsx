@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import icons from "../../assets/symbol-defs.svg";
 import styles from "./Navigation.module.scss";
 import LanguageToggleBtn from "../LanguageToggleBtn/LanguageToggleBtn";
 import Translator from "../Translator/Translator";
@@ -39,10 +39,18 @@ const Navigation = () => {
         <>
             <LanguageToggleBtn />
             <nav className={`${styles.nav} ${sticky} ${active}`}>
-                <div
-                    className={styles.burger}
-                    onClick={activeMenuHandler}
-                ></div>
+                <div className={styles.burger} onClick={activeMenuHandler}>
+                    {!isMenuActive && (
+                        <svg className={styles.burger__btn}>
+                            <use xlinkHref={`${icons}#icon-menu`}></use>
+                        </svg>
+                    )}
+                    {isMenuActive && (
+                        <svg className={styles.burger__btn}>
+                            <use xlinkHref={`${icons}#icon-clear`}></use>
+                        </svg>
+                    )}
+                </div>
                 <ul className={styles.nav__list}>
                     <li className={styles.nav__item}>
                         <a href="#" className={styles.nav__logo}>

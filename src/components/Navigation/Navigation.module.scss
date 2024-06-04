@@ -5,16 +5,17 @@
     top: 0;
     left: 0;
     z-index: 2;
-    animation: fadeInDown 0.7s ease-out;
+    @include respond(tab-port) {
+        animation: fadeInDown 0.7s ease-out;
+    }
 
     .burger {
         display: none;
     }
     &--sticky {
         position: fixed;
-
+        transition: 0.4s all;
         backdrop-filter: blur(10px);
-        // transition: 0.4s;
 
         .burger {
             display: block;
@@ -25,10 +26,7 @@
     }
 
     &--active {
-        // top: -18rem;
         transform: translateY(-13.5rem);
-        // transition: 0.4s;
-        background-color: pink;
     }
     min-width: 100vw;
 
@@ -175,13 +173,20 @@
 
 .burger {
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0.8rem;
     left: 50%;
-    width: 3rem;
-    height: 3rem;
-    background-color: red;
+    width: 4rem;
+    height: 4rem;
+    // background-color: red;
     border-radius: 50%;
     transform: translate(-50%, 0);
+
+    &__btn {
+        width: 100%;
+        height: 100%;
+        fill: $primary-white;
+        transition: 0.4s;
+    }
 }
 
 @keyframes fadeInDown {
