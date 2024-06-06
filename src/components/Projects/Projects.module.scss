@@ -4,7 +4,7 @@
     max-width: 400px;
     max-height: 500px;
     margin: 0 auto;
-    border: 2px solid red;
+    border: 2px solid $primary-white;
     border-radius: 1.5rem;
     display: grid;
     grid-template: min-content 2fr 2fr 1fr 1fr/ 1fr;
@@ -68,6 +68,23 @@
             border: 2px solid $primary-white;
             border-radius: 2rem;
             padding: 1rem 3rem;
+            transition: 0.4s all;
+            font-weight: bold;
+            letter-spacing: 2px;
+            &:hover {
+                background-color: $primary-white;
+                color: $primary-black;
+                transform: translateY(-2px);
+                box-shadow: 0.1rem 2rem 3rem $primary-black;
+            }
+        }
+
+        .github__btn {
+            transition: 0.4s all;
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0.1rem 2rem 5rem $primary-black;
+            }
         }
 
         .card__svg {

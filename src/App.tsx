@@ -103,7 +103,7 @@ function App() {
                             <Translator translationKey="navigation.projects" />
                         </h1>
                     </AnimatedTxt>
-                    <Projects />
+                    <Projects id="idd" />
                 </section>
                 <section className="section section--contact">
                     <div className="contact">
