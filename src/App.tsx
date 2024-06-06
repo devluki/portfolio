@@ -17,6 +17,7 @@ import Services from "./components/Services/Services";
 import StackCarousel from "./components/StackCarousel/StackCarosel";
 import { TECH_STACK_ROW } from "./utils/consts";
 import ContactForm from "./components/ContactForm/ContactForm";
+import Projects from "./components/Projects/Projects";
 
 function App() {
     const lenis = new Lenis();
@@ -77,13 +78,33 @@ function App() {
                             start: "top 50%",
                         }}
                     >
-                        <h1 className="heading-primary" id="animatedTxt">
+                        <h1
+                            className="heading-primary heading-primary--uppercase"
+                            id="animatedTxt"
+                        >
                             <Translator translationKey="section-2.animated-heading--2" />
                         </h1>
                     </AnimatedTxt>
                     <StackCarousel data={TECH_STACK_ROW} />
                 </section>
-                <section></section>
+                <section id="projects2">
+                    <AnimatedTxt
+                        animationParameters={{
+                            color: "white",
+                            isScrollTrigger: true,
+                            triggerId: "#projects2",
+                            start: "top 80%",
+                        }}
+                    >
+                        <h1
+                            className="heading-primary heading-primary--uppercase"
+                            id="animatedTxt"
+                        >
+                            <Translator translationKey="navigation.projects" />
+                        </h1>
+                    </AnimatedTxt>
+                    <Projects />
+                </section>
                 <section className="section section--contact">
                     <div className="contact">
                         <div className="form-container">

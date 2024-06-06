@@ -5,9 +5,10 @@
     top: 0;
     left: 0;
     z-index: 2;
-    @include respond(tab-port) {
-        animation: fadeInDown 0.7s ease-out;
-    }
+    min-width: 100vw;
+
+    padding: 4rem 0rem;
+    margin: 0rem auto 0 auto;
 
     .burger {
         display: none;
@@ -16,6 +17,9 @@
         position: fixed;
         transition: 0.4s all;
         backdrop-filter: blur(10px);
+        @include respond(tab-port) {
+            animation: fadeInDown 0.7s ease-out;
+        }
 
         .burger {
             display: block;
@@ -28,10 +32,10 @@
     &--active {
         transform: translateY(-13.5rem);
     }
-    min-width: 100vw;
 
-    padding: 4rem 0rem;
-    margin: 0rem auto 0 auto;
+    @include respond(tab-port) {
+        padding: 1.7rem 0 1rem 0;
+    }
 
     @include respond(tab-land) {
         // max-width: 1300px;
@@ -173,11 +177,11 @@
 
 .burger {
     position: absolute;
-    bottom: 0.8rem;
+    bottom: 0.45rem;
     left: 50%;
     width: 4rem;
     height: 4rem;
-    // background-color: red;
+
     border-radius: 50%;
     transform: translate(-50%, 0);
 

@@ -20,7 +20,7 @@
             flex-direction: column;
             margin: 0 auto;
             margin-top: 3rem;
-            padding: 2rem;
+            padding: 2rem 1rem;
             width: 90%;
             @include respond(tab-port) {
                 flex: 0 0 50%;
