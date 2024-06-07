@@ -1,0 +1,17 @@
+@import "../../styles/main.scss";
+
+.project {
+    width: 90%;
+    margin: 0 auto;
+    border: 0.2rem solid $primary-white;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template: min-content 2fr 2fr 1fr 1fr/ 1fr;
+    grid-gap: 0.5rem;
+    padding: 1rem;
+
+    @include respond(tab-port) {
+        max-width: 40rem;
+        max-height: 50rem;
+    }
+}

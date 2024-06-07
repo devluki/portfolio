@@ -2,6 +2,7 @@
 
 import spriteIcons from "../assets/sprite.svg";
 import spriteIconsDefs from "../assets/symbol-defs.svg";
+import projectIcons from "../assets/projects_logos.svg";
 
 export const SOFTWARE = [
     { name: "Web Apps", icon: `${spriteIcons}#icon-window` },
@@ -43,6 +44,39 @@ export const SERVICES = [
         title: ["servicesCard.heading--4"],
         icon: `${spriteIconsDefs}#icon-cogs`,
         description: "services.description-backend",
+    },
+];
+
+export const PROJECTS = [
+    {
+        projectName: "Kejtrip",
+        releaseYear: "2022",
+        icon: `${projectIcons}#logo_kejtrip`,
+        description: "project.kejtrip",
+        stack: [
+            `${spriteIcons}#icon-html-five`,
+            `${spriteIcons}#icon-css3`,
+            `${spriteIcons}#icon-javascript1`,
+            `${spriteIcons}#icon-node-dot-js`,
+            `${spriteIcons}#icon-mongodb`,
+        ],
+        liveLink: "https://kejtrip.pl/",
+        githubLink: "https://github.com/devluki/KejTrip",
+    },
+    {
+        projectName: "Portfolio",
+        releaseYear: "2024",
+        icon: `${projectIcons}#logo_portfolio`,
+        description: "project.portfolio",
+        stack: [
+            `${spriteIcons}#icon-typescript`,
+            `${spriteIcons}#icon-react`,
+
+            `${spriteIcons}#icon-sass`,
+            `${spriteIcons}#icon-node-dot-js`,
+        ],
+        liveLink: "https://kejtrip.pl/",
+        githubLink: "https://github.com/devluki/portfolio",
     },
 ];
 

@@ -1,96 +1,161 @@
 @import "../../styles/main.scss";
 
-.project {
-    max-width: 400px;
-    max-height: 500px;
-    margin: 0 auto;
-    border: 2px solid $primary-white;
-    border-radius: 1.5rem;
-    display: grid;
-    grid-template: min-content 2fr 2fr 1fr 1fr/ 1fr;
-    grid-gap: 0.5rem;
-    padding: 1rem;
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
-    .card__svg {
-        fill: white;
-    }
-
-    &__data {
+    .card__container {
         display: flex;
-        justify-content: space-between;
-        font-style: italic;
-        font-size: 2rem;
+        flex-direction: column;
+        width: 100%;
+        max-width: 130rem;
+        margin: 0 auto;
 
-        // background-color: floralwhite;
-    }
-
-    &__logo {
-        // background-color: pink;
-
-        .card__svg {
-            fill: white;
+        @include respond(tab-land) {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
         }
-    }
 
-    &__description {
-        padding: 0.5rem;
-        text-align: justify;
-        font-size: 1.5rem;
-        // font-size:$default ;
-        // background-color: greenyellow;
-    }
+        .project {
+            // max-width: 400px;
+            // max-height: 50rem;
+            // width: 70%;
+            // margin: 0 auto;
+            // border: 0.2rem solid $primary-white;
+            // border-radius: 1.5rem;
+            // display: grid;
+            // grid-template: min-content 2fr 2fr 1fr 1fr/ 1fr;
+            // grid-gap: 0.5rem;
+            // padding: 1rem;
 
-    &__stack {
-        // background-color: blue;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
+            // @include respond(tab-port) {
+            //     max-width: 40rem;
+            //     max-height: 50rem;
+            // }
 
-        .card__svg {
-            fill: white;
-            width: 4rem;
-            height: 4rem;
-        }
-    }
-
-    &__links {
-        // background-color: gray;
-        display: flex;
-        justify-content: space-around;
-        // flex-direction: column;
-        align-items: center;
-
-        .link__btn {
-            color: $primary-white;
-            font-size: 1.5rem;
-            text-decoration: none;
-            border: 2px solid $primary-white;
-            border-radius: 2rem;
-            padding: 1rem 3rem;
-            transition: 0.4s all;
-            font-weight: bold;
-            letter-spacing: 2px;
-            &:hover {
-                background-color: $primary-white;
-                color: $primary-black;
-                transform: translateY(-2px);
-                box-shadow: 0.1rem 2rem 3rem $primary-black;
+            .card__svg {
+                fill: white;
+                svg {
+                    width: 10rem;
+                    height: 10rem;
+                    aspect-ratio: 1;
+                }
             }
-        }
 
-        .github__btn {
-            transition: 0.4s all;
-            &:hover {
-                transform: translateY(-2px);
-                box-shadow: 0.1rem 2rem 5rem $primary-black;
+            &__data {
+                display: flex;
+                justify-content: space-between;
+                font-style: italic;
+                font-size: 2rem;
+                font-weight: bold;
+
+                &--left {
+                    text-transform: uppercase;
+                }
+
+                // background-color: floralwhite;
             }
-        }
 
-        .card__svg {
-            fill: white;
-            width: 4rem;
-            height: 4rem;
+            &__logo {
+                // background-color: pink;
+
+                .card__svg {
+                    fill: white;
+                }
+            }
+
+            &__description {
+                padding: 0.5rem;
+                text-align: justify;
+                font-size: 1.5rem;
+                // font-size:$default ;
+                // background-color: greenyellow;
+            }
+
+            &__stack {
+                // background-color: blue;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+
+                .card__svg {
+                    fill: white;
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+
+            &__links {
+                // background-color: gray;
+                display: flex;
+                justify-content: space-around;
+                // flex-direction: column;
+                align-items: center;
+
+                .link__btn {
+                    color: $primary-white;
+                    font-size: 1.5rem;
+                    text-decoration: none;
+                    border: 2px solid $primary-white;
+                    border-radius: 2rem;
+                    padding: 1rem 3rem;
+                    transition: 0.4s all;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    &:hover {
+                        background-color: $primary-white;
+                        color: $primary-black;
+                        transform: translateY(-2px);
+                        box-shadow: 0.1rem 2rem 3rem $primary-black;
+                    }
+                }
+
+                .github__btn {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: $primary-white;
+                    font-size: 1.5rem;
+                    letter-spacing: 2px;
+                    text-decoration: none;
+                    transition: 0.4s all;
+                    font-weight: bold;
+
+                    border: 2px solid $primary-white;
+                    border-radius: 2rem;
+                    padding: 1rem 3rem;
+
+                    &:hover {
+                        // transform: translateY(-2px);
+                        // box-shadow: 0.1rem 2rem 5rem $primary-black;
+                        background-color: $primary-white;
+                        color: $primary-black;
+                        transform: translateY(-2px);
+                        box-shadow: 0.1rem 2rem 3rem $primary-black;
+                    }
+
+                    &:hover .card__svg {
+                        fill: $primary-black;
+                    }
+                }
+
+                .card__svg {
+                    margin-left: 1.2rem;
+                    fill: white;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    transition: 0.4s;
+
+                    &:hover {
+                        fill: $primary-black;
+                    }
+                }
+            }
         }
     }
 }

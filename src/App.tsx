@@ -16,8 +16,12 @@ import Visualizer from "./components/Visualizer/Visualizer";
 import Services from "./components/Services/Services";
 import StackCarousel from "./components/StackCarousel/StackCarosel";
 import { TECH_STACK_ROW } from "./utils/consts";
-import ContactForm from "./components/ContactForm/ContactForm";
 import Projects from "./components/Projects/Projects";
+import ContactForm from "./components/ContactForm/ContactForm";
+
+// import Porject from "./components/Project/Project";
+// import POJECTS from "./utils/consts.ts";
+// import Project from "./components/Project/Project";
 
 function App() {
     const lenis = new Lenis();
@@ -103,7 +107,8 @@ function App() {
                             <Translator translationKey="navigation.projects" />
                         </h1>
                     </AnimatedTxt>
-                    <Projects id="idd" />
+                    <Projects />
+                    {/* <Project id="idd" /> */}
                 </section>
                 <section className="section section--contact">
                     <div className="contact">

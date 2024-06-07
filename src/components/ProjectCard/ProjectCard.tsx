@@ -1,22 +1,55 @@
-import styles from "./ProjectCard.module.scss";
+import { useRef, ReactNode } from "react";
+import gsap from "gsap";
 
-const ProjectCard = () => {
+import styles from "./Projects.module.scss";
+// import icons from "../../assets/sprite.svg";
+// import kejtrip from "../../assets/kejtrip.svg";
+// import { POJECTS } from "../../utils/consts";
+
+const ProjectCard = (props: { id: string; children: ReactNode }) => {
+    const { id, children } = props;
+    const itemRef = useRef<HTMLDivElement | null>(null);
+    const onMouseMoveHandler = (e: React.MouseEvent) => {
+        const itemHeight = itemRef.current!.clientHeight;
+        const itemWidth = itemRef.current!.clientWidth;
+        const boundingRect = itemRef.current?.getBoundingClientRect();
+
+        const x = (e.clientX - boundingRect!.left) / itemWidth;
+        const y = (e.clientY - boundingRect!.top) / itemHeight;
+
+        const rX = -1 * (x - 0.5) * 15; //* 40;
+        const rY = (y - 0.5) * 15; //* 40;
+
+        gsap.to(`#${id}`, {
+            background: `radial-gradient(farthest-corner circle at ${
+                100 * x
+            }% ${100 * y}%, rgba(${25 + 10 * rX},${
+                230 - 10 * rY
+            },${255},.15) 10%, transparent 90%)`,
+            duration: 0.71,
+        });
+    };
+
+    const onMouseLeaveHandler = () => {
+        gsap.to(`#${id}`, {
+            background: `transparent`,
+            // background: "rgba(55,55,55,.6)",
+            duration: 0.71,
+            delay: 0.15,
+        });
+    };
+
     return (
-        <div className={styles.card}>
-            <p className={styles.card__data}>2000</p>
-            <h3 className={styles.card__heading}>Project</h3>
-            <div className={styles["card__img-box"]}>
-                <div className={styles.card__img}></div>
+        <div className={styles.container}>
+            <div
+                className={styles.project}
+                id={id}
+                ref={itemRef}
+                onMouseMove={onMouseMoveHandler}
+                onMouseLeave={onMouseLeaveHandler}
+            >
+                {children}
             </div>
-            <p className={styles.card__desc}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam nemo cum dolor voluptas excepturi? Commodi, ipsum
-                alias fugit sequi numquam quas magnam ratione animi? Porro qui
-                est amet voluptas quidem?
-            </p>
-            <a href="#" className={styles.BtnTxt}>
-                View details
-            </a>
         </div>
     );
 };
