@@ -62,7 +62,9 @@ const Projects = () => {
                     </ProjectCard>
                 ))}
             </div>
-            <BtnTxt>More projects</BtnTxt>
+            <BtnTxt href={"https://github.com/devluki"}>
+                More projects...
+            </BtnTxt>
         </div>
     );
 };

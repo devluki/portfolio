@@ -7,9 +7,14 @@ const BtnTxt: FC<{
     handler1?: () => void;
     isOpen?: boolean;
     isDisabled?: boolean;
-}> = ({ children, handler1, isDisabled }) => {
+    href?: string;
+}> = ({ children, handler1, isDisabled, href }) => {
     const handler = (e: React.MouseEvent) => {
-        e.preventDefault();
+        if (!href) {
+            console.log("Prevent Default");
+            e.preventDefault();
+        }
+
         if (!handler1) return;
         handler1();
     };
@@ -17,7 +22,7 @@ const BtnTxt: FC<{
     return (
         <>
             <a
-                href="#"
+                href={href ? href : "#"}
                 className={`${
                     !isDisabled
                         ? styles["btn-txt"]
