@@ -5,7 +5,7 @@ type Language = "pl" | "en";
 
 interface LanguageState {
     currentLanguage: Language;
-    //toggleLanguage: () => void;
+
     toggleLanguage: (lang: Language) => void;
     getTranslatedValue: (key: string) => string;
 }

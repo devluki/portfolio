@@ -73,10 +73,14 @@ const FormMessage = (props: {
                         className={`${styles["text-primary"]} ${styles["text-primary--bold"]}`}
                     >
                         {isSendSuccessfully && (
-                            <Translator translationKey="contactForm.successMessage" />
+                            <span className={styles.success}>
+                                <Translator translationKey="contactForm.successMessage" />
+                            </span>
                         )}
                         {!isSendSuccessfully && (
-                            <Translator translationKey="contactForm.ErrorMessage" />
+                            <span className={styles.error}>
+                                <Translator translationKey="contactForm.ErrorMessage" />
+                            </span>
                         )}
                     </p>
                     <BtnTxt handler1={formHandler}>

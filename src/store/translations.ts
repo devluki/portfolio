@@ -27,6 +27,10 @@ const TRANSLATION_KEYS: string[] = [
     "contactForm.ErrorMessage",
     "contactForm.returnBtn",
     "contactForm.text",
+    "projects.buttonGoLive",
+    "projects.buttonGithub",
+    "projects.description",
+    "projects.buttonGoCode",
 ];
 
 // type KeyTuple = typeof TRANSLATION_KEYS;
@@ -81,6 +85,9 @@ export const TRANSLATIONS: Record<
             "Ready to start your project or have any questions? Let's connect! Fill out the form , and I'll get back to you as soon as possible. Whether it's web development, troubleshooting, or a custom solution, I'm here to help bring your vision to life. Looking forward to working with you!",
         "contactForm.text_bottom":
             "Your next great idea is just a conversation away!",
+        "projects.buttonGoLive": "Life version",
+        "projects.buttonGoCode": "Code",
+        "projects.buttonGithub": "More projects...",
     },
 
     pl: {
@@ -124,5 +131,8 @@ export const TRANSLATIONS: Record<
             "Jesteś gotowy, aby rozpocząć swój projekt lub masz jakieś pytania? Napisz do mnie! Wypełnij formularz, a odezwę się do Ciebie tak szybko, jak to możliwe. Niezależnie od tego, czy chodzi o stworzenie strony internetowej, usunięcie problemów w istniejącym projekcie, czy indywidualne rozwiązanie, jestem tu, aby pomóc urzeczywistnić Twoją wizję. Nie mogę się doczekać współpracy z Tobą!",
         "contactForm.text_bottom":
             "Twój wspaniały pomysł jest na wyciągnięcie ręki!",
+        "projects.buttonGoLive": "Idź do",
+        "projects.buttonGoCode": "Kod",
+        "projects.buttonGithub": "Więcej projektów...",
     },
 };

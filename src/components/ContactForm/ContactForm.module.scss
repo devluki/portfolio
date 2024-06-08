@@ -1,11 +1,9 @@
 @import "../../styles//main.scss";
 
 .container {
-    // display: flex;
-    // flex-direction: column;
     width: 90%;
 
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(0.3px);
     // background-color: lightgoldenrodyellow;
     border-radius: 2rem;
     display: flex;

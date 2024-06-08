@@ -11,7 +11,7 @@ const Footer = () => {
                     </svg>
                 </div>
                 <p className={styles.reserved}>
-                    &reg; 2024. All rigts reserved
+                    &reg; 2024. All rigts reserved.
                 </p>
             </div>
         </footer>

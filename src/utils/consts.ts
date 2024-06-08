@@ -49,21 +49,6 @@ export const SERVICES = [
 
 export const PROJECTS = [
     {
-        projectName: "Kejtrip",
-        releaseYear: "2022",
-        icon: `${projectIcons}#logo_kejtrip`,
-        description: "project.kejtrip",
-        stack: [
-            `${spriteIcons}#icon-html-five`,
-            `${spriteIcons}#icon-css3`,
-            `${spriteIcons}#icon-javascript1`,
-            `${spriteIcons}#icon-node-dot-js`,
-            `${spriteIcons}#icon-mongodb`,
-        ],
-        liveLink: "https://kejtrip.pl/",
-        githubLink: "https://github.com/devluki/KejTrip",
-    },
-    {
         projectName: "Portfolio",
         releaseYear: "2024",
         icon: `${projectIcons}#logo_portfolio`,
@@ -77,6 +62,21 @@ export const PROJECTS = [
         ],
         liveLink: "https://kejtrip.pl/",
         githubLink: "https://github.com/devluki/portfolio",
+    },
+    {
+        projectName: "Kejtrip",
+        releaseYear: "2022",
+        icon: `${projectIcons}#logo_kejtrip`,
+        description: "project.kejtrip",
+        stack: [
+            `${spriteIcons}#icon-html-five`,
+            `${spriteIcons}#icon-css3`,
+            `${spriteIcons}#icon-javascript1`,
+            `${spriteIcons}#icon-node-dot-js`,
+            `${spriteIcons}#icon-mongodb`,
+        ],
+        liveLink: "https://kejtrip.pl/",
+        githubLink: "https://github.com/devluki/KejTrip",
     },
 ];
 

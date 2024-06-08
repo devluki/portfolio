@@ -4,6 +4,7 @@ import { PROJECTS } from "../../utils/consts";
 import styles from "./Projects.module.scss";
 import icons from "../../assets/sprite.svg";
 import BtnTxt from "../BtnTxt/BtnTxt";
+import Translator from "../Translator/Translator";
 
 const Projects = () => {
     return (
@@ -44,14 +45,14 @@ const Projects = () => {
                                 href={proj.liveLink}
                                 className={styles.link__btn}
                             >
-                                Life version
+                                <Translator translationKey="projects.buttonGoLive" />
                             </a>
 
                             <a
                                 href={proj.githubLink}
                                 className={styles.github__btn}
                             >
-                                Code{" "}
+                                <Translator translationKey="projects.buttonGoCode" />{" "}
                                 <svg className={styles.card__svg}>
                                     <use
                                         xlinkHref={`${icons}#icon-github`}
@@ -63,7 +64,7 @@ const Projects = () => {
                 ))}
             </div>
             <BtnTxt href={"https://github.com/devluki"}>
-                More projects...
+                <Translator translationKey="projects.buttonGithub" />
             </BtnTxt>
         </div>
     );
