@@ -18,6 +18,7 @@ import StackCarousel from "./components/StackCarousel/StackCarosel";
 import { TECH_STACK_ROW } from "./utils/consts";
 import Projects from "./components/Projects/Projects";
 import ContactForm from "./components/ContactForm/ContactForm";
+import Footer from "./components/Footer/Footer";
 
 // import Porject from "./components/Project/Project";
 // import POJECTS from "./utils/consts.ts";
@@ -129,7 +130,8 @@ function App() {
                         </div>
                     </div>
                 </section>
-                <footer id="footer"></footer>
+                {/* <footer id="footer"></footer> */}
+                <Footer />
             </LanguageContextProvider>
         </>
     );

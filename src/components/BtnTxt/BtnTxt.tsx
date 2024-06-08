@@ -11,7 +11,6 @@ const BtnTxt: FC<{
 }> = ({ children, handler1, isDisabled, href }) => {
     const handler = (e: React.MouseEvent) => {
         if (!href) {
-            console.log("Prevent Default");
             e.preventDefault();
         }
 

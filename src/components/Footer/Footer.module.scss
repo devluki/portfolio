@@ -1,0 +1,22 @@
+@import "../../styles/main.scss";
+
+.footer {
+    // border-top: 2px solid $primary-white;
+
+    padding: 1.5rem 0;
+    margin-top: 15rem;
+    // https://hype4.academy/tools/glassmorphism-generator
+    background: rgba(255, 255, 255, 0);
+
+    box-shadow: 0 4px 8px 0 rgba(206, 206, 206, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+    .footer__svg {
+        fill: $primary-white;
+        height: 2rem;
+        width: 2rem;
+    }
+}

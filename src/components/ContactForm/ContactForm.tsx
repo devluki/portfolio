@@ -135,7 +135,7 @@ const ContactForm = () => {
                     <input
                         className={styles.form__input}
                         {...register("phone", {
-                            required: "Phone number is required",
+                            // required: "Phone number is required",
                             pattern: {
                                 value: /^(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/,
                                 message: "Please eneter a valid number",
