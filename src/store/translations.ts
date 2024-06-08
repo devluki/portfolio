@@ -29,7 +29,8 @@ const TRANSLATION_KEYS: string[] = [
     "contactForm.text",
     "projects.buttonGoLive",
     "projects.buttonGithub",
-    "projects.description",
+    "projects.description-kejtrip",
+    "projects.description-portfolio",
     "projects.buttonGoCode",
 ];
 
@@ -86,6 +87,10 @@ export const TRANSLATIONS: Record<
         "contactForm.text_bottom":
             "Your next great idea is just a conversation away!",
         "projects.buttonGoLive": "Life version",
+        "projects.description-kejtrip":
+            "Travel blog written in Node.js (Express), using EJS, MongoDB & Mongoose. With content management system created from scratch (CRUD) - articles, maps, routes traveled. With the functionality of commenting on articles and adding likes.",
+        "projects.description-portfolio":
+            "Portfolio website written in TypeScipt and React, with interactive 3D animation (Three.js), music player and server-side messaging (Node.js and NodeMailer).",
         "projects.buttonGoCode": "Code",
         "projects.buttonGithub": "More projects...",
     },
@@ -131,6 +136,11 @@ export const TRANSLATIONS: Record<
             "Jesteś gotowy, aby rozpocząć swój projekt lub masz jakieś pytania? Napisz do mnie! Wypełnij formularz, a odezwę się do Ciebie tak szybko, jak to możliwe. Niezależnie od tego, czy chodzi o stworzenie strony internetowej, usunięcie problemów w istniejącym projekcie, czy indywidualne rozwiązanie, jestem tu, aby pomóc urzeczywistnić Twoją wizję. Nie mogę się doczekać współpracy z Tobą!",
         "contactForm.text_bottom":
             "Twój wspaniały pomysł jest na wyciągnięcie ręki!",
+
+        "projects.description-kejtrip":
+            "Blog podróżniczy napisany w Node.js (express), przy użyciu EJS, MongoDB & Mongoose. Z autorskim systemem do zarządzania treściami (CRUD) - artykułami, mapami, przebytymi trasami. Z funkcjonalnością komentowania artykułów i dodawania polubień.",
+        "projects.description-portfolio":
+            "Strona portfolio napisana w TypeScipt i React, z interaktywną animacją 3d (Three.js),  odtwarzaczem muzyki oraz obsługą wiadomości po stronie servera (Node.js i NodeMailer).",
         "projects.buttonGoLive": "Idź do",
         "projects.buttonGoCode": "Kod",
         "projects.buttonGithub": "Więcej projektów...",

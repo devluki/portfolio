@@ -26,11 +26,7 @@ const Projects = () => {
                             </svg>
                         </div>
                         <div className={styles.project__description}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Soluta quibusdam nemo labore alias ut fuga
-                            ipsum praesentium, dolor reprehenderit ullam
-                            asperiores incidunt voluptatem fugiat! Commodi
-                            reprehenderit corporis aspernatur dolorum in.
+                            <Translator translationKey={proj.description} />
                         </div>
                         <div className={styles.project__stack}>
                             {proj.stack.map((stack, i) => (

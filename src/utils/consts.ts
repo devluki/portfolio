@@ -52,7 +52,7 @@ export const PROJECTS = [
         projectName: "Portfolio",
         releaseYear: "2024",
         icon: `${projectIcons}#logo_portfolio`,
-        description: "project.portfolio",
+        description: "projects.description-portfolio",
         stack: [
             `${spriteIcons}#icon-typescript`,
             `${spriteIcons}#icon-react`,
@@ -67,7 +67,7 @@ export const PROJECTS = [
         projectName: "Kejtrip",
         releaseYear: "2022",
         icon: `${projectIcons}#logo_kejtrip`,
-        description: "project.kejtrip",
+        description: "projects.description-kejtrip",
         stack: [
             `${spriteIcons}#icon-html-five`,
             `${spriteIcons}#icon-css3`,
