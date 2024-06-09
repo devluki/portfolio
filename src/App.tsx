@@ -50,14 +50,22 @@ function App() {
     return (
         <>
             <LanguageContextProvider>
-                <section style={{ position: "relative" }} ref={parent}>
+                <section
+                    className="section section--hero"
+                    ref={parent}
+                    id="section--hero"
+                >
                     <ProgressBar />
                     <Navigation />
                     <Intro />
 
                     <Visualizer />
                 </section>
-                <section id="projects">
+
+                <section
+                    className="section section--services"
+                    id="section--services"
+                >
                     <AnimatedTxt
                         animationParameters={{
                             color: "white",
@@ -67,7 +75,7 @@ function App() {
                         }}
                     >
                         <h1
-                            className="heading-primary heading-primary--uppercase"
+                            className="heading-primary heading-primary--uppercase u-margin-top-medium u-margin-bottom-medium"
                             id="animatedTxt"
                         >
                             <Translator translationKey="section-2.animated-heading" />
@@ -84,7 +92,7 @@ function App() {
                         }}
                     >
                         <h1
-                            className="heading-primary heading-primary--uppercase"
+                            className="heading-primary heading-primary--uppercase u-margin-top-medium u-margin-bottom-medium"
                             id="animatedTxt"
                         >
                             <Translator translationKey="section-2.animated-heading--2" />
@@ -92,7 +100,11 @@ function App() {
                     </AnimatedTxt>
                     <StackCarousel data={TECH_STACK_ROW} />
                 </section>
-                <section id="projects2">
+
+                <section
+                    className="section section--projects"
+                    id="section--projects"
+                >
                     <AnimatedTxt
                         animationParameters={{
                             color: "white",
@@ -109,9 +121,12 @@ function App() {
                         </h1>
                     </AnimatedTxt>
                     <Projects />
-                    {/* <Project id="idd" /> */}
                 </section>
-                <section className="section section--contact">
+
+                <section
+                    className="section section--contact"
+                    id="section--contact"
+                >
                     <div className="contact">
                         <div className="form-container">
                             <div className="form-container__txt">
@@ -130,7 +145,7 @@ function App() {
                         </div>
                     </div>
                 </section>
-                {/* <footer id="footer"></footer> */}
+
                 <Footer />
             </LanguageContextProvider>
         </>

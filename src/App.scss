@@ -1,4 +1,25 @@
 @import "./styles/main.scss";
+
+.section {
+    position: relative;
+
+    &--services {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        border: 2px red solid;
+    }
+
+    &--projects {
+        min-height: 100vh;
+        border: 2px green solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
 .section--contact {
     display: flex;
     justify-content: center;

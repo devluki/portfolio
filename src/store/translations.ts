@@ -88,9 +88,9 @@ export const TRANSLATIONS: Record<
             "Your next great idea is just a conversation away!",
         "projects.buttonGoLive": "Life version",
         "projects.description-kejtrip":
-            "Travel blog written in Node.js (Express), using EJS, MongoDB & Mongoose. With content management system created from scratch (CRUD) - articles, maps, routes traveled. With the functionality of commenting on articles and adding likes.",
+            "Travel blog written in Node.js (Express), using EJS, MongoDB & Mongoose. With content management system created from scratch (CRUD) - articles, maps, routes. With the functionality of commenting on articles and adding likes.",
         "projects.description-portfolio":
-            "Portfolio website written in TypeScipt and React, with interactive 3D animation (Three.js), music player and server-side messaging (Node.js and NodeMailer).",
+            "Portfolio website written in TypeScript and React, with interactive 3D animation (Three.js), scroll animations (GSAP), music player and visulaser + server-side mailing (Node.js and NodeMailer).",
         "projects.buttonGoCode": "Code",
         "projects.buttonGithub": "More projects...",
     },
@@ -140,7 +140,7 @@ export const TRANSLATIONS: Record<
         "projects.description-kejtrip":
             "Blog podróżniczy napisany w Node.js (express), przy użyciu EJS, MongoDB & Mongoose. Z autorskim systemem do zarządzania treściami (CRUD) - artykułami, mapami, przebytymi trasami. Z funkcjonalnością komentowania artykułów i dodawania polubień.",
         "projects.description-portfolio":
-            "Strona portfolio napisana w TypeScipt i React, z interaktywną animacją 3d (Three.js),  odtwarzaczem muzyki oraz obsługą wiadomości po stronie servera (Node.js i NodeMailer).",
+            "Strona portfolio napisana w TypeScript i React, z interaktywną animacją 3D (Three.js), animacjami przewijania (GSAP), odtwarzaczem muzyki i wizualizacją + mailingiem po stronie serwera (Node.js i NodeMailer).",
         "projects.buttonGoLive": "Idź do",
         "projects.buttonGoCode": "Kod",
         "projects.buttonGithub": "Więcej projektów...",
