@@ -28,7 +28,9 @@ const Visualizer = () => {
     const container = useRef<HTMLDivElement | null>(null);
 
     const [url, setUrl] = useState(
-        "../../../public/energetic-hip-hop-8303.ogg",
+        // "/public/energetic-hip-hop-8303.ogg",
+        // "../../../public/energetic-hip-hop-8303.ogg",
+        "./rap-beats-music-161432.ogg",
     );
 
     const [isPlaying, setIsPlaying] = useState(false);
@@ -66,10 +68,10 @@ const Visualizer = () => {
 
         const timeLineScroll = gsap.timeline({
             scrollTrigger: {
-                trigger: "#projects",
+                trigger: "#section--services",
                 start: "top 95%", //Top of trigger element hits the center of scroller lement - view port
                 toggleActions: "restart none reverse none",
-                end: "top 0%",
+                end: "top -250%",
 
                 scrub: true,
 
@@ -80,6 +82,7 @@ const Visualizer = () => {
             .to(
                 sceneManagerRef.current.mesh!.position,
                 {
+                    stagger: 0.5,
                     z: 0,
                     x: 0,
                     y: -8,
@@ -93,7 +96,7 @@ const Visualizer = () => {
             )
             .to(
                 sceneManagerRef.current.mesh!.rotation,
-                { z: 0, x: 0, y: 2.5 },
+                { z: 0, x: 0, y: 3.2 },
                 "simultaneously",
             );
     }, []);

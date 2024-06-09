@@ -114,7 +114,7 @@ function App() {
                         }}
                     >
                         <h1
-                            className="heading-primary heading-primary--uppercase"
+                            className="heading-primary heading-primary--uppercase u-margin-top-medium u-margin-bottom-big"
                             id="animatedTxt"
                         >
                             <Translator translationKey="navigation.projects" />

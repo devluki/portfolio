@@ -13,6 +13,7 @@
         width: 100%;
         max-width: 130rem;
         margin: 0 auto;
+        margin-bottom: 5rem;
 
         @include respond(tab-land) {
             flex-direction: row;
@@ -97,7 +98,8 @@
                 // flex-direction: column;
                 align-items: center;
 
-                .link__btn {
+                .link__btn,
+                .github__btn {
                     color: $primary-white;
                     font-size: 1.5rem;
                     text-decoration: none;
@@ -112,32 +114,16 @@
                         color: $primary-black;
                         transform: translateY(-2px);
                         box-shadow: 0.1rem 2rem 3rem $primary-black;
+                    }
+
+                    @media screen and (max-width: 660px) {
+                        font-size: 1.3rem;
                     }
                 }
 
                 .github__btn {
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
-                    color: $primary-white;
-                    font-size: 1.5rem;
-                    letter-spacing: 2px;
-                    text-decoration: none;
-                    transition: 0.4s all;
-                    font-weight: bold;
-
-                    border: 2px solid $primary-white;
-                    border-radius: 2rem;
-                    padding: 1rem 3rem;
-
-                    &:hover {
-                        // transform: translateY(-2px);
-                        // box-shadow: 0.1rem 2rem 5rem $primary-black;
-                        background-color: $primary-white;
-                        color: $primary-black;
-                        transform: translateY(-2px);
-                        box-shadow: 0.1rem 2rem 3rem $primary-black;
-                    }
 
                     &:hover .card__svg {
                         fill: $primary-black;
@@ -150,6 +136,11 @@
                     width: 2.5rem;
                     height: 2.5rem;
                     transition: 0.4s;
+
+                    @media screen and (max-width: 660px) {
+                        width: 2rem;
+                        height: 2rem;
+                    }
 
                     &:hover {
                         fill: $primary-black;

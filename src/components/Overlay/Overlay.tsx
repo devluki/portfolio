@@ -13,7 +13,7 @@ const Overtlay = () => {
             duration: 0.8,
             stagger: 0.5,
             scrollTrigger: {
-                trigger: "#projects",
+                trigger: "#section--projects",
                 start: "top 50%",
                 toggleActions: "restart none reverse none",
                 end: "top 45%",
