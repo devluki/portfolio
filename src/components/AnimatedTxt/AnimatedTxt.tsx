@@ -34,7 +34,9 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
             "#animatedTxt",
         ) as HTMLElement;
 
-        const txt = new SplitType(chars, { types: "words,chars" });
+        const txt = new SplitType(chars, {
+            types: "words,chars",
+        });
 
         txt.chars?.forEach((txt, i) => {
             gsap.set(txt, {

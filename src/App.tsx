@@ -70,8 +70,8 @@ function App() {
                         animationParameters={{
                             color: "white",
                             isScrollTrigger: true,
-                            triggerId: "#projects",
-                            start: "top 50%",
+                            triggerId: "#section--services",
+                            start: "top 70%",
                         }}
                     >
                         <h1
@@ -87,8 +87,8 @@ function App() {
                         animationParameters={{
                             color: "white",
                             isScrollTrigger: true,
-                            triggerId: "#projects",
-                            start: "top 50%",
+                            triggerId: "#section--services",
+                            start: "top 20%",
                         }}
                     >
                         <h1
@@ -109,8 +109,8 @@ function App() {
                         animationParameters={{
                             color: "white",
                             isScrollTrigger: true,
-                            triggerId: "#projects2",
-                            start: "top 80%",
+                            triggerId: "#section--projects",
+                            start: "top 85%",
                         }}
                     >
                         <h1
@@ -137,9 +137,9 @@ function App() {
                                     <Translator translationKey="contactForm.text" />
                                 </p>
 
-                                <p className="text-primary u-margin-top-huge">
+                                {/* <p className="text-primary u-margin-top-huge">
                                     <Translator translationKey="contactForm.text__bottom" />
-                                </p>
+                                </p> */}
                             </div>
                             <ContactForm />
                         </div>

@@ -13,7 +13,6 @@
         width: 100%;
         max-width: 130rem;
         margin: 0 auto;
-        margin-bottom: 5rem;
 
         @include respond(tab-land) {
             flex-direction: row;
@@ -22,22 +21,6 @@
         }
 
         .project {
-            // max-width: 400px;
-            // max-height: 50rem;
-            // width: 70%;
-            // margin: 0 auto;
-            // border: 0.2rem solid $primary-white;
-            // border-radius: 1.5rem;
-            // display: grid;
-            // grid-template: min-content 2fr 2fr 1fr 1fr/ 1fr;
-            // grid-gap: 0.5rem;
-            // padding: 1rem;
-
-            // @include respond(tab-port) {
-            //     max-width: 40rem;
-            //     max-height: 50rem;
-            // }
-
             .card__svg {
                 fill: white;
                 svg {

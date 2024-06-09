@@ -9,6 +9,7 @@
     grid-template: min-content 2fr 2fr 1fr 1fr/ 1fr;
     grid-gap: 0.5rem;
     padding: 1rem;
+    margin-bottom: 4rem;
 
     @include respond(tab-port) {
         max-width: 40rem;
