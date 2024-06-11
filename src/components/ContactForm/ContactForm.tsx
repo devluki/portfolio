@@ -50,16 +50,16 @@ const ContactForm = () => {
             });
             const result = await response.json();
             if (result.code == 200) {
-                console.log("SUCCES, check email");
+                // console.log("SUCCES, check email");
 
                 setSendSuccessfully(true);
                 reset();
             } else {
-                console.log("ERROR");
+                // console.log("ERROR");
                 setSendSuccessfully(false);
             }
         } catch (err) {
-            console.log("ERROR", err);
+            // console.log("ERROR", err);
         }
         setFormSubmited(true);
     };

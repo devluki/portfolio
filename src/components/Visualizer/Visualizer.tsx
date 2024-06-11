@@ -106,13 +106,20 @@ const Visualizer = () => {
         audioLoader.current.load(url, function (buffer) {
             audioRef.current!.setBuffer(buffer);
             setIsLoading(false);
+            audioRef.current!.onEnded = () => {
+                isMusicPlaying.current = false;
+                sceneManagerRef.current!.isMusicPlaying = false;
+                setIsPlaying(false);
+                audioRef.current!.stop();
+                console.log("Song ended!");
+            };
         });
     }, [url]);
 
     const playMusicHanlder = () => {
         setModalIsOpen(false);
         if (!isPlaying) {
-            console.log(audioRef.current!);
+            // console.log(audioRef.current!);
             audioRef.current!.play();
             isMusicPlaying.current = true;
             sceneManagerRef.current!.isMusicPlaying = true;
@@ -181,7 +188,7 @@ const Visualizer = () => {
                             sceneManagerRef.current!.isMusicPlaying = false;
                             setIsPlaying(false);
                             audioRef.current!.stop();
-                            console.log("Song ended!");
+                            // console.log("Song ended!");
                         };
                         setIsLoading(false);
                     },

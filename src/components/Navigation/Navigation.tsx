@@ -100,17 +100,23 @@ const Navigation = () => {
                         </a>
                     </li>
                     <li className={styles.nav__item}>
-                        <a href="#" className={styles.nav__link}>
+                        <a href="#section--hero" className={styles.nav__link}>
                             <Translator translationKey="navigation.home" />
                         </a>
                     </li>
                     <li className={styles.nav__item}>
-                        <a href="#" className={styles.nav__link}>
+                        <a
+                            href="#section--projects"
+                            className={styles.nav__link}
+                        >
                             <Translator translationKey="navigation.projects" />
                         </a>
                     </li>
                     <li className={styles.nav__item}>
-                        <a href="#" className={styles.nav__link}>
+                        <a
+                            href="#section--contact"
+                            className={styles.nav__link}
+                        >
                             <Translator translationKey="navigation.contact" />
                         </a>
                     </li>

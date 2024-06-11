@@ -15,7 +15,7 @@ const StackCarousel = (props: StackCarouselProps) => {
     // Offset stored in state -> to render on different position each time
     // Mouse coords for draging stored inside refs to avoid rerender on each change
 
-    const data = [...props.data, ...props.data]; // One set of input data multiplayed in component
+    const data = [...props.data, ...props.data, ...props.data]; // One set of input data multiplayed in component -> use loop?
 
     const [cards, setCards] = useState(data);
 
@@ -42,7 +42,7 @@ const StackCarousel = (props: StackCarouselProps) => {
         slideItemWidth.current =
             +style.width.replace("px", "") +
             +style.marginLeft.replace("px", "") * 2;
-        console.log(slideItemWidth.current, Math.floor(cards.length / 2));
+        // console.log(slideItemWidth.current, Math.floor(cards.length / 2));
 
         setOffset(startOffset.current * slideItemWidth.current);
     }, [cards.length]);
@@ -157,7 +157,7 @@ const StackCarousel = (props: StackCarouselProps) => {
             setOffset(reminder - startOffset.current * slideItemWidth.current);
         }
     };
-    // TODO: Fix issue with speed
+
     const onMouseLeave = () => {
         if (!isMouseDown.current) return;
         mouseStart.current = 0;
@@ -165,11 +165,6 @@ const StackCarousel = (props: StackCarouselProps) => {
 
         intervalRef.current = interval();
 
-        // if (isMouseDown.current) {
-        //     mouseStart.current = 0;
-        //     mouseEnd.current = 0;
-        //     intervalRef.current = interval();
-        // }
         isMouseDown.current = false;
     };
 
@@ -201,9 +196,6 @@ const StackCarousel = (props: StackCarouselProps) => {
 
     return (
         <>
-            {/* <p>OFFSET: {offset}</p>
-            <p>REMINDER:{offset % 190} </p>
-            <p>REMINDER:{offset % (startOffset.current * 190)} </p> */}
             <div className={styles.slider}>
                 {cards.map((el, i) => (
                     <div
@@ -221,7 +213,6 @@ const StackCarousel = (props: StackCarouselProps) => {
                         ref={slideItem}
                     >
                         <div id="slide__container" className={styles.container}>
-                            {/* <p>{i}</p> */}
                             <h4 className={styles.item__title}>{el.name}</h4>
                             <svg>
                                 <use xlinkHref={el.icon}></use>

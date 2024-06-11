@@ -9,7 +9,6 @@ import { UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
-import StackIcons from "../assets/sprite_stack_gallery.svg";
 
 const uniforms = {
     u_resolution: {
@@ -198,29 +197,29 @@ export const TIME = 4000;
 
 // Consts
 
-export const TECH_STACK = [
-    {
-        name: "Html",
-        path: `${StackIcons}/#icon-html-five2`,
-    },
-    { name: "Css", path: `${StackIcons}/#icon-css3` },
-    { name: "Sass", path: `${StackIcons}/#icon-sass` },
-    {
-        name: "JavaScript",
-        path: `${StackIcons}/#icon-javascript`,
-    },
-    { name: "React", path: `${StackIcons}/#icon-react` },
-    { name: "Redex", path: `${StackIcons}/#icon-redux` },
-    {
-        name: "TypeScript",
-        path: `${StackIcons}/#icon-typescript`,
-    },
-    {
-        name: "Node",
-        path: `${StackIcons}/#icon-node-dot-js`,
-    },
-    {
-        name: "MongoDB",
-        path: `${StackIcons}/#icon-mongodb`,
-    },
-];
+// export const TECH_STACK = [
+//     {
+//         name: "Html",
+//         path: `${StackIcons}/#icon-html-five2`,
+//     },
+//     { name: "Css", path: `${StackIcons}/#icon-css3` },
+//     { name: "Sass", path: `${StackIcons}/#icon-sass` },
+//     {
+//         name: "JavaScript",
+//         path: `${StackIcons}/#icon-javascript`,
+//     },
+//     { name: "React", path: `${StackIcons}/#icon-react` },
+//     { name: "Redex", path: `${StackIcons}/#icon-redux` },
+//     {
+//         name: "TypeScript",
+//         path: `${StackIcons}/#icon-typescript`,
+//     },
+//     {
+//         name: "Node",
+//         path: `${StackIcons}/#icon-node-dot-js`,
+//     },
+//     {
+//         name: "MongoDB",
+//         path: `${StackIcons}/#icon-mongodb`,
+//     },
+// ];

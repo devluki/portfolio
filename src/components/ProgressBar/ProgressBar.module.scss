@@ -17,6 +17,12 @@ progress::-webkit-progress-value {
     border-radius: 5px;
 }
 
+progress::-moz-progress-bar {
+    background-color: black;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
 progress[value] {
     -webkit-appearance: none;
     appearance: none;

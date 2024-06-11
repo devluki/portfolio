@@ -4,24 +4,16 @@ import spriteIcons from "../assets/sprite.svg";
 import spriteIconsDefs from "../assets/symbol-defs.svg";
 import projectIcons from "../assets/projects_logos.svg";
 
-export const SOFTWARE = [
-    { name: "Web Apps", icon: `${spriteIcons}#icon-window` },
-    { name: "Mobile Apps", icon: `${spriteIcons}#icon-mobile` },
-    { name: "E-commerce", icon: `${spriteIcons}#icon-cart` },
-
-    { name: "Outsourcing", icon: `${spriteIcons}#icon-people_alt` },
-];
-
 export const TECH_STACK_ROW = [
-    // { name: "Swift", icon: `${spriteIcons}#icon-swift` },
-    // { name: "Flutter", icon: `${spriteIcons}#icon-flutter` },
+    { name: "HTML", icon: `${spriteIcons}#icon-html-five` },
     { name: "TypeScript", icon: `${spriteIcons}#icon-typescript` },
     { name: "React", icon: `${spriteIcons}#icon-react` },
+    { name: "CSS", icon: `${spriteIcons}#icon-css3` },
     { name: "Node", icon: `${spriteIcons}#icon-node-dot-js` },
     { name: "FireBase", icon: `${spriteIcons}#icon-firebase` },
     { name: "SASS", icon: `${spriteIcons}#icon-sass` },
     { name: "JavaScript", icon: `${spriteIcons}#icon-javascript` },
-    { name: "Figma", icon: `${spriteIcons}#icon-figma` },
+    // { name: "Figma", icon: `${spriteIcons}#icon-figma` },
     { name: "MongoDB", icon: `${spriteIcons}#icon-mongodb` },
     // { name: "MySQL", icon: `${spriteIcons}#icon-mysql` },
     { name: "Redux", icon: `${spriteIcons}#icon-redux` },

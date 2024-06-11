@@ -46,7 +46,7 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
             });
 
             if (!animationParams.isScrollTrigger) {
-                console.log("SCROLL TRIGGER", animationParams.isScrollTrigger);
+                // console.log("SCROLL TRIGGER", animationParams.isScrollTrigger);
 
                 gsap.to(
                     txt,
