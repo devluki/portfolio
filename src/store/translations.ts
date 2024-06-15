@@ -55,7 +55,8 @@ export const TRANSLATIONS: Record<
         "btn.custiomize": "Customize animation",
         "modal.custiomize":
             "You can customize animation, make a sound equalizer from particles. Just click play button, you can also upload your favorite song.",
-        "modal.default-message": "Default audio file loaded.",
+        "modal.default-message": "Default audio file loaded",
+
         "modal.error-message": "Please upload valid file format (*.mp3).",
         "modal.success-message": "Valid file format!",
         "section-2.animated-heading": "What I can do for you?",
@@ -108,7 +109,8 @@ export const TRANSLATIONS: Record<
         "btn.custiomize": "Dostosuj animacje",
         "modal.custiomize":
             "Możesz zmienić animację, stworzyć z cząsteczek equalizer dźwięku. Wystarczy, że klikniesz play, możesz również załadować swoją ulubioną piosenkę.",
-        "modal.default-message": "Załadowano domyślny plik audio.",
+        "modal.default-message": "Załadowano domyślny plik audio",
+
         "modal.error-message": "Możesz załadować tylko pliki w formacie *.mp3.",
         "modal.success-message": "Poprawny format pliku!",
         "section-2.animated-heading": "Co mogę dla Ciebie zrobić?",

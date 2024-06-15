@@ -45,13 +45,18 @@ const AudioPanel = (props: AudioPanelProps) => {
             <use xlinkHref={`${panelIcons}#icon-upload3`}></use>
         </svg>
     );
+    const info = (
+        <svg>
+            <use xlinkHref={`${panelIcons}#icon-info`}></use>
+        </svg>
+    );
 
     // TODO isLoaded? Add file loaded successful
 
     const validated =
         typeof isValid === "undefined" ? (
             <p className={styles.info}>
-                <Translator translationKey="modal.default-message" />
+                <Translator translationKey="modal.default-message" />{" "}
             </p>
         ) : (
             <>
@@ -62,9 +67,13 @@ const AudioPanel = (props: AudioPanelProps) => {
                 )}
 
                 {isValid && (
-                    <p className={`${styles.info} ${styles["info--success"]}`}>
-                        <Translator translationKey="modal.success-message" />
-                    </p>
+                    <>
+                        <p
+                            className={`${styles.info} ${styles["info--success"]}`}
+                        >
+                            <Translator translationKey="modal.success-message" />{" "}
+                        </p>
+                    </>
                 )}
             </>
         );
@@ -74,6 +83,7 @@ const AudioPanel = (props: AudioPanelProps) => {
                 <div className={styles["audio-panel__txt"]}>
                     <Translator translationKey="modal.custiomize" />
                 </div>
+
                 <div className={styles["audio-panel__info"]}>
                     {!isMusicPlaying && validated}
                 </div>
@@ -114,6 +124,23 @@ const AudioPanel = (props: AudioPanelProps) => {
                         accept="audio/*"
                         onChange={(e) => uploadHandler(e)}
                     />
+
+                    {typeof isValid === "undefined" && (
+                        <a
+                            className={styles.panel__btn}
+                            href="https://pixabay.com/pl/users/diephoanghai-12989642/"
+                        >
+                            {" "}
+                            {info}
+                        </a>
+                    )}
+                    {/* <a
+                        className={styles.panel__btn}
+                        href="https://pixabay.com/pl/users/diephoanghai-12989642/"
+                    >
+                        {" "}
+                        {info}
+                    </a> */}
                 </div>
             </div>
         </>

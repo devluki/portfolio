@@ -13,11 +13,24 @@
         text-align: justify;
     }
 
+    .link {
+        display: inline-flex;
+        justify-content: flex-end;
+        align-items: center;
+        svg {
+            height: 1.4rem;
+            width: 1.4rem;
+        }
+
+        fill: black;
+    }
+
     &__info {
         width: 100%;
         text-align: center;
         font-size: 1.2rem;
         background-color: $primary-gray-light;
+
         .info--success {
             background-color: #96f1d6;
         }
