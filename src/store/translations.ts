@@ -32,6 +32,8 @@ const TRANSLATION_KEYS: string[] = [
     "projects.description-kejtrip",
     "projects.description-portfolio",
     "projects.buttonGoCode",
+    // "projects.firstProject",
+    // "projects.latestProject",
 ];
 
 // type KeyTuple = typeof TRANSLATION_KEYS;
@@ -93,6 +95,8 @@ export const TRANSLATIONS: Record<
             "Portfolio website written in TypeScript and React, with interactive 3D animation (Three.js), scroll animations (GSAP), music player and visulaser + server-side mailing (Node.js and NodeMailer).",
         "projects.buttonGoCode": "Code",
         "projects.buttonGithub": "More projects...",
+        // "projects.firstProject": "First project",
+        // "projects.latestProject": "Latest project",
     },
 
     pl: {
@@ -144,5 +148,7 @@ export const TRANSLATIONS: Record<
         "projects.buttonGoLive": "Idź do",
         "projects.buttonGoCode": "Kod",
         "projects.buttonGithub": "Więcej projektów...",
+        // "projects.firstProject": "Pierwszy projekt",
+        // "projects.latestProject": "Ostatni project",
     },
 };

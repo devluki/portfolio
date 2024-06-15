@@ -73,6 +73,7 @@
     &__link,
     &__link:visited,
     &__link:active {
+        cursor: pointer;
         position: relative;
 
         text-decoration: none;
@@ -83,6 +84,7 @@
         transition: all 0.2s;
 
         color: white;
+        // Class added by Smooth Sroll
 
         @include respond(tab-land) {
             font-size: 1.8rem;

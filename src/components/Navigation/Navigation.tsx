@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, animateScroll } from "react-scroll";
 import icons from "../../assets/symbol-defs.svg";
 import styles from "./Navigation.module.scss";
 import LanguageToggleBtn from "../LanguageToggleBtn/LanguageToggleBtn";
@@ -30,6 +31,10 @@ const Navigation = () => {
         setIsMenuActive((prev) => !prev);
     };
 
+    const scrollToTopHandler = () => {
+        animateScroll.scrollToTop();
+    };
+
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > height);
@@ -53,7 +58,11 @@ const Navigation = () => {
                 </div>
                 <ul className={styles.nav__list}>
                     <li className={styles.nav__item}>
-                        <a href="#" className={styles.nav__logo}>
+                        <a
+                            href="#"
+                            className={styles.nav__logo}
+                            onClick={scrollToTopHandler}
+                        >
                             <svg
                                 id="svg"
                                 className={styles.svg}
@@ -100,25 +109,61 @@ const Navigation = () => {
                         </a>
                     </li>
                     <li className={styles.nav__item}>
-                        <a href="#section--hero" className={styles.nav__link}>
+                        {/* <a href="#section--hero" className={styles.nav__link}>
                             <Translator translationKey="navigation.home" />
-                        </a>
+                        </a> */}
+                        <Link
+                            activeClass="active"
+                            to="section--hero"
+                            spy={true}
+                            smooth={true}
+                            // offset={-70}
+                            offset={-80}
+                            duration={500}
+                            className={styles.nav__link}
+                        >
+                            <Translator translationKey="navigation.home" />
+                        </Link>
                     </li>
                     <li className={styles.nav__item}>
-                        <a
+                        {/* <a
                             href="#section--projects"
                             className={styles.nav__link}
                         >
                             <Translator translationKey="navigation.projects" />
-                        </a>
+                        </a> */}
+                        <Link
+                            activeClass="active"
+                            to="section--projects"
+                            spy={true}
+                            smooth={true}
+                            // offset={-70}
+                            offset={-80}
+                            duration={500}
+                            className={styles.nav__link}
+                        >
+                            <Translator translationKey="navigation.projects" />
+                        </Link>
                     </li>
                     <li className={styles.nav__item}>
-                        <a
+                        {/* <a
                             href="#section--contact"
                             className={styles.nav__link}
                         >
                             <Translator translationKey="navigation.contact" />
-                        </a>
+                        </a> */}
+                        <Link
+                            activeClass="active"
+                            to="section--contact"
+                            spy={true}
+                            smooth={true}
+                            // offset={-70}
+                            offset={-80}
+                            duration={500}
+                            className={styles.nav__link}
+                        >
+                            <Translator translationKey="navigation.contact" />
+                        </Link>
                     </li>
                 </ul>
             </nav>

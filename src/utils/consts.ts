@@ -41,6 +41,7 @@ export const SERVICES = [
 
 export const PROJECTS = [
     {
+        projectTimeleine: "projects.latestProject",
         projectName: "Portfolio",
         releaseYear: "2024",
         icon: `${projectIcons}#logo_portfolio`,
@@ -56,6 +57,7 @@ export const PROJECTS = [
         githubLink: "https://github.com/devluki/portfolio",
     },
     {
+        projectTimeleine: "projects.firstProject",
         projectName: "Kejtrip",
         releaseYear: "2022",
         icon: `${projectIcons}#logo_kejtrip`,
