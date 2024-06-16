@@ -22,6 +22,12 @@
 .section--contact {
     display: flex;
     justify-content: center;
+    // @include respond(big-desktop) {
+    //     min-height: 100vh;
+    // }
+    @media only screen and (min-width: 1200px) {
+        min-height: 70vh;
+    }
 }
 .contact {
     max-width: 120rem;

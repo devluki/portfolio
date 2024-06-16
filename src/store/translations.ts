@@ -1,5 +1,6 @@
 const TRANSLATION_KEYS: string[] = [
     "navigation.home",
+    "navigation.portfolio",
     "navigation.projects",
     "navigation.contact",
     "intro.intro",
@@ -48,6 +49,7 @@ export const TRANSLATIONS: Record<
 > = {
     en: {
         "navigation.home": "Home",
+        "navigation.sevices": "Services",
         "navigation.projects": "Projects",
         "navigation.contact": "Contact",
         "intro.intro": "Hi! My name is Lukas.",
@@ -102,6 +104,7 @@ export const TRANSLATIONS: Record<
 
     pl: {
         "navigation.home": "Główna",
+        "navigation.sevices": "Usługi",
         "navigation.projects": "Projekty",
         "navigation.contact": "Kontakt",
         "intro.intro": "Cześć! Nazywam się Łukasz.",

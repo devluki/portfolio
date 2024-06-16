@@ -114,7 +114,7 @@ const Navigation = () => {
                         </a> */}
                         <Link
                             activeClass="active"
-                            to="section--hero"
+                            to="section--services"
                             spy={true}
                             smooth={true}
                             // offset={-70}
@@ -122,7 +122,7 @@ const Navigation = () => {
                             duration={500}
                             className={styles.nav__link}
                         >
-                            <Translator translationKey="navigation.home" />
+                            <Translator translationKey="navigation.sevices" />
                         </Link>
                     </li>
                     <li className={styles.nav__item}>
