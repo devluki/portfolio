@@ -80,7 +80,9 @@ export const TRANSLATIONS: Record<
         "services.description-frontend":
             "I love to code things from scratch. Whether it's a small business website or a complex web application, my goal is to create a frontend experience that stands out.",
         "services.description-backend":
-            "I write clean, efficient code to power dynamic website features.  Create server-side solutions, I ensure your website performs seamlessly.   ",
+            "Need something more complex than regular website? I can create for you server-side solutions, I ensure your website performs seamlessly and it's secure.",
+        // "services.description-backend":
+        //     "I write clean, efficient code to power dynamic website features.  Create server-side solutions, I ensure your website performs seamlessly.   ",
         "contactForm.getInTouch": "Get in touch!",
         "contactForm.successMessage":
             "Thank you! Your message has been successfully sent.",
@@ -93,9 +95,9 @@ export const TRANSLATIONS: Record<
             "Your next great idea is just a conversation away!",
         "projects.buttonGoLive": "Life version",
         "projects.description-kejtrip":
-            "Travel blog written in Node.js (Express), using EJS, MongoDB & Mongoose. With content management system created from scratch (CRUD) - articles, maps, routes. With the functionality of commenting on articles and adding likes.",
+            "First major project: Travel blog written in Node.js (Express), using EJS, MongoDB & Mongoose. With content management system created from scratch (CRUD) - articles, maps, routes. With the functionality of commenting on articles and adding likes.",
         "projects.description-portfolio":
-            "Portfolio website written in TypeScript and React, with interactive 3D animation (Three.js), scroll animations (GSAP), music player and visulaser + server-side mailing (Node.js and NodeMailer).",
+            "Latest project: Portfolio website written in TypeScript and React, with interactive 3D animation (Three.js), scroll animations (GSAP) and SVG, music player and visulaser + server-side mailing (Node.js and NodeMailer).",
         "projects.buttonGoCode": "Code",
         "projects.buttonGithub": "More projects...",
         // "projects.firstProject": "First project",
@@ -135,7 +137,7 @@ export const TRANSLATIONS: Record<
         "services.description-frontend":
             "Uwielbiam kodować od podstaw. Niezależnie czy to mała strona firmowa, czy skomplikowana aplikacja, moim celem jest stworzenie wyjątkowego frontend.",
         "services.description-backend":
-            "Piszę czysty, wydajny kod, aby wspierać dynamiczne funkcje witryny. Tworzę rozwiązania po stronie serwera, zapewniam płynne działanie Twojej witryny.",
+            "Potrzebujesz czegoś bardziej złożonego niź standardowa strona internetowa? Mogę dla Ciebie stworzyć rozwiązania po stronie serwera, zapewniam płynne oraz bezpieczne działanie Twojej witryny.",
         "contactForm.getInTouch": "Napisz do mnie!",
         "contactForm.successMessage": "Dzięki! Twoja wiadomość została wysłana",
         "contactForm.ErrorMessage":
@@ -147,9 +149,9 @@ export const TRANSLATIONS: Record<
             "Twój wspaniały pomysł jest na wyciągnięcie ręki!",
 
         "projects.description-kejtrip":
-            "Blog podróżniczy napisany w Node.js (express), przy użyciu EJS, MongoDB & Mongoose. Z autorskim systemem do zarządzania treściami (CRUD) - artykułami, mapami, przebytymi trasami. Z funkcjonalnością komentowania artykułów i dodawania polubień.",
+            "Pierwszy poważny projekt: Blog podróżniczy napisany w Node.js (express), przy użyciu EJS, MongoDB & Mongoose. Z autorskim systemem do zarządzania treściami (CRUD) - artykułami, mapami, przebytymi trasami. Z funkcjonalnością komentowania artykułów i dodawania polubień.",
         "projects.description-portfolio":
-            "Strona portfolio napisana w TypeScript i React, z interaktywną animacją 3D (Three.js), animacjami przewijania (GSAP), odtwarzaczem muzyki i wizualizacją + mailingiem po stronie serwera (Node.js i NodeMailer).",
+            "Najnowszy projekt: Strona portfolio napisana w TypeScript i React, z interaktywną animacją 3D (Three.js), animacjami textu (GSAP) oraz SVG, odtwarzaczem muzyki i wizualizacją + mailingiem po stronie serwera (Node.js i NodeMailer).",
         "projects.buttonGoLive": "Idź do",
         "projects.buttonGoCode": "Kod",
         "projects.buttonGithub": "Więcej projektów...",

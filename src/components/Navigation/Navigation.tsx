@@ -19,7 +19,7 @@ const Navigation = () => {
     const changeShapeHandler = (e: React.PointerEvent | React.MouseEvent) => {
         const element = e.target as HTMLElement;
         element.setAttribute("rx", "50");
-        element.setAttribute("fill", "#252526");
+        // element.setAttribute("fill", "#252526");
     };
     const reChangeShapeHandler = (e: React.PointerEvent | React.MouseEvent) => {
         const element = e.target as HTMLElement;
@@ -31,7 +31,12 @@ const Navigation = () => {
         setIsMenuActive((prev) => !prev);
     };
 
-    const scrollToTopHandler = () => {
+    const disableMenuHandler = () => {
+        setIsMenuActive(false);
+    };
+
+    const scrollToTopHandler = (e: React.MouseEvent) => {
+        e.preventDefault();
         animateScroll.scrollToTop();
     };
 
@@ -45,7 +50,7 @@ const Navigation = () => {
             <LanguageToggleBtn />
             <nav className={`${styles.nav} ${sticky} ${active}`}>
                 <div className={styles.burger} onClick={activeMenuHandler}>
-                    {!isMenuActive && (
+                    {/* {!isMenuActive && (
                         <svg className={styles.burger__btn}>
                             <use xlinkHref={`${icons}#icon-menu`}></use>
                         </svg>
@@ -54,7 +59,13 @@ const Navigation = () => {
                         <svg className={styles.burger__btn}>
                             <use xlinkHref={`${icons}#icon-clear`}></use>
                         </svg>
-                    )}
+                    )} */}
+                    <svg className={styles.burger__btn}>
+                        <use
+                            // xlinkHref={`${icons}#icon-double_arrow`}
+                            xlinkHref={`${icons}#icon-keyboard_arrow_down`}
+                        ></use>
+                    </svg>
                 </div>
                 <ul className={styles.nav__list}>
                     <li className={styles.nav__item}>
@@ -121,6 +132,7 @@ const Navigation = () => {
                             offset={-80}
                             duration={500}
                             className={styles.nav__link}
+                            onClick={disableMenuHandler}
                         >
                             <Translator translationKey="navigation.sevices" />
                         </Link>
@@ -141,6 +153,7 @@ const Navigation = () => {
                             offset={-80}
                             duration={500}
                             className={styles.nav__link}
+                            onClick={disableMenuHandler}
                         >
                             <Translator translationKey="navigation.projects" />
                         </Link>
@@ -161,6 +174,7 @@ const Navigation = () => {
                             offset={-80}
                             duration={500}
                             className={styles.nav__link}
+                            onClick={disableMenuHandler}
                         >
                             <Translator translationKey="navigation.contact" />
                         </Link>

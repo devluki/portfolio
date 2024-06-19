@@ -25,6 +25,7 @@
         "react-audio-player": "^0.17.0",
         "react-dom": "^18.2.0",
         "react-hook-form": "^7.51.4",
+        "react-router-dom": "^6.23.1",
         "react-scroll": "^1.9.0",
         "sass": "^1.70.0",
         "split-type": "^0.3.4",

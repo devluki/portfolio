@@ -25,6 +25,10 @@
         height: 3rem;
         width: 3rem;
         margin-bottom: 0.5rem;
+        transition: 0.2s all;
+        &:hover {
+            transform: translateY(-2px);
+        }
         @include respond(tab-port) {
             height: 4rem;
             width: 4rem;

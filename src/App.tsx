@@ -1,6 +1,7 @@
 import "./App.scss";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
+
 import "./styles/main.scss";
 
 import LanguageContextProvider from "./store/LanguageContext";
@@ -20,14 +21,13 @@ import Projects from "./components/Projects/Projects";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Footer from "./components/Footer/Footer";
 
-// import Porject from "./components/Project/Project";
-// import POJECTS from "./utils/consts.ts";
-// import Project from "./components/Project/Project";
-
 function App() {
     const lenis = new Lenis();
+    // const ctx = useContext(LanguageContext);
+    // 1. Parent used to access the root element
     const parent = useRef<HTMLElement | null>(null);
 
+    // Lenis initialization
     function raf(time: number) {
         lenis.raf(time);
         requestAnimationFrame(raf);
@@ -35,12 +35,14 @@ function App() {
 
     requestAnimationFrame(raf);
 
+    // Lock the haight of the app to 100vh until intro animation end
     const updateHeight = (div: HTMLDivElement) => {
         setTimeout(() => {
             div.style.height = "auto";
             div.style.overflowY = "auto";
         }, 2500);
     };
+
     // Update height and overflowY values after intro animation is finished
     useEffect(() => {
         const rootElement = parent.current?.parentElement as HTMLDivElement;
@@ -136,10 +138,6 @@ function App() {
                                 <p className="text-primary">
                                     <Translator translationKey="contactForm.text" />
                                 </p>
-
-                                {/* <p className="text-primary u-margin-top-huge">
-                                    <Translator translationKey="contactForm.text__bottom" />
-                                </p> */}
                             </div>
                             <ContactForm />
                         </div>

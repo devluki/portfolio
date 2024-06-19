@@ -14,7 +14,17 @@
 </symbol>
 <symbol id="icon-menu" viewBox="0 0 24 24">
 <path d="M3 6h18v2.016h-18v-2.016zM3 12.984v-1.969h18v1.969h-18zM3 18v-2.016h18v2.016h-18z"></path>
+<symbol id="icon-circle-down" viewBox="0 0 32 32">
+<path d="M32 16c0-8.837-7.163-16-16-16s-16 7.163-16 16 7.163 16 16 16 16-7.163 16-16zM3 16c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13-13-5.82-13-13z"/>
+<path d="M9.914 11.086l-2.829 2.829 8.914 8.914 8.914-8.914-2.828-2.828-6.086 6.086z"/>
 </symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="icon-double_arrow" viewBox="0 0 24 24">
+<path d="M8.484 5.016l5.016 6.984-5.016 6.984h-4.5l5.016-6.984-5.016-6.984h4.5zM15.516 5.016l4.969 6.984-4.969 6.984h-4.5l4.969-6.984-4.969-6.984h4.5z"/>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="icon-keyboard_arrow_down" viewBox="0 0 24 24">
+<path d="M7.406 8.578l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z"/>
+</symbol>
+
 
 </defs>
 </svg>

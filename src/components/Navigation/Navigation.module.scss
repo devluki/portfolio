@@ -26,11 +26,38 @@
             @include respond(tab-port) {
                 display: none;
             }
+
+            position: absolute;
+            bottom: 0.45rem;
+            left: 50%;
+            width: 3.7rem;
+            height: 3.7rem;
+
+            border-radius: 50%;
+            transform: translate(-50%, 0);
+
+            &__btn {
+                transition: 0.4s transform;
+                width: 100%;
+                height: 100%;
+                fill: $primary-white;
+                transition: 0.4s;
+                // Arrow down
+                transform: rotateZ(180deg);
+                // animation: upAndDown 0.6s infinite linear;
+            }
         }
     }
 
     &--active {
         transform: translateY(-13.5rem);
+
+        .burger {
+            &__btn {
+                // Arrow down
+                transform: rotateZ(360deg);
+            }
+        }
     }
 
     @include respond(tab-port) {
@@ -177,24 +204,6 @@
     }
 }
 
-.burger {
-    position: absolute;
-    bottom: 0.45rem;
-    left: 50%;
-    width: 4rem;
-    height: 4rem;
-
-    border-radius: 50%;
-    transform: translate(-50%, 0);
-
-    &__btn {
-        width: 100%;
-        height: 100%;
-        fill: $primary-white;
-        transition: 0.4s;
-    }
-}
-
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -203,5 +212,17 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(-2px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-2px);
     }
 }

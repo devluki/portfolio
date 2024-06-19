@@ -53,7 +53,7 @@ export const PROJECTS = [
             `${spriteIcons}#icon-sass`,
             `${spriteIcons}#icon-node-dot-js`,
         ],
-        liveLink: "https://kejtrip.pl/",
+        liveLink: "",
         githubLink: "https://github.com/devluki/portfolio",
     },
     {
