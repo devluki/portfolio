@@ -2,7 +2,7 @@
 
 import spriteIcons from "../assets/sprite.svg";
 import spriteIconsDefs from "../assets/symbol-defs.svg";
-import projectIcons from "../assets/projects_logos.svg";
+// import projectIcons from "../assets/projects_logos.svg";
 
 export const TECH_STACK_ROW = [
     { name: "HTML", icon: `${spriteIcons}#icon-html-five` },
@@ -44,7 +44,7 @@ export const PROJECTS = [
         projectTimeleine: "projects.latestProject",
         projectName: "Portfolio",
         releaseYear: "2024",
-        icon: `${projectIcons}#logo_portfolio`,
+        icon: `${spriteIconsDefs}#logo_portfolio`,
         description: "projects.description-portfolio",
         stack: [
             `${spriteIcons}#icon-typescript`,
@@ -60,7 +60,7 @@ export const PROJECTS = [
         projectTimeleine: "projects.firstProject",
         projectName: "Kejtrip",
         releaseYear: "2022",
-        icon: `${projectIcons}#logo_kejtrip`,
+        icon: `${spriteIconsDefs}#logo_kejtrip`,
         description: "projects.description-kejtrip",
         stack: [
             `${spriteIcons}#icon-html-five`,

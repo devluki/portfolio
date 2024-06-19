@@ -35,7 +35,7 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
         ) as HTMLElement;
 
         const txt = new SplitType(chars, {
-            types: "words,chars",
+            types: "words,chars,lines",
         });
 
         txt.chars?.forEach((txt, i) => {

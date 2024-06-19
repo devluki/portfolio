@@ -1,6 +1,7 @@
 import styles from "./AudioPanel.module.scss";
 import Translator from "../Translator/Translator";
-import panelIcons from "../../assets/sprite_audio_panel.svg";
+// import panelIcons from "../../assets/sprite_audio_panel.svg";
+import panelIcons from "../../assets/symbol-defs.svg";
 
 interface AudioPanelProps {
     isLoading: boolean;

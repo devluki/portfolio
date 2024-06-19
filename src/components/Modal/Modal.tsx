@@ -1,6 +1,6 @@
 import { useEffect, useRef, FC, ReactNode } from "react";
 import { createPortal } from "react-dom";
-import panelIcons from "../../assets/sprite_audio_panel.svg";
+import panelIcons from "../../assets/symbol-defs.svg";
 import styles from "./Modal.module.scss";
 
 const Modal: FC<{

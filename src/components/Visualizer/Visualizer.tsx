@@ -201,7 +201,7 @@ const Visualizer = () => {
 
     const openModalHandler = () => {
         setModalIsOpen(true);
-        console.log("Open modal");
+        // console.log("Open modal");
     };
     const closeModalHandler = () => {
         setModalIsOpen(false);
