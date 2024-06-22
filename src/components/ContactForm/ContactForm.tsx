@@ -33,22 +33,26 @@ const ContactForm = () => {
 
     const submitHandler: SubmitHandler<FormFileds> = async (data) => {
         try {
-            const response = await fetch("http://localhost:3001/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json;charset=utf-8",
+            const response = await fetch(
+                "https://zabiegli-development.pl/api/contact",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json;charset=utf-8",
+                    },
+                    body: JSON.stringify({
+                        firstName: data.firstName,
+                        lastName: data.lastName,
+                        email: data.email,
+                        message: data.message,
+                        phone: data.phone,
+                    }),
+                    // console.log("RESPONSE", res);
+                    // const result = await res.json();
                 },
-                body: JSON.stringify({
-                    firstName: data.firstName,
-                    lastName: data.lastName,
-                    email: data.email,
-                    message: data.message,
-                    phone: data.phone,
-                }),
-                // console.log("RESPONSE", res);
-                // const result = await res.json();
-            });
+            );
             const result = await response.json();
+            console.log(result, result.code);
             if (result.code == 200) {
                 // console.log("SUCCES, check email");
 
@@ -59,7 +63,7 @@ const ContactForm = () => {
                 setSendSuccessfully(false);
             }
         } catch (err) {
-            // console.log("ERROR", err);
+            console.log("ERROR", err);
         }
         setFormSubmited(true);
     };

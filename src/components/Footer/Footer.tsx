@@ -13,7 +13,11 @@ const Footer = () => {
                     </a>
                 </div>
                 <p className={styles.reserved}>
-                    &reg; 2024. All rigts reserved.
+                    &reg; Copyright{" "}
+                    <span className={styles["reserved--bold"]}>
+                        Zabiegli Development
+                    </span>
+                    . All rigts reserved.
                 </p>
             </div>
         </footer>
