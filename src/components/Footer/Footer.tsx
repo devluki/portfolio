@@ -1,3 +1,4 @@
+import Translator from "../Translator/Translator";
 import styles from "./Footer.module.scss";
 import icons from "../../assets/sprite.svg";
 
@@ -13,11 +14,11 @@ const Footer = () => {
                     </a>
                 </div>
                 <p className={styles.reserved}>
-                    &reg; Copyright{" "}
+                    &reg; <Translator translationKey="footer.copyright" />{" "}
                     <span className={styles["reserved--bold"]}>
-                        Zabiegli Development
-                    </span>
-                    . All rigts reserved.
+                        Zabiegli Development.
+                    </span>{" "}
+                    <Translator translationKey="footer.allRightReserved" />
                 </p>
             </div>
         </footer>

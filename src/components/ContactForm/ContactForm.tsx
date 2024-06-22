@@ -52,7 +52,7 @@ const ContactForm = () => {
                 },
             );
             const result = await response.json();
-            console.log(result, result.code);
+            // console.log(result, result.code);
             if (result.code == 200) {
                 // console.log("SUCCES, check email");
 
