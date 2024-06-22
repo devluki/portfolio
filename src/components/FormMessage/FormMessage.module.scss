@@ -18,15 +18,18 @@
     animation: dashOutline 0.8s linear forwards;
 }
 
-.svg {
-    margin: 5rem 0 0 0;
-}
+// .svg {
+//     // margin: 5rem 0 0 0;
+// }
 
 .success {
-    color: green;
+    // color: green;
+    text-shadow: 0 0 2px green, 0 0 3px green, 0 0 10px rgba(green, 0.7);
 }
 .error {
-    color: rgb(255, 0, 0);
+    // color: rgb(255, 0, 0);
+    text-shadow: 0 0 2px rgb(255, 0, 0), 0 0 3px rgb(255, 0, 0),
+        0 0 10px rgba(rgb(255, 0, 0), 0.7);
 }
 @keyframes dash {
     0% {

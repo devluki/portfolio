@@ -70,7 +70,7 @@ const FormMessage = (props: {
             {isformSubmited && (
                 <>
                     <p
-                        className={`${styles["text-primary"]} ${styles["text-primary--bold"]}`}
+                        className={`${styles["text-primary"]} ${styles["text-primary--bold"]} ${styles["u-margin-bottom-small"]} ${styles["u-margin-top-small"]}`}
                     >
                         {isSendSuccessfully && (
                             <span className={styles.success}>
