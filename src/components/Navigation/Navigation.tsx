@@ -4,9 +4,11 @@ import icons from "../../assets/symbol-defs.svg";
 import styles from "./Navigation.module.scss";
 import LanguageToggleBtn from "../LanguageToggleBtn/LanguageToggleBtn";
 import Translator from "../Translator/Translator";
+import ScrollDownIcon from "../ScrollDownIcon/ScrollDownIcon";
 
 const Navigation = () => {
     const [scroll, setScroll] = useState(false);
+    const [showScrollIcon, setShowScrollIcon] = useState(false);
     const [isMenuActive, setIsMenuActive] = useState(false);
     // Set dynamic CSS styles, navigation sticky and navigation active
     const sticky = scroll ? styles["nav--sticky"] : "";
@@ -19,7 +21,6 @@ const Navigation = () => {
     const changeShapeHandler = (e: React.PointerEvent | React.MouseEvent) => {
         const element = e.target as HTMLElement;
         element.setAttribute("rx", "50");
-        // element.setAttribute("fill", "#252526");
     };
     const reChangeShapeHandler = (e: React.PointerEvent | React.MouseEvent) => {
         const element = e.target as HTMLElement;
@@ -43,6 +44,7 @@ const Navigation = () => {
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > height);
+            setShowScrollIcon(window.scrollY > 10);
         });
     });
     return (
@@ -50,19 +52,8 @@ const Navigation = () => {
             <LanguageToggleBtn />
             <nav className={`${styles.nav} ${sticky} ${active}`}>
                 <div className={styles.burger} onClick={activeMenuHandler}>
-                    {/* {!isMenuActive && (
-                        <svg className={styles.burger__btn}>
-                            <use xlinkHref={`${icons}#icon-menu`}></use>
-                        </svg>
-                    )}
-                    {isMenuActive && (
-                        <svg className={styles.burger__btn}>
-                            <use xlinkHref={`${icons}#icon-clear`}></use>
-                        </svg>
-                    )} */}
                     <svg className={styles.burger__btn}>
                         <use
-                            // xlinkHref={`${icons}#icon-double_arrow`}
                             xlinkHref={`${icons}#icon-keyboard_arrow_down`}
                         ></use>
                     </svg>
@@ -120,15 +111,11 @@ const Navigation = () => {
                         </a>
                     </li>
                     <li className={styles.nav__item}>
-                        {/* <a href="#section--hero" className={styles.nav__link}>
-                            <Translator translationKey="navigation.home" />
-                        </a> */}
                         <Link
                             activeClass="active"
                             to="section--services"
                             spy={true}
                             smooth={true}
-                            // offset={-70}
                             offset={-80}
                             duration={500}
                             className={styles.nav__link}
@@ -138,18 +125,11 @@ const Navigation = () => {
                         </Link>
                     </li>
                     <li className={styles.nav__item}>
-                        {/* <a
-                            href="#section--projects"
-                            className={styles.nav__link}
-                        >
-                            <Translator translationKey="navigation.projects" />
-                        </a> */}
                         <Link
                             activeClass="active"
                             to="section--projects"
                             spy={true}
                             smooth={true}
-                            // offset={-70}
                             offset={-80}
                             duration={500}
                             className={styles.nav__link}
@@ -159,18 +139,11 @@ const Navigation = () => {
                         </Link>
                     </li>
                     <li className={styles.nav__item}>
-                        {/* <a
-                            href="#section--contact"
-                            className={styles.nav__link}
-                        >
-                            <Translator translationKey="navigation.contact" />
-                        </a> */}
                         <Link
                             activeClass="active"
                             to="section--contact"
                             spy={true}
                             smooth={true}
-                            // offset={-70}
                             offset={-80}
                             duration={500}
                             className={styles.nav__link}
@@ -181,6 +154,7 @@ const Navigation = () => {
                     </li>
                 </ul>
             </nav>
+            {!showScrollIcon && <ScrollDownIcon />}
         </>
     );
 };

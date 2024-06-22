@@ -3,7 +3,7 @@
 .pathAt {
     stroke-dasharray: 734.7;
     stroke-dashoffset: 734.7;
-    animation: dash 2.2s linear forwards;
+    animation: dash 1.5s linear forwards;
 }
 
 .errorOutline {
@@ -18,19 +18,15 @@
     animation: dashOutline 0.8s linear forwards;
 }
 
-// .svg {
-//     // margin: 5rem 0 0 0;
-// }
+.svg {
+    margin: 5rem 0 0 0;
+}
 
-.success {
-    // color: green;
-    text-shadow: 0 0 2px green, 0 0 3px green, 0 0 10px rgba(green, 0.7);
-}
+.success,
 .error {
-    // color: rgb(255, 0, 0);
-    text-shadow: 0 0 2px rgb(255, 0, 0), 0 0 3px rgb(255, 0, 0),
-        0 0 10px rgba(rgb(255, 0, 0), 0.7);
+    text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 2px rgba(249, 249, 249, 0.9);
 }
+
 @keyframes dash {
     0% {
         stroke-dashoffset: 734.7;

@@ -20,6 +20,7 @@ import { TECH_STACK_ROW } from "./utils/consts";
 import Projects from "./components/Projects/Projects";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Footer from "./components/Footer/Footer";
+// import ScrollDownIcon from "./components/ScrollDownIcon/ScrollDownIcon";
 
 function App() {
     const lenis = new Lenis();
@@ -62,6 +63,7 @@ function App() {
                     <Intro />
 
                     <Visualizer />
+                    {/* <ScrollDownIcon /> */}
                 </section>
 
                 <section

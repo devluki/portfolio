@@ -114,7 +114,7 @@ export const TRANSLATIONS: Record<
         "btn.custiomize": "Dostosuj animacje",
         "modal.custiomize":
             "Możesz zmienić animację, stworzyć z cząsteczek equalizer dźwięku. Wystarczy, że klikniesz play, możesz również załadować swoją ulubioną piosenkę.",
-        "modal.default-message": "Załadowano domyślny plik audio",
+        "modal.default-message": "Załadowano domyślny plik audio.",
 
         "modal.error-message": "Możesz załadować tylko pliki w formacie *.mp3.",
         "modal.success-message": "Poprawny format pliku!",
@@ -139,7 +139,8 @@ export const TRANSLATIONS: Record<
         "services.description-backend":
             "Potrzebujesz czegoś bardziej złożonego niź standardowa strona internetowa? Mogę dla Ciebie stworzyć rozwiązania po stronie serwera, zapewniam płynne oraz bezpieczne działanie Twojej witryny.",
         "contactForm.getInTouch": "Napisz do mnie!",
-        "contactForm.successMessage": "Dzięki! Twoja wiadomość została wysłana",
+        "contactForm.successMessage":
+            "Dzięki! Twoja wiadomość została wysłana.",
         "contactForm.ErrorMessage":
             "Coś poszło nie tak, spróbuj pownownie za kilka minut...",
         "contactForm.returnBtn": "Wstecz",
