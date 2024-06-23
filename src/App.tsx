@@ -63,7 +63,6 @@ function App() {
                     <Intro />
 
                     <Visualizer />
-                    {/* <ScrollDownIcon /> */}
                 </section>
 
                 <section

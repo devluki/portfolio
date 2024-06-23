@@ -32,12 +32,14 @@ const Intro = () => {
                     isScrollTrigger: false,
                 }}
             >
-                <h1 className="heading-primary" id="animatedTxt">
-                    <Translator translationKey="intro.intro" />
-                    <br />
+                <span className={styles.intro}>
+                    <h1 className="heading-primary" id="animatedTxt">
+                        <Translator translationKey="intro.intro" />
+                        <br />
 
-                    <Translator translationKey="intro.profession" />
-                </h1>
+                        <Translator translationKey="intro.profession" />
+                    </h1>
+                </span>
             </AnimatedTxt>
             <br />
         </div>

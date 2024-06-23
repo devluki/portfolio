@@ -35,13 +35,17 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
         ) as HTMLElement;
 
         const txt = new SplitType(chars, {
-            types: "words,chars,lines",
+            // types: "words,chars,lines",
+            types: "chars,words,lines",
         });
 
         txt.chars?.forEach((txt, i) => {
             gsap.set(txt, {
                 color: animationParams.color,
-                x: -5 * i,
+                // x: -5 * i,
+                y: -2 * i,
+                x: -8 * i,
+                // xPercent: -5 * i,
                 opacity: 0,
             });
 
@@ -53,7 +57,10 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
 
                     {
                         color: animationParams.color,
+                        // color: "red",
                         delay: 0.045 * i,
+                        // xPercent: i,
+                        y: 0,
                         x: i,
                         opacity: 1,
                         duration: 0.5,
@@ -71,6 +78,7 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
                         },
                         delay: 0.045 * i,
                         x: i,
+                        y: 0,
                         opacity: 1,
                     },
                 );

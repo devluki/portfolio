@@ -12,4 +12,10 @@
 
     //     mix-blend-mode: exclusion;
     // }
+    // .intro {
+    //     margin: 0 1rem;
+    // }
+    @media screen and (max-width: 900px) {
+        padding: 0rem 2.5rem;
+    }
 }
