@@ -41,11 +41,12 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
 
         txt.chars?.forEach((txt, i) => {
             gsap.set(txt, {
-                color: animationParams.color,
-                // x: -5 * i,
-                y: -2 * i,
+                color: "#252526",
+
+                y: -1 * i,
+
                 x: -8 * i,
-                // xPercent: -5 * i,
+
                 opacity: 0,
             });
 
@@ -57,11 +58,12 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
 
                     {
                         color: animationParams.color,
-                        // color: "red",
+
                         delay: 0.045 * i,
-                        // xPercent: i,
+
                         y: 0,
-                        x: i,
+
+                        x: 0,
                         opacity: 1,
                         duration: 0.5,
                     },
