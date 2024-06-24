@@ -79,7 +79,7 @@ const AnimatedTxt = (props: AnimatedTextProps) => {
                             start: animationParams.start,
                         },
                         delay: 0.045 * i,
-                        x: i,
+                        x: 0,
                         y: 0,
                         opacity: 1,
                     },
