@@ -27,11 +27,8 @@ const Visualizer = () => {
 
     const container = useRef<HTMLDivElement | null>(null);
 
-    const [url, setUrl] = useState(
-        // "/public/energetic-hip-hop-8303.ogg",
-        // "../../../public/energetic-hip-hop-8303.ogg",
-        "./rap-beats-music-161432.ogg",
-    );
+    const [url, setUrl] = useState("./rap-beats-music-161432.ogg");
+    const [fileName, setFileName] = useState("rap-beats-music");
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -105,13 +102,14 @@ const Visualizer = () => {
         audioLoader.current = new THREE.AudioLoader();
         audioLoader.current.load(url, function (buffer) {
             audioRef.current!.setBuffer(buffer);
+
             setIsLoading(false);
             audioRef.current!.onEnded = () => {
                 isMusicPlaying.current = false;
                 sceneManagerRef.current!.isMusicPlaying = false;
                 setIsPlaying(false);
                 audioRef.current!.stop();
-                console.log("Song ended!");
+                // console.log("Song ended!");
             };
         });
     }, [url]);
@@ -173,9 +171,12 @@ const Visualizer = () => {
             const [file] = Array.from(files);
             if (file.name.slice(-4) !== ".mp3") {
                 setIsFileValid(false);
+
                 return;
             } else {
                 setIsFileValid(true);
+                const title = file.name.slice(0, file.name.length - 4);
+                setFileName(title);
                 const src = URL.createObjectURL(file);
 
                 audioLoader.current!.load(
@@ -218,6 +219,7 @@ const Visualizer = () => {
                     isMusicPlaying={isPlaying}
                     isLoading={isLoading}
                     isValid={isFileVaild}
+                    title={fileName}
                 />
             </Modal>
 

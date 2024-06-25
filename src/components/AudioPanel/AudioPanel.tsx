@@ -7,6 +7,7 @@ interface AudioPanelProps {
     isLoading: boolean;
     isMusicPlaying: boolean;
     isValid: boolean | undefined;
+    title: string;
     uploadHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
     musicHandler: () => void;
     stopHandler: () => void;
@@ -20,6 +21,7 @@ const AudioPanel = (props: AudioPanelProps) => {
         uploadHandler,
         stopHandler,
         isValid,
+        title,
     } = props;
 
     //   SVG icons
@@ -67,13 +69,51 @@ const AudioPanel = (props: AudioPanelProps) => {
                     </p>
                 )}
 
-                {isValid && (
+                {isValid && !isLoading && !isMusicPlaying && (
                     <>
                         <p
                             className={`${styles.info} ${styles["info--success"]}`}
                         >
                             <Translator translationKey="modal.success-message" />{" "}
                         </p>
+                    </>
+                )}
+                {isValid && isLoading && (
+                    <>
+                        <p className={`${styles.info} `}>
+                            <Translator translationKey="modal.loading-message" />{" "}
+                        </p>
+                    </>
+                )}
+                {isValid && !isLoading && isMusicPlaying && (
+                    <>
+                        <div className={styles["info-container"]}>
+                            <p
+                                className={`${styles.info} ${styles["info--slide"]}`}
+                            >
+                                <span> &#9834;</span>{" "}
+                                <span className={styles.slide}>{title}</span>
+                                <span> &#9834;</span>{" "}
+                                <span className={styles.slide}>{title}</span>
+                                <span> &#9834;</span>{" "}
+                                <span className={styles.slide}>{title}</span>
+                                <span> &#9834;</span>{" "}
+                                <span className={styles.slide}>{title}</span>
+                            </p>
+                            <p
+                                className={`${styles.info} ${styles["info--slide"]}`}
+                            >
+                                {" "}
+                                <span> &#9834;</span>{" "}
+                                <span className={styles.slide}>{title}</span>
+                                <span> &#9834;</span>{" "}
+                                <span className={styles.slide}>{title}</span>
+                                <span> &#9834;</span>{" "}
+                                <span className={styles.slide}>{title}</span>
+                                <span> &#9834;</span>{" "}
+                                <span className={styles.slide}>{title}</span>
+                            </p>
+                        </div>
                     </>
                 )}
             </>
@@ -86,7 +126,8 @@ const AudioPanel = (props: AudioPanelProps) => {
                 </div>
 
                 <div className={styles["audio-panel__info"]}>
-                    {!isMusicPlaying && validated}
+                    {/* {!isMusicPlaying && validated} */}
+                    {validated}
                 </div>
                 <div className={styles["audio-panel__controls"]}>
                     <button

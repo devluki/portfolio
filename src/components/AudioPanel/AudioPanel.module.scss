@@ -38,6 +38,21 @@
             background-color: #f1a196;
         }
 
+        .info-container {
+            white-space: nowrap;
+            overflow: hidden;
+            .info--slide {
+                font-weight: 800;
+                display: inline-block;
+                animation: 30s slide infinite linear;
+                .slide {
+                    display: inline-block;
+                    margin: 0rem 1rem;
+                    // animation: 2s slide infinite linear;
+                }
+            }
+        }
+
         font-weight: bold;
 
         .info {
@@ -94,5 +109,14 @@
                 }
             }
         }
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
     }
 }

@@ -10,6 +10,7 @@ const TRANSLATION_KEYS: string[] = [
     "modal.default-message",
     "modal.error-message",
     "modal.success-message",
+    "modal.loading-message",
     "section-2.animated-heading",
     "section-2.animated-heading--2",
     "servicesCard.heading--1",
@@ -62,7 +63,8 @@ export const TRANSLATIONS: Record<
         "modal.default-message": "Default audio file loaded",
 
         "modal.error-message": "Please upload valid file format (*.mp3).",
-        "modal.success-message": "Valid file format!",
+        "modal.success-message": "File loaded successfully!",
+        "modal.loading-message": "Loading...",
         "section-2.animated-heading": "What I can do for you?",
         "section-2.animated-heading--2": "My Tech Toolkit",
         // "servicesCard.heading--1": "Tailor made solutions",
@@ -121,7 +123,8 @@ export const TRANSLATIONS: Record<
         "modal.default-message": "Załadowano domyślny plik audio.",
 
         "modal.error-message": "Możesz załadować tylko pliki w formacie *.mp3.",
-        "modal.success-message": "Poprawny format pliku!",
+        "modal.success-message": "Plik został pomyślnie załadowny!",
+        "modal.loading-message": "Ładowanie pliku...",
         "section-2.animated-heading": "Co mogę dla Ciebie zrobić?",
         "section-2.animated-heading--2": "Technologie z którymi pracuję",
 
